@@ -1,0 +1,847 @@
+class Adder{  
+static int add(int a,int b){return a+b;}  
+static int add(int a,int b,int c){return a+b+c;}  
+}  
+class TestOverloading1{  
+public static void main(String[] args){  
+System.out.println(Adder.add(11,11));  
+System.out.println(Adder.add(11,11,11));  
+}}  
+
+Why Method Overloading is not possible by changing the return type of method only?
+
+In java, method overloading is not possible by changing the return type of the method only because of ambiguity. Let's see how ambiguity 
+may occur:
+
+class Adder{  
+static int add(int a,int b){return a+b;}  
+static double add(int a,int b){return a+b;}  
+}  
+class TestOverloading3{  
+public static void main(String[] args){  
+System.out.println(Adder.add(11,11));//ambiguity  
+}}  
+
+
+es, by method overloading. You can have any number of main methods in a class by method overloading. But JVM calls main() method which 
+receives string array as arguments only. Let's see the simple example:
+
+class TestOverloading4{  
+public static void main(String[] args){System.out.println("main with String[]");}  
+public static void main(String args){System.out.println("main with String");}  
+public static void main(){System.out.println("main without args");}  
+
+
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+
+In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is 
+known as method overriding.
+
+Method overriding is used to provide the specific implementation of a method which is already provided by its superclass.
+Method overriding is used for runtime polymorphism
+
+Rules for Java Method Overriding
+The method must have the same name as in the parent class
+The method must have the same parameter as in the parent class.
+There must be an IS-A relationship (inheritance).
+
+
+//Java Program to demonstrate why we need method overriding  
+//Here, we are calling the method of parent class with child  
+//class object.  
+//Creating a parent class  
+class Vehicle{  
+  void run(){System.out.println("Vehicle is running");}  
+}  
+//Creating a child class  
+class Bike extends Vehicle{  
+  public static void main(String args[]){  
+  //creating an instance of child class  
+  Bike obj = new Bike();  
+  //calling the method with child class instance  
+  obj.run();  
+  }  
+}  
+
+
+
+//Java Program to illustrate the use of Java Method Overriding  
+//Creating a parent class.  
+class Vehicle{  
+  //defining a method  
+  void run(){System.out.println("Vehicle is running");}  
+}  
+//Creating a child class  
+class Bike2 extends Vehicle{  
+  //defining the same method as in the parent class  
+  void run(){System.out.println("Bike is running safely");}  
+  
+  public static void main(String args[]){  
+  Bike2 obj = new Bike2();//creating object  
+  obj.run();//calling method  
+  }  
+}  
+
+
+//Java Program to demonstrate the real scenario of Java Method Overriding  
+//where three classes are overriding the method of a parent class.  
+//Creating a parent class.  
+class Bank{  
+int getRateOfInterest(){return 0;}  
+}  
+//Creating child classes.  
+class SBI extends Bank{  
+int getRateOfInterest(){return 8;}  
+}  
+  
+class ICICI extends Bank{  
+int getRateOfInterest(){return 7;}  
+}  
+class AXIS extends Bank{  
+int getRateOfInterest(){return 9;}  
+}  
+//Test class to create objects and call the methods  
+class Test2{  
+public static void main(String args[]){  
+SBI s=new SBI();  
+ICICI i=new ICICI();  
+AXIS a=new AXIS();  
+System.out.println("SBI Rate of Interest: "+s.getRateOfInterest());  
+System.out.println("ICICI Rate of Interest: "+i.getRateOfInterest());  
+System.out.println("AXIS Rate of Interest: "+a.getRateOfInterest());  
+}  
+}  
+
+
+Why can we not override static method?
+It is because the static method is bound with class whereas instance method is bound with an object. Static belongs to the class area, and
+ an instance belongs to the heap area.
+
+Can we override java main method?
+
+No, because the main is a static method.
+
+
+Super Keyword in Java
+The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+
+Whenever you create the instance of subclass, an instance of parent class is created implicitly which is referred by super reference variable.
+
+Usage of Java super Keyword
+super can be used to refer immediate parent class instance variable.
+super can be used to invoke immediate parent class method.
+super() can be used to invoke immediate parent class constructor.
+
+
+
+class Animal{  
+String color="white";  
+}  
+class Dog extends Animal{  
+String color="black";  
+void printColor(){  
+System.out.println(color);//prints color of Dog class  
+System.out.println(super.color);//prints color of Animal class  
+}  
+}  
+class TestSuper1{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.printColor();  
+}}  
+
+
+
+The super keyword can also be used to invoke parent class method. It should be used if subclass contains the same method as parent class. In other words, it is used if method is overridden.
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void eat(){System.out.println("eating bread...");}  
+void bark(){System.out.println("barking...");}  
+void work(){  
+super.eat();  
+bark();  
+}  
+}  
+class TestSuper2{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.work();  
+}}  
+
+
+
+Final Keyword In Java
+Final variable
+Final method
+Final class
+Is final method inherited ?
+Blank final variable
+Static blank final variable
+Final parameter
+Can you declare a final constructor
+The final keyword in java is used to restrict the user. The java final keyword can be used in many context. Final can be:
+
+variable
+method
+class
+The final keyword can be applied with the variables, a final variable that have no value it is called blank final variable or uninitialized final variable. It can be initialized in the constructor only. The blank final variable can be static also which will be initialized in the static block only. We will have detailed learning of these. Let's first learn the basics of final keyword.
+
+
+class Bike9{  
+ final int speedlimit=90;//final variable  
+ void run(){  
+  speedlimit=400;  
+ }  
+ public static void main(String args[]){  
+ Bike9 obj=new  Bike9();  
+ obj.run();  
+ }  
+}//end of class  
+
+Compile Time error
+
+
+
+class Bike{  
+  final void run(){System.out.println("running");}  
+}  
+     
+class Honda extends Bike{  
+   void run(){System.out.println("running safely with 100kmph");}  
+     
+   public static void main(String args[]){  
+   Honda honda= new Honda();  
+   honda.run();  
+   }  
+}  
+
+
+
+Compile Time error
+
+
+final class Bike{}  
+  
+class Honda1 extends Bike{  
+  void run(){System.out.println("running safely with 100kmph");}  
+    
+  public static void main(String args[]){  
+  Honda1 honda= new Honda1();  
+  honda.run();  
+  }  
+}  
+
+Compile Time error
+
+
+Polymorphism in Java
+Polymorphism in Java is a concept by which we can perform a single action in different ways. Polymorphism is derived from 2 Greek words: poly and morphs. The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
+
+There are two types of polymorphism in Java: compile-time polymorphism and runtime polymorphism. We can perform polymorphism in java by method overloading and method overriding.
+
+If you overload a static method in Java, it is the example of compile time polymorphism. Here, we will focus on runtime polymorphism in java.
+
+Runtime Polymorphism in Java
+
+Runtime polymorphism or Dynamic Method Dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time.
+
+
+In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+
+
+Abstract class in Java
+A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body).
+
+Before learning the Java abstract class, let's understand the abstraction in Java first.
+
+Abstraction in Java
+
+Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+Another way, it shows only essential things to the user and hides the internal details, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery.
+
+
+
+Ways to achieve Abstraction
+There are two ways to achieve abstraction in java
+
+Abstract class (0 to 100%)
+Interface (100%)
+
+A class which is declared as abstract is known as an abstract class. It can have abstract and non-abstract methods. It needs to be extended and its method implemented. It cannot be instantiated.
+
+
+An abstract class must be declared with an abstract keyword.
+It can have abstract and non-abstract methods.
+It cannot be instantiated.
+It can have constructors and static methods also.
+It can have final methods which will force the subclass not to change the body of the method.
+
+
+
+Example of Abstract class that has an abstract method
+
+In this example, Bike is an abstract class that contains only one abstract method run. Its implementation is provided by the Honda class.
+
+abstract class Bike{  
+  abstract void run();  
+}  
+class Honda4 extends Bike{  
+void run(){System.out.println("running safely");}  
+public static void main(String args[]){  
+ Bike obj = new Honda4();  
+ obj.run();  
+}  
+}  
+
+
+Understanding the real scenario of Abstract class
+
+In this example, Shape is the abstract class, and its implementation is provided by the Rectangle and Circle classes.
+
+Mostly, we don't know about the implementation class (which is hidden to the end user), and an object of the implementation class is provided by the factory method.
+
+A factory method is a method that returns the instance of the class. We will learn about the factory method later.
+
+In this example, if you create the instance of Rectangle class, draw() method of Rectangle class will be invoked.
+
+File: TestAbstraction1.java
+
+
+abstract class Shape{  
+abstract void draw();  
+}  
+//In real scenario, implementation is provided by others i.e. unknown by end user  
+class Rectangle extends Shape{  
+void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle1 extends Shape{  
+void draw(){System.out.println("drawing circle");}  
+}  
+//In real scenario, method is called by programmer or user  
+class TestAbstraction1{  
+public static void main(String args[]){  
+Shape s=new Circle1();//In a real scenario, object is provided through method, e.g., getShape() method  
+s.draw();  
+}  
+}  
+
+
+An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+
+The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+
+
+
+In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body.
+
+Java Interface also represents the IS-A relationship.
+
+
+It cannot be instantiated just like the abstract class.
+
+
+Since Java 8, we can have default and static methods in an interface.
+
+Since Java 9, we can have private methods in an interface.
+
+
+There are mainly three reasons to use interface. They are given below.
+
+It is used to achieve abstraction.
+By interface, we can support the functionality of multiple inheritance.
+It can be used to achieve loose coupling.
+
+
+An interface is declared by using the interface keyword. It provides total abstraction; means all the methods in an interface are declared with the empty body, and all the fields are public, static and final by default. A class that implements an interface must implement all the methods declared in the interface.
+
+Syntax:
+interface <interface_name>{  
+      
+    // declare constant fields  
+    // declare methods that abstract   
+    // by default.  
+}  
+
+
+In this example, the Drawable interface has only one method. Its implementation is provided by Rectangle and Circle classes. In a real scenario, an interface is defined by someone else, but its implementation is provided by different implementation providers. Moreover, it is used by someone else. The implementation part is hidden by the user who uses the interface.
+
+
+File: TestInterface1.java
+
+//Interface declaration: by first user  
+interface Drawable{  
+void draw();  
+}  
+//Implementation: by second user  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle implements Drawable{  
+public void draw(){System.out.println("drawing circle");}  
+}  
+//Using interface: by third user  
+class TestInterface1{  
+public static void main(String args[]){  
+Drawable d=new Circle();//In real scenario, object is provided by method e.g. getDrawable()  
+d.draw();  
+}}  
+
+
+
+package MyBrushUp;
+
+interface Bank{  
+	
+float rateOfInterest();  
+}  
+
+class SBI implements Bank{  
+	
+public float rateOfInterest(){
+	return 9.15f;
+	}  
+}  
+
+class PNB implements Bank{  
+	
+public float rateOfInterest(){
+	return 9.7f;
+	}  
+}  
+
+class TestInterface2{  
+	public static void main(String[] args){  
+		Bank b=new SBI();  
+		System.out.println("ROI: "+b.rateOfInterest());  
+		}
+	}  
+	
+	
+	
+	
+
+Encapsulation in Java is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
+
+encapsulation in java
+We can create a fully encapsulated class in Java by making all the data members of the class private. Now we can use setter and getter methods to set and get the data in it
+
+
+
+It provides you the control over the data. Suppose you want to set the value of id which should be greater than 100 only, you can write the logic inside the setter method. You can write the logic not to store the negative numbers in the setter methods.
+
+
+It is a way to achieve data hiding in Java because other class will not be able to access the data through the private data members.
+
+The encapsulate class is easy to test. So, it is better for unit testing.
+
+The standard IDE's are providing the facility to generate the getters and setters. So, it is easy and fast to create an encapsulated class in Java.
+
+//A Java class which is a fully encapsulated class.  
+//It has a private data member and getter and setter methods.  
+package com.javatpoint;  
+public class Student{  
+//private data member  
+private String name;  
+//getter method for name  
+public String getName(){  
+return name;  
+}  
+//setter method for name  
+public void setName(String name){  
+this.name=name  
+}  
+}  
+
+
+/A Java class to test the encapsulated class.  
+package com.javatpoint;  
+class Test{  
+public static void main(String[] args){  
+//creating instance of the encapsulated class  
+Student s=new Student();  
+//setting value in the name member  
+s.setName("vijay");  
+//getting value of the name member  
+System.out.println(s.getName());  
+}  
+}  
+Compile By: javac -d . Test.java
+Run By: java com.javatpoint.Test
+
+Output:
+
+vijay
+Read-Only class
+//A Java class which has only getter methods.  
+public class Student{  
+//private data member  
+private String college="AKG";  
+//getter method for college  
+public String getCollege(){  
+return college;  
+}  
+}  
+Now, you can't change the value of the college data member which is "AKG".
+
+
+s.setCollege("KITE");//will render compile time error  
+Write-Only class
+//A Java class which has only setter methods.  
+public class Student{  
+//private data member  
+private String college;  
+//getter method for college  
+public void setCollege(String college){  
+this.college=college;  
+}  
+}  
+Now, you can't get the value of the college, you can only change the value of college data member.
+
+
+System.out.println(s.getCollege());//Compile Time Error, because there is no such method  
+System.out.println(s.college);//Compile Time Error, because the college data member is private.   
+//So, it can't be accessed from outside the class  
+Another Example of Encapsulation in Java
+Let's see another example of encapsulation that has only four fields with its setter and getter methods.
+
+File: Account.java
+
+//A Account class which is a fully encapsulated class.  
+//It has a private data member and getter and setter methods.  
+class Account {  
+//private data members  
+private long acc_no;  
+private String name,email;  
+private float amount;  
+//public getter and setter methods  
+public long getAcc_no() {  
+    return acc_no;  
+}  
+public void setAcc_no(long acc_no) {  
+    this.acc_no = acc_no;  
+}  
+public String getName() {  
+    return name;  
+}  
+public void setName(String name) {  
+    this.name = name;  
+}  
+public String getEmail() {  
+    return email;  
+}  
+public void setEmail(String email) {  
+    this.email = email;  
+}  
+public float getAmount() {  
+    return amount;  
+}  
+public void setAmount(float amount) {  
+    this.amount = amount;  
+}  
+  
+}  
+File: TestAccount.java
+
+//A Java class to test the encapsulated class Account.  
+public class TestEncapsulation {  
+public static void main(String[] args) {  
+    //creating instance of Account class  
+    Account acc=new Account();  
+    //setting values through setter methods  
+    acc.setAcc_no(7560504000L);  
+    acc.setName("Sonoo Jaiswal");  
+    acc.setEmail("sonoojaiswal@javatpoint.com");  
+    acc.setAmount(500000f);  
+    //getting values through getter methods  
+    System.out.println(acc.getAcc_no()+" "+acc.getName()+" "+acc.getEmail()+" "+acc.getAmount());  
+}  
+}  
+Test it Now
+Output:
+
+7560504000 Sonoo Jaiswal sonoojaiswal@javatpoint.com 500000.0
+
+
+
+The Object class is the parent class of all the classes in java by default. In other words, it is the topmost class of java.
+
+The Object class is beneficial if you want to refer any object whose type you don't know. Notice that parent class reference variable can refer the child class object, know as upcasting.
+
+Let's take an example, there is getObject() method that returns an object but it can be of any type like Employee,Student etc, we can use Object class reference to refer that object. For example:
+
+
+Object obj=getObject();//we don't know what object will be returned from this method  
+The Object class provides some common behaviors to all the objects such as object can be compared, object can be cloned, object can be notified etc.
+
+
+
+The Object class provides many methods. They are as follows:
+Method	Description
+public final Class getClass()
+
+returns the Class class object of this object. The Class class can further be used to get the metadata of this class.
+public int hashCode()	returns the hashcode number for this object.
+public boolean equals(Object obj)	compares the given object to this object.
+protected Object clone() throws CloneNotSupportedException	creates and returns the exact copy (clone) of this object.
+public String toString()	returns the string representation of this object.
+public final void notify()	wakes up single thread, waiting on this object's monitor.
+public final void notifyAll()	wakes up all the threads, waiting on this object's monitor.
+public final void wait(long timeout)throws InterruptedException
+
+causes the current thread to wait for the specified milliseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait(long timeout,int nanos)throws InterruptedException	causes the current thread to wait for the specified milliseconds and nanoseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait()throws InterruptedException
+
+causes the current thread to wait, until another thread notifies (invokes notify() or notifyAll() method).
+protected void finalize()throws Throwable
+
+is invoked by the garbage collector before object is being garbage collected.
+We will have the detailed learning of these methods in next chapters
+
+
+The object cloning is a way to create exact copy of an object. The clone() method of Object class is used to clone an object.
+
+The java.lang.Cloneable interface must be implemented by the class whose object clone we want to create. If we don't implement Cloneable interface, clone() method generates CloneNotSupportedException.
+
+The clone() method is defined in the Object class. Syntax of the clone() method is as follows:
+
+protected Object clone() throws CloneNotSupportedException  
+Why use clone() method ?
+
+The clone() method saves the extra processing task for creating the exact copy of an object. If we perform it by using the new keyword, it will take a lot of processing time to be performed that is why we use object cloning.
+
+
+Example of clone() method (Object cloning)
+Let's see the simple example of object cloning
+
+class Student18 implements Cloneable{  
+int rollno;  
+String name;  
+  
+Student18(int rollno,String name){  
+this.rollno=rollno;  
+this.name=name;  
+}  
+  
+public Object clone()throws CloneNotSupportedException{  
+return super.clone();  
+}  
+  
+public static void main(String args[]){  
+try{  
+Student18 s1=new Student18(101,"amit");  
+  
+Student18 s2=(Student18)s1.clone();  
+  
+System.out.println(s1.rollno+" "+s1.name);  
+System.out.println(s2.rollno+" "+s2.name);  
+  
+}catch(CloneNotSupportedException c){}  
+  
+}  
+}  
+Test it Now
+Output:101 amit
+       101 amit
+	   
+	   
+	   
+Important methods of StringBuffer class
+Modifier and Type	Method	Description
+public synchronized StringBuffer	append(String s)	It is used to append the specified string with this string. The append() method is overloaded like append(char), append(boolean), append(int), append(float), append(double) etc.
+public synchronized StringBuffer	insert(int offset, String s)	It is used to insert the specified string with this string at the specified position. The insert() method is overloaded like insert(int, char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double) etc.
+public synchronized StringBuffer	replace(int startIndex, int endIndex, String str)	It is used to replace the string from specified startIndex and endIndex.
+public synchronized StringBuffer	delete(int startIndex, int endIndex)	It is used to delete the string from specified startIndex and endIndex.
+public synchronized StringBuffer	reverse()	is used to reverse the string.
+public int	capacity()	It is used to return the current capacity.
+public void	ensureCapacity(int minimumCapacity)	It is used to ensure the capacity at least equal to the given minimum.
+public char	charAt(int index)	It is used to return the character at the specified position.
+public int	length()	It is used to return the length of the string i.e. total number of characters.
+public String	substring(int beginIndex)	It is used to return the substring from the specified beginIndex.
+public String	substring(int beginIndex, int endIndex)	It is used to return the substring from the specified beginIndex and endIndex.
+What is a mutable String?
+A String that can be modified or changed is known as mutable String. StringBuffer and StringBuilder classes are used for creating mutable strings.
+
+1) StringBuffer Class append() Method
+The append() method concatenates the given argument with this String.
+
+StringBufferExample.java
+
+
+class StringBufferExample{  
+public static void main(String args[]){  
+StringBuffer sb=new StringBuffer("Hello ");  
+sb.append("Java");//now original string is changed  
+System.out.println(sb);//prints Hello Java  
+}  
+}  
+
+
+class StringBufferExample2{  
+public static void main(String args[]){  
+StringBuffer sb=new StringBuffer("Hello ");  
+sb.insert(1,"Java");//now original string is changed  
+System.out.println(sb);//prints HJavaello  
+}  
+}  
+
+
+lass Student{  
+ int rollno;  
+ String name;  
+ String city;  
+  
+ Student(int rollno, String name, String city){  
+ this.rollno=rollno;  
+ this.name=name;  
+ this.city=city;  
+ }  
+  
+ public static void main(String args[]){  
+   Student s1=new Student(101,"Raj","lucknow");  
+   Student s2=new Student(102,"Vijay","ghaziabad");  
+     
+   System.out.println(s1);//compiler writes here s1.toString()  
+   System.out.println(s2);//compiler writes here s2.toString()  
+ }  
+}  
+Output:
+
+Student@1fee6fc
+Student@1eed786
+As you can see in the above example, printing s1 and s2 prints the hashcode values of the objects but I want to print the values of these objects. Since Java compiler internally calls toString() method, overriding this method will return the specified values. 
+
+
+class Student{  
+ int rollno;  
+ String name;  
+ String city;  
+  
+ Student(int rollno, String name, String city){  
+ this.rollno=rollno;  
+ this.name=name;  
+ this.city=city;  
+ }  
+   
+ public String toString(){//overriding the toString() method  
+  return rollno+" "+name+" "+city;  
+ }  
+ public static void main(String args[]){  
+   Student s1=new Student(101,"Raj","lucknow");  
+   Student s2=new Student(102,"Vijay","ghaziabad");  
+     
+   System.out.println(s1);//compiler writes here s1.toString()  
+   System.out.println(s2);//compiler writes here s2.toString()  
+ }  
+}  
+Output:
+
+101 Raj lucknow
+102 Vijay ghaziabad
+In the above program, Java compiler internally calls toString() method, overriding this method will return the specified values of s1 and s2 objects of Student class.
+
+
+
+import java.util.StringTokenizer;  
+public class Simple{  
+ public static void main(String args[]){  
+   StringTokenizer st = new StringTokenizer("my name is khan"," ");  
+     while (st.hasMoreTokens()) {  
+         System.out.println(st.nextToken());  
+     }  
+   }  
+}  
+
+
+my
+name
+is
+khan
+
+
+
+Nested classes represent a particular type of relationship that is it can access all the members (data members and methods) of the outer class, including private.
+Nested classes are used to develop more readable and maintainable code because it logically group classes and interfaces in one place only.
+Code Optimization: It requires less code to write.
+
+An inner class is a part of a nested class. Non-static nested classes are known as inner classes.
+
+Life cycle of a Thread (Thread States)
+In Java, a thread always exists in any one of the following states. These states are:
+
+New
+Active
+Blocked / Waiting
+Timed Waiting
+Terminated
+Explanation of Different Thread States
+New: Whenever a new thread is created, it is always in the new state. For a thread in the new state, the code has not been run yet and thus has not begun its execution.
+
+Active: When a thread invokes the start() method, it moves from the new state to the active state. The active state contains two states within it: one is runnable, and the other is running.
+
+Runnable: A thread, that is ready to run is then moved to the runnable state. In the runnable state, the thread may be running or may be ready to run at any given instant of time. It is the duty of the thread scheduler to provide the thread time to run, i.e., moving the thread the running state.
+A program implementing multithreading acquires a fixed slice of time to each individual thread. Each and every thread runs for a short span of time and when that allocated time slice is over, the thread voluntarily gives up the CPU to the other thread, so that the other threads can also run for their slice of time. Whenever such a scenario occurs, all those threads that are willing to run, waiting for their turn to run, lie in the runnable state. In the runnable state, there is a queue where the threads lie.
+Running: When the thread gets the CPU, it moves from the runnable to the running state. Generally, the most common change in the state of a thread is from runnable to running and again back to runnable.
+Blocked or Waiting: Whenever a thread is inactive for a span of time (not permanently) then, either the thread is in the blocked state or is in the waiting state.
+
+
+
+For example, a thread (let's say its name is A) may want to print some data from the printer. However, at the same time, the other thread (let's say its name is B) is using the printer to print some data. Therefore, thread A has to wait for thread B to use the printer. Thus, thread A is in the blocked state. A thread in the blocked state is unable to perform any execution and thus never consume any cycle of the Central Processing Unit (CPU). Hence, we can say that thread A remains idle until the thread scheduler reactivates thread A, which is in the waiting or blocked state.
+
+When the main thread invokes the join() method then, it is said that the main thread is in the waiting state. The main thread then waits for the child threads to complete their tasks. When the child threads complete their job, a notification is sent to the main thread, which again moves the thread from waiting to the active state.
+
+If there are a lot of threads in the waiting or blocked state, then it is the duty of the thread scheduler to determine which thread to choose and which one to reject, and the chosen thread is then given the opportunity to run.
+
+Timed Waiting: Sometimes, waiting for leads to starvation. For example, a thread (its name is A) has entered the critical section of a code and is not willing to leave that critical section. In such a scenario, another thread (its name is B) has to wait forever, which leads to starvation. To avoid such scenario, a timed waiting state is given to thread B. Thus, thread lies in the waiting state for a specific span of time, and not forever. A real example of timed waiting is when we invoke the sleep() method on a specific thread. The sleep() method puts the thread in the timed wait state. After the time runs out, the thread wakes up and start its execution from when it has left earlier.
+
+Terminated: A thread reaches the termination state because of the following reasons:
+
+When a thread has finished its job, then it exists or terminates normally.
+Abnormal termination: It occurs when some unusual events such as an unhandled exception or segmentation fault.
+A terminated thread means the thread is no more in the system. In other words, the thread is dead, and there is no way one can respawn (active after kill) the dead thread.
+
+
+
+apple, orange, orange, orange, apple, mango
+
+
+Apple-2
+Orange-3
+mango-1
+
+
+
+NO of occurences
+
+
+Hashmap<String> map = new Hashmap<>();
+
+
+
+
+2, -1, 3, -5, 6, 7
+
+
+ArrayList<Integer> list = {2,-1,3,-5,6,7};
+
+list.stream().filter(x-> x>=0 ).Collectors.toList().collect();
+
+
+2 1 3 4 5
+
+
+Caching
+
+Encryption decryption
+
+Spring security
+
+Token call
+
+Basic applciation function
+
+How to fetch 10000 images on a request for user?

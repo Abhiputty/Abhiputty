@@ -1,0 +1,212 @@
+
+
+
+Employee
+
+Name, dept 
+
+fetch count of each dept;
+
+select count(name),dept from employee group by dept;
+
+
+
+
+FileNet is an Enterprise Content Management (ECM) product suite from IBM designed for managing the content and business process. The FileNet Enterprise Content Management products include.
+
+1.Content Management product 
+
+FileNet Content Manager (CE) - provides the core management solutions for FileNet P8 platform.
+FileNet Image Services (IS) - provides the services to store and manage the documents.
+2.Business Management products  
+FileNet BPM - The FileNet BMP improves the productivity and complex process of workflows management by reducing the cycle times. The Process Engine, Process Analyzer and Process Simulator are the components of FileNet BPM.
+
+
+
+The documents will be stored in the following locations
+
+File Store
+Fixed storage devices
+Database
+
+
+Describe Content Engine Web Services(CEWS).
+Content Engine Web Service (CEWS) establishes the communication with Content Engine. FileNet Content Manager provides all features in the CE server which can be accessed by using CEWS. A web service interface is used by a unique Web Service Description Language (WSDL) provided by FileNet. CEWS clients or stub classes are generated from WSDL files.
+
+Describe what is P8 in FileNet P8?
+P8 denotes total of eight products in FileNet which is together called as FileNet P8. The eight products are.
+
+Content Manager.
+Records Manager.
+Team Collaboration Manager.
+Business Process Manager.
+Web Content Manager.
+Image Manager.
+Forms Manager.
+Email Manager.
+How Authentication is handled in FileNet P8?
+FileNet P8 uses two different standards for Authentication.
+
+Java Authentication and Authorization Service (JAAS) is a standard which provides the policy-based framework to determine the invocation of a Java application. CE uses JAAS pluggable framework for authentication since the Content Engine EJB resides in the J2EE application server’s EJB container. 
+Web Services Security (WS-Security) is another standard used by FileNet for web services to provide authentication with WS-Security. WS-Security supports multiple security tokens such as Username, Kerberos, SSL X.509 Tokens etc.
+When the Content Engine server receives the request then Content Engine Web Service Listener extracts WS-Security header and performs JAAS login based on its contents. The Web service listener passes the request to the Content Engine EJB layer within the EJB container when JAAS login becomes successful.
+
+What is FileNet BPF?
+FileNet BPF is a configuration framework which develops BPM applications such as Ajax that provides the users with user-friendly interface applications. BPF framework provides predefined screens and functionalities for the development and customization of BMP applications.
+
+There are two components in FileNet BPF.
+
+BPF Explorer - It is a Microsoft Management Console tool that defines and configures the BPF applications.
+BPF Web application - It is a web application portal which configures and customizes BPM applications and UI containers.
+What is a File Store and File Store Policy?
+A physical folder which stores all the FileNet documents is called as File Store. 
+Filestore is a physical folder whereas FileNet stores the documents.
+Multiple file stores can be created in FileNet to store documents at two different places. This setup is called File Store Farm.
+Filestore policy allows distribution of documents in Filestore Farm.
+How many databases are used by FileNet Content Engine to store data?
+The FileNet Content Engine has two or more databases.
+
+Global Configuration database.
+Object store databases.
+The object store databases can be one or more than one in a FileNet P8 domain. Each object store needs its own database, either existing or newly created which uses object-store creation wizard in FEM.
+
+
+Explain the use of FileNet Consistency Check utility.
+The FileNet Consistency Check tool is a utility part of FileNet Enterprise Management (FEM). It verifies files stored in the FileStore corresponds to the metadata in the CE database or not. It ensures data consistency over common use events such as system restore, power loss, system crash.
+
+. Does FileNet CE provide content compression or encryption?
+No.The FileNet P8 5.1 release supports this encryption feature that helps to protect the content from unauthorized access.
+
+If you have any doubts on IBM Filenet, then get them clarified from IBM Filenet Industry experts on our  IBM Filenet Tutorial !
+
+. Why use custom objects when you have a content-less document?
+Custom objects can be customized as they are general-purpose objects while document objects contain metadata and content as its objects are instances of the document class.
+Content-less documents are used in tracking physical items such as Video Tapes, books, etc. This document contains the properties but has no content.
+Custom objects are not versionable. If versioning is required then appropriate class will be defined in document class hierarchy and objects are stored in the content-less documents.
+. What happens to the work items when a work queue is deleted from PE?
+The work items will be kept on hold in the Process Engine work queue. The queues are deleted after initializing the isolated region. Once the queue is deleted then all the associated work items in it also get deleted.
+
+. Where can you find the terminated workflows or work items?
+The administrator was able to search for events in the event logs available in the FileNet Process Administrator. The terminated work items are found through the process administrator by searching the information about these events.
+
+. What are the types of queues available in the Process Engine?
+There are four different types of queues present in the Process Engine.
+
+Work queues - The work items await for processing in the work queues. It ensures the fast processing of items in the work queues. 
+Component queues - Component queues process the workflow steps by configuring with external entities such as Java Message Service, Process Configuration control.
+System queues - The systems queues are the queues which can be accessed only by the Process Engine.
+User queues - The user queues hold the work items that are assigned to users or tracked by the users. Inbox and Tracker are two queues that are created automatically after initializing isolated region.
+. Explain about an isolated region?
+An isolated region is the logical sub-division of the workflow database in the Process Engine. It contains the queues which maintain the work items, rosters, event-logs and other configuration-related information.
+
+The Process Engine contains isolated regions.
+Many isolated regions can exist in one process engine.
+The Process Configuration Control(PCC) creates and manages the isolated regions.
+The same content engine is not connected to many isolated regions.
+When a new isolation region is created then every time Default inbox, Default roaster and event log are also created. 
+The isolated regions are defined by the system administrators by using the  FileNet Enterprise Manager.
+An isolated host in the content engine is defined by using an isolated region number, password, process engine host and communication point.
+. Why do we need multiple isolated regions?
+A Process Engine which contains a logical sub-division of the workflow database is called an isolated region. It maintains the queues for work items, rosters, event-logs and other configuration information.
+
+Different isolated regions are created for two different process departments in an organisation which has different workflow patterns.
+In order to maintain the systems and effective workflow, it is recommended to have two different isolated regions for two different departments.
+The changes made into one region doesn’t affect the users of another region while using these multiple isolated regions.
+
+. How can you delete a queue in the Process Engine?
+There is no specific mechanism which can delete a work queue or a component queue. The following steps must be initiated for the isolated region
+
+1.Export isolation configuration data to XML 
+Select an isolated region and export all its components by using Process Configuration Control (PCC)
+
+2.Initialize the isolated region
+Take the backup file of XML and remove the nodes of an unwanted queue after carefully editing the XML file. Import XML file with an option “overwrite” from an initialized isolated region.
+
+3.Validate the configuration
+With the initialization of isolated regions, the changes will be updated to the workflow database structure and this deletes the data in the workflow database. While deleting a queue, the FileNet developers must design and configure the queues very carefully. 
+
+. How many object stores does FileNet Content Engine support?
+IBM FileNet P8 5.1 Content Engine supports up to 750 object stores.
+The CE application server running with 32 bit JVM supports not more than 75 Content Engine object stores.
+The CE application server running with 64 bit JVM supports not more than 150 Content Engine object stores.
+
+Subscribe To Our YouTube Channel To Get New Updates..!
+ 
+
+. What is Workflow Roster?
+A database structure which is used for storing information about all workflows in an isolated region is called a Workflow Roster.
+
+Workflow rosters provide the process engine with an efficient way to locate the specific workflows.
+A DefaultRoster is created when a newly isolated region is initialized in process engine.
+Additional rosters are created using Process Configuration Control (PCC).
+. How can you determine that FileNet Content Engine is running properly?
+Check whether the “FileNet Engine” web application status is in running state in WebSphere Console.
+Try connecting to CE with FEM. If CE is not running then the user gets a message “Unable to log in to P8 domain” else the CE connection will be running fine.
+Try login to FileNet workplace. The user will get the “credential exception” if not able to sign in, CE and directory services else it will be running fine.
+. What are event actions and subscriptions?
+Event Action - An event action is an action that is triggered by the Content Engine when the user implements certain action events such as object creation, object modification, object deletion is performed in an object-store. 
+
+Subscriptions - The association of the event trigger with an event action is called a subscription. A single event trigger causes many event subscriptions.
+
+. Describe the different ways to secure documents in FileNet CE.
+There are two ways in securing the documents in FileNet CE
+
+1.Access Control List 
+The Access Control List defines the access rights provided to the users which include viewing, updating the content, publishing, updating, access rights and metadata. An authorization framework assigns the access rights to the user groups or users based on configured LDAP repositories.
+
+2.Marking sets
+The Marking sets define the level of security for the objects. Access to objects is controlled by using the marking sets based on providing the specific property values. 
+
+. Define root classes in FileNet.
+A class which doesn’t have any parent class is called a root class. The FileNet object store contains various root classes such as an event, choice list, annotation, document class etc. The root classes are created automatically when the object store is created. After creating the root class the properties and subclasses can be defined or added to the object-store.
+
+. What is the difference between a document and a record in FileNet terms?
+A document is a file where you can create, save, retrieve, update, replace the old version with the updated version. 
+A record is a reference to information which provides metadata that can manage the information. 
+A document which is added to IBM FileNet P8 repository without declaring it as a record is called a “document” but as soon as it is declared as a record then the document will be considered as a record.
+Records-enabled Content Objects Store (ROS) stores the Document objects and File Plan Object Store (FPOS) stores the record objects.
+. What is the difference between the Major Version and Minor Version?
+Content Engine supports two-level versioning where a document is either a major or minor version.
+
+The documents with minor versions are denoted as “in-progress” while the major version documents are denoted as “completed”.
+The documents can be promoted from the minor to major version or can be demoted from major to a minor version.
+
+The versions also can be deleted. The versions can be enabled or disabled on a document class level when multiple versions are not required.
+
+If you have any doubts on IBM FileNet,then get them clarified from IBM FileNet Industry experts on our IBM FileNet Community !
+
+. Should all properties of CE replicate to RM?
+No. It is recommended to avoid duplicating the properties unless it represents a specific requirement.
+
+CE uses the properties which have the functional need for document management.
+RM uses the properties which have the functional need for records management.
+The same properties are used in ROS (CE) and FPOS (RM) by many ECM architects for simplicity
+. What is the significance of folders in FileNet P8?
+Folders are used in organizing the documents and other items. It groups other objects including the documents and custom objects. A document can be filed to multiple folders.
+
+The documents are versionable but not folders.
+Within the same object store, the contents of one folder can be copied to another folder.
+When a new object store is created then a new folder is also created and it serves as a parent folder for all other folders in the object-store.
+Each folder has its custom security and also generates the server events when it is created, modified or deleted.
+IBM FileNet Training
+Weekday / Weekend Batches
+
+ 
+
+. What is document class in FileNet Content Engine?
+The document class in FileNet is used in classifying the documents. These documents can be classified through manual classification or automatic.
+
+In manual classification, document class name is provided while adding a document to the CE repository.
+In automatic classification, CE’s Document Classification Manager parses the document and assigns the document class for it based on the classification module.
+The document class determines the document’s security and system-generated properties.
+
+. What are stored search and search templates?
+The stored search and search templates are the predefined searches that are configured by the administrators by using the search designer tool.
+
+The users are able to search for objects in the workplace to locate the items. 
+The workplace provides multiple options for searching objects stored in FileNet Content Engine that include simple search, stored search, search templates etc.
+Simple search enables the users to customize searches for documents, folders and custom objects.
+The search criteria and options are configured using the search view under the User Preferences page in the workplace.
+
+
+

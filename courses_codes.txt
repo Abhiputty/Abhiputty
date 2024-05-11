@@ -1,0 +1,6489 @@
+public class Student {
+    private int marks;
+
+    public Student(int marks) {
+        // TODO: Assign 'marks' to the instance variable 'this.marks'
+        this.marks=marks;
+    }
+
+    public char assignGrade() {
+        // TODO: Implement the method which assigns the grade based on marks.
+        // If marks are less than 0 or greater than 100, return 'X'
+        // If marks are greater than or equal to 90, return 'A'
+        // If marks are greater than or equal to 80, return 'B'
+        // If marks are greater than or equal to 70, return 'C'
+        // If marks are greater than or equal to 60, return 'D'
+        // If marks are greater than or equal to 50, return 'E'
+        // If marks are less than 50, return 'F'
+        if(marks<0 || marks>100)
+        {
+            return 'X';
+        }
+        if(marks>=90)
+        {
+            return 'A';
+        }
+        if(marks>=80)
+        {
+            return 'B';
+        }
+        if(marks>=70)
+        {
+            return 'C';
+        }
+        if(marks>=60)
+        {
+            return 'D';
+        }
+        if(marks>=50)
+        {
+            return 'E';
+        }
+            return 'F';
+    }
+}
+
+
+
+
+
+
+
+
+public class WeatherAdviser {
+
+    public String provideWeatherAdvisory(int temperature) {
+        // TODO: Provide a weather advisory message based on the temperature.
+        if(temperature<0){
+            return "It's freezing! Wear a heavy coat.";
+        }
+        if(temperature>=0 && temperature<=10){
+            return "It's cold! Bundle up.";
+        }
+        if(temperature>=11 && temperature<=20){
+            return "It's cool! A light jacket will do.";
+        }
+        return "It's warm! Enjoy the day.";
+    }
+}
+
+
+
+
+
+
+
+
+MyChar myChar = new MyChar();
+ 
+System.out.println(myChar.isVowel('A'));  // Output: true
+System.out.println(myChar.isVowel('b'));  // Output: false
+System.out.println(myChar.isVowel('E'));  // Output: true
+System.out.println(myChar.isVowel('f'));  // Output: false
+
+
+public class MyChar {
+
+    // Method to determine if a character is a vowel
+    public boolean isVowel(char ch) {
+    
+        // Use a switch statement to check for each vowel, both lowercase and uppercase
+        switch (ch) {
+        
+            // TODO: Complete the switch statement
+            case 'a':return true;
+            case 'A':return true;
+            case 'E':return true;
+            case 'e':return true;
+            case 'i':return true;
+            case 'I':return true;
+            case 'o':return true;
+            case 'O':return true;
+            case 'u':return true;
+            case 'U':return true;
+            default:return false;
+        }
+
+    }
+}
+
+
+
+
+
+public class FactorialCalculator {
+
+    public int calculateFactorial(int number) {
+        // Write your code here
+        if(number<0){
+            return -1;
+        }
+        int sum=1;
+        for(int i=2;i<=number;i++){
+            sum =sum*i;
+        }
+        return sum;
+    }
+}
+
+
+
+
+
+
+public class NumberUtils {
+
+    public int getLastDigit(int number) {
+        // Write your code here
+        if(number<0){
+            return -1;
+        }
+        return number%10;
+    }
+}
+
+
+
+public class NumberUtils {
+
+    /**
+     * This method calculates and returns the number of digits in a given integer.
+     * If the number is negative, it returns -1.
+     * If the number is zero, it returns 1 as zero is considered to have one digit.
+     * @param number: an integer
+     * @return number of digits in number, or -1 if number is negative, or 1 if number is zero.
+     */
+    public int getNumberOfDigits(int number) {
+        // Write your code here
+        if(number<0){
+            return -1;
+        }
+        if(number==0){
+            return 1;
+        }
+        
+        int noOfDigits = 0;
+        
+        while(number>0){
+            number = number/10;
+            noOfDigits++;
+        }
+        return noOfDigits;
+        
+    }
+}
+
+
+
+
+
+public class NumberUtils {
+
+    public int getSumOfDigits(int number) {
+        // Write your code here
+        if(number<0){
+            return -1;
+        }
+        if(number==0){
+            return 0;
+        }
+        
+        int x = 0;
+        
+        while(number>0){
+            
+            int digit=number%10;
+            x+=digit;
+            number = number/10;
+        }
+        return x;
+    }
+}
+
+
+
+
+
+public class NumberUtils {
+
+    /**
+     * This method reverses a given integer and returns the reversed number.
+     * If the number is negative, it returns -1 as the reverse of a negative number is undefined.
+     * If the number is zero, it returns 0 as the reverse of 0 is 0.
+     * @param number: an integer
+     * @return reversed number, or -1 if number is negative, or 0 if number is zero.
+     */
+    public int reverseNumber(int number) {
+        // TODO: Write your code here
+        if(number<0){
+            return -1;
+        }
+        if(number==0){
+            return 0;
+        }
+        
+        int reversedNumber=0;
+        
+        while(number>0){
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number = number /10;
+			System.out.format("%d %d %d", digit,number,reversedNumber).println();
+        }
+        return reversedNumber;
+        
+    }
+}
+
+
+
+
+
+public class BiNumber {
+
+    private int number1;
+    private int number2;
+
+    /**
+     * Constructor that initializes the two numbers.
+     * @param number1: The first number.
+     * @param number2: The second number.
+     */
+    public BiNumber(int number1, int number2) {
+        this.number1 = number1;
+        this.number2 = number2;
+    }
+
+    /**
+     * Getter for the first number.
+     * @return the first number.
+     */
+    public int getNumber1() {
+        return number1;
+    }
+
+    /**
+     * Getter for the second number.
+     * @return the second number.
+     */
+    public int getNumber2() {
+        return number2;
+    }
+
+    /**
+     * Calculates and returns the least common multiple (LCM) of the two numbers.
+     * If either number is negative, returns -1 as the LCM for negative numbers is undefined.
+     * If either number is zero, returns 0 as the LCM of 0 and any other number is 0.
+     * @return LCM of the two numbers, or -1 if either number is negative, or 0 if either number is zero.
+     */
+    public int calculateLCM() {
+        // TODO: Write your code here
+        if(number1<0 || number2<0){
+            return -1;
+        }
+        if(number1==0 || number2==0){
+            return 0;
+        }
+        
+        int max = Math.max(number1,number2);
+        int lcm = max;
+
+        while(true){
+        boolean isTrue=lcm%number1 == 0 && lcm%number2 == 0;
+        if(isTrue){
+            return lcm;
+            }
+            lcm += max;
+        }
+        
+        
+    }
+}
+
+
+
+
+public class BiNumber {
+    private int number1;
+    private int number2;
+
+    /**
+     * Constructor that initializes the two numbers.
+     * @param number1: The first number.
+     * @param number2: The second number.
+     */
+    public BiNumber(int number1, int number2) {
+        this.number1 = number1;
+        this.number2 = number2;
+    }
+
+    /**
+     * Getter for the first number.
+     * @return the first number.
+     */
+    public int getNumber1() {
+        return number1;
+    }
+
+    /**
+     * Getter for the second number.
+     * @return the second number.
+     */
+    public int getNumber2() {
+        return number2;
+    }
+
+    /**
+     * Calculates and returns the greatest common divisor (GCD) of the two numbers.
+     * Edge case: If either number is negative, returns 1 as the GCD for negative numbers is 1.
+     * Edge case: If either number is zero, returns 0 as the GCD of 0 and any other number is 0.
+     * Edge case: If two numbers are equal, returns the number as the GCD of two equal numbers is the number itself.
+     * @return GCD of the two numbers, or 1 if either number is negative, or 0 if either number is zero.
+     */
+    public int calculateGCD() {
+        // Write your code here
+        if(number1<0 || number2<0){
+            return 1;
+        }
+        if(number1==0 || number2==0){
+            return 0;
+        }
+        
+        if(number1==number2){
+            return number1;
+        }
+        
+        int min = Math.min(number1,number2);
+
+for(int i=min;i>0;i--){
+	boolean isDivisorsofBothNumbers = number1%i==0 && number2%i==0;
+	if(isDivisorsofBothNumbers){
+	return i;
+	}
+}
+
+return -1;
+    }
+}
+
+
+
+jshell> class Animal {
+   ...>     int id;
+   ...>     Animal(int id){
+   ...>         this.id=id;
+   ...>     }
+   ...> }
+|  created class Animal
+
+|               ^----------^
+
+jshell> Animal dog = new Animal(12);
+dog ==> Animal@2328c243
+
+jshell> Animal cat = new Animal(15);
+cat ==> Animal@7a4f0f29
+
+jshell> Animal nothing;
+nothing ==> null
+
+jshell> nothing = cat;
+nothing ==> Animal@7a4f0f29
+
+jshell> nothing.id
+$9 ==> 15
+
+
+jshell> "Test".length();
+$10 ==> 4
+
+jshell> String str = "Test";
+str ==> "Test"
+
+jshell> BigDecimal bd = new BigDecimal(1.0);
+bd ==> 1
+
+jshell> String str = new String("Test");
+str ==> "Test"
+
+jshell> str.chatAt(3);
+|  Error:
+|  cannot find symbol
+|    symbol:   method chatAt(int)
+|  str.chatAt(3);
+|  ^--------^
+
+jshell> str.charAt(3);
+$14 ==> 't'
+
+jshell> str.charAt(2);
+$15 ==> 's'
+
+jshell> str.length();
+$16 ==> 4
+
+jshell> String biggerString = "This is a lot of text";
+biggerString ==> "This is a lot of text"
+
+jshell> biggerString.substring(5);
+$18 ==> "is a lot of text"
+
+jshell> biggerString.substring(5,13);
+$19 ==> "is a lot"
+
+jshell> for(int i=0; i<biggerStrung.length();i++){
+   ...>     System.out.println(biggerString.charAt(i));
+   ...> }
+
+
+jshell> for(int i=0; i<biggerString.length();i++){
+   ...>     System.out.println(biggerString.charAt(i));
+   ...> }
+T
+h
+i
+s
+
+i
+s
+
+a
+
+l
+o
+t
+
+o
+f
+
+t
+e
+x
+t
+
+jshell> str.
+charAt(                chars()                codePointAt(           codePointBefore(       codePointCount(
+codePoints()           compareTo(             compareToIgnoreCase(   concat(                contains(
+contentEquals(         describeConstable()    endsWith(              equals(                equalsIgnoreCase(
+formatted(             getBytes(              getChars(              getClass()             hashCode()
+indent(                indexOf(               intern()               isBlank()              isEmpty()
+lastIndexOf(           length()               lines()                matches(               notify()
+notifyAll()            offsetByCodePoints(    regionMatches(         repeat(                replace(
+replaceAll(            replaceFirst(          resolveConstantDesc(   split(                 startsWith(
+strip()                stripIndent()          stripLeading()         stripTrailing()        subSequence(
+substring(             toCharArray()          toLowerCase(           toString()             toUpperCase(
+transform(             translateEscapes()     trim()                 wait(
+jshell> String.
+CASE_INSENSITIVE_ORDER   class                    copyValueOf(             format(                  join(
+valueOf(
+
+
+
+jshell> LocalDate now = LocalDate.now();
+|  Error:
+|  cannot find symbol
+|    symbol:   class LocalDate
+|  LocalDate now = LocalDate.now();
+|  ^-------^
+|  Error:
+|  cannot find symbol
+|    symbol:   variable LocalDate
+|  LocalDate now = LocalDate.now();
+|                  ^-------^
+
+jshell> /imports
+|    import java.io.*
+|    import java.math.*
+|    import java.net.*
+|    import java.nio.file.*
+|    import java.util.*
+|    import java.util.concurrent.*
+|    import java.util.function.*
+|    import java.util.prefs.*
+|    import java.util.regex.*
+|    import java.util.stream.*
+
+jshell> import java.time.*
+
+jshell> LocalDate now = LocalDate.now();
+now ==> 2024-01-14
+
+jshell> LocalTime now = LocalTime.now();
+now ==> 18:59:00.628222
+
+jshell> LocalDateTime now = LocalDateTime.now();
+now ==> 2024-01-14T18:59:12.002135500
+
+jshell>jshell> now.getYear();
+$25 ==> 2024
+
+jshell> now.getDayOf();
+|  Error:
+|  cannot find symbol
+|    symbol:   method getDayOf()
+|  now.getDayOf();
+|  ^----------^
+
+jshell> LocalDate now = LocalDate.now();
+now ==> 2024-01-14
+
+jshell> now.getDayOf();
+|  Error:
+|  cannot find symbol
+|    symbol:   method getDayOf()
+|  now.getDayOf();
+|  ^----------^
+
+jshell> now.getDayOfWeek();
+$27 ==> SUNDAY
+
+jshell> now.getDayOfMonth();
+$28 ==> 14
+
+jshell> now.getDayOfYear();
+$29 ==> 14
+
+jshell> now.getMonth();
+$30 ==> JANUARY
+
+jshell> now.getMonthValue();
+$31 ==> 1
+
+jshell>
+
+jshell> now.isLeapYear();
+$32 ==> true
+
+jshell>  now.lengthofDays();
+|  Error:
+|  cannot find symbol
+|    symbol:   method lengthofDays()
+|   now.lengthofDays();
+|   ^--------------^
+
+jshell> now.lengthOfYear();
+$33 ==> 366
+
+jshell> now.lengthOfMonth();
+$34 ==> 31
+
+jshell> now.plusDays(60);
+$35 ==> 2024-03-14
+
+jshell> now.plusMonths(4);
+$36 ==> 2024-05-14
+
+jshell> now.plusYears(56);
+$37 ==> 2080-01-14
+
+jshell>
+
+jshell> LocalDateTime now = LocalDateTime.now();
+now ==> 2024-01-14T19:11:15.301260700
+
+jshell> now.plus
+plus(          plusDays(      plusHours(     plusMinutes(   plusMonths(    plusNanos(     plusSeconds(   plusWeeks(
+plusYears(
+jshell> now.plus
+
+ 
+ 
+ 
+ 
+ public class StringMagic {
+    
+    /**
+     * This method counts the number of uppercase letters in a given string.
+     *
+     * @param str The string to count uppercase letters in.
+     * @return The number of uppercase letters in the string.
+     */
+    public int countUppercaseLetters(String str) {
+        // TODO: Write your code here
+        if(str==null){
+            return 0;
+        }
+        
+        int count =0;
+        
+        for(int i=0;i<str.length();i++){
+            if(Character.isUpperCase(str.charAt(i))){
+            count++;
+            }
+            
+        }
+        return count;
+    }
+}
+
+
+public class StringMagic {
+
+    /**
+     * This method checks if a given string has two consecutive identical characters.
+     *
+     * @param str The string to check for consecutive duplicates.
+     * @return true if the string has consecutive duplicates, false otherwise.
+     */
+    public boolean hasConsecutiveDuplicates(String str) {
+        
+        // TODO: Write your code here
+        for(int i=0;i<str.length()-1;i++){
+            char currCharacter = str.charAt(i);
+            char nextCharacter = str.charAt(i+1);
+            
+            if(currCharacter == nextCharacter)
+            return true;
+        }
+        return false;
+    }
+}
+
+
+
+
+public class StringMagic {
+
+    /**
+     * This method finds the rightmost digit in a given string.
+     *
+     * @param str The string to find the rightmost digit in.
+     * @return The rightmost digit in the string. If no digit is found, return -1.
+     */
+    public int getRightmostDigit(String str) {
+
+        // TODO: Write your code here
+        if(str == null || str.equals("")){
+	        return -1;
+        }
+
+        int length = str.length();
+
+        for(int i=length-1; i>=0; i--){
+	        char ch = str.charAt(i);
+	
+	        if(Character.isDigit(ch)){
+		        return Character.getNumericValue(ch);
+	        }
+        }
+
+        return -1;
+    }
+}
+
+
+
+public class StringMagic {
+
+    /**
+     * This method finds the longest word in a given sentence.
+     *
+     * @param sentence The sentence to find the longest word in.
+     * @return The longest word in the sentence. If sentence is empty, return an empty string.
+     */
+    public String findLongestWord(String sentence) {
+
+        // TODO: Write your code here
+        if(sentence == null || sentence.equals("")){
+	        return "";
+        }
+
+        String[] words= sentence.split(" ");
+
+        int maxLength=0;
+        String longestWord = "";
+
+        for(String word:words){
+            if(word.length() > maxLength){
+            maxLength=word.length();
+            longestWord=word;
+
+            }
+        }
+        return longestWord;	
+        
+    }
+}	
+
+
+
+---------------------------------------------------------------------------------
+
+
+
+package in20minutes.oops;
+
+public class Mapping {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] marks = {99,98,100};
+		
+		Student student = new Student("Ranga",marks);
+		
+		
+		int number = student.getNumberOfMarks();
+		System.out.println("Number of marks is:" + number);
+		int sum = student.getTotalSumOfMarks();
+		System.out.println("Total of marks is:" + sum);
+		int maximumMark= student.getMaximumMark();
+		System.out.println("Maximum marks is:" + maximumMark);
+		int minimumMark= student.getMinimumMark();
+		System.out.println("Minimum marks is:" + minimumMark);
+		double average = student.getAverageMarks();
+		System.out.println("Average marks is:" + average);
+	}
+
+}
+
+
+package in20minutes.oops;
+
+public class Student {
+
+	private String name;
+	private int[] marks;
+	
+	public Student(String Name,int[] marks) {
+		this.name=name;
+		this.marks=marks;
+		
+	}
+	
+	public int getNumberOfMarks() {
+		
+		return marks.length;
+	}
+	
+	public int getTotalSumOfMarks() {
+		
+		int sum = 0;
+		for(int mark:marks) {
+			sum += mark;
+		}
+		return sum;
+	}
+	
+	public int getMaximumMark() {
+		int bigger=Integer.MIN_VALUE;
+		for(int mark:marks) {
+			if(mark>bigger)
+				bigger = mark;
+		}
+		return bigger;
+	}
+
+	public int getMinimumMark() {
+	
+		int smaller=Integer.MAX_VALUE;
+		for(int mark:marks) {
+			if(mark<smaller)
+				smaller = mark;
+		}
+		return smaller;
+	}
+	
+	public double getAverageMarks() {
+		
+		int sum = getTotalSumOfMarks();
+		int number = getNumberOfMarks();
+		return (sum/number);
+	}
+}
+
+
+Student student = new Student("Ranga",new int[] {99,98,100});
+-------------------------------------------------------------------------------
+
+jshell>
+
+jshell> int sum(int i, int j, int k){
+   ...>     return i + j + k;
+   ...> }
+|  created method sum(int,int,int)
+
+jshell> sum(1,2,3,4);
+|  Error:
+|  method sum in class  cannot be applied to given types;
+|    required: int,int,int
+|    found:    int,int,int,int
+|    reason: actual and formal argument lists differ in length
+|  sum(1,2,3,4);
+|  ^-^
+
+jshell> sum(1,2,3);
+$2 ==> 6
+
+jshell> void print(int... values){
+   ...>     System.out.println(Arrays.toString(values));
+   ...> }
+|  created method print(int...)
+
+jshell> print(1);
+[1]
+
+jshell> print(1,2,4,6,7);
+[1, 2, 4, 6, 7]
+
+jshell>
+
+jshell> void print(int... values){
+   ...>     System.out.println(Arrays.toString(values));
+   ...> }
+|  created method print(int...)
+
+jshell> print(1);
+[1]
+
+jshell> print(1,2,4,6,7);
+[1, 2, 4, 6, 7]
+
+jshell> int sum(int... values){
+   ...>     int sum = 0;
+   ...>     for(int value:values){
+   ...>         sum += value;
+   ...>     }
+   ...>     return sum;
+   ...> }
+|  created method sum(int...)
+
+jshell> sum(2,3,4)
+$7 ==> 9
+
+jshell>
+
+
+
+package in20minutes.oops;
+
+public class StringRunner {
+
+	public static void main(String[] args) {
+
+
+		String daysOfWeek = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+		
+		String daysWithMostCharacters="";
+		for(String day:daysOfWeek) {
+			if(day.length>daysWithMostCharacters.length()) {
+				daysWithMostCharacters=day;
+			}
+		}
+		System.out.println("Days with most number of characters	" + daysWithMostCharacters);
+
+	}
+
+}
+
+
+
+
+jshell>
+
+jshell> int[] marks={23,45,77}
+marks ==> int[3] { 23, 45, 77 }
+
+jshell> int newMarks[]=new int[marks.length+1];
+newMarks ==> int[4] { 0, 0, 0, 0 }
+
+jshell> int marksDeleted[]=new int[marks.length-1];
+marksDeleted ==> int[2] { 0, 0 }
+
+jshell>
+
+
+
+This is a lot of logic. Thats why ArrayList is used.
+
+
+
+jshell> ArrayList arrayList = new ArrayList();
+arrayList ==> []
+
+jshell> arrayList.add("Lemon");
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add("Lemon");
+|  ^--------------------^
+$19 ==> true
+
+jshell> arrayList.add("Adam");
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add("Adam");
+|  ^-------------------^
+$20 ==> true
+
+jshell> arrayList.add("Kill");
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add("Kill");
+|  ^-------------------^
+$21 ==> true
+
+jshell> arrayList
+arrayList ==> [Lemon, Adam, Kill]
+
+jshell>
+
+
+
+jshell> arrayList.remove("Kill");
+$23 ==> true
+
+jshell> arrayList
+arrayList ==> [Lemon, Adam]
+
+jshell> arrayList.add(67);
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add(67);
+|  ^---------------^
+$25 ==> true
+
+jshell> arrayList
+arrayList ==> [Lemon, Adam, 67]
+
+jshell>
+
+
+
+
+jshell> ArrayList<String> items = new ArrayList<String>();
+items ==> []
+
+jshell> items.add("Eve");
+$29 ==> true
+
+jshell> items.add("Roll");
+$30 ==> true
+
+jshell> items.add("Smoke");
+$31 ==> true
+
+jshell> items
+items ==> [Eve, Roll, Smoke]
+
+jshell> items.add(56);
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  items.add(56);
+|            ^^
+
+jshell>
+
+
+jshell> items.remove("Eve");
+$33 ==> true
+
+jshell> items.remove(1);
+$34 ==> "Smoke"
+
+jshell> items
+items ==> [Roll]
+
+jshell>
+
+
+
+package in20minutes.oops;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+
+public class Student {
+
+	private String name;
+	private ArrayList<Integer> marks= new ArrayList<Integer>();
+	
+	public Student(String name,int... marks) {
+		this.name=name;
+		for(int mark:marks) {
+			this.marks.add(mark);
+		}
+		
+	}
+	
+	public int getNumberOfMarks() {
+		
+		return marks.size();
+	}
+	
+	public int getTotalSumOfMarks() {
+		
+		int sum = 0;
+		for(int mark:marks) {
+			sum += mark;
+		}
+		return sum;
+	}
+	
+	public int getMaximumMark() {
+		/*int bigger=Integer.MIN_VALUE;
+		for(int mark:marks) {
+			if(mark>bigger)
+				bigger = mark;
+		}
+		return bigger;*/
+		return Collections.max(marks);
+	}
+
+	public int getMinimumMark() {
+	
+		/*int smaller=Integer.MAX_VALUE;
+		for(int mark:marks) {
+			if(mark<smaller)
+				smaller = mark;
+		}
+		return smaller;*/
+		return Collections.min(marks);
+	}
+	
+	public double getAverageMarks() {
+		
+		int sum = getTotalSumOfMarks();
+		int number = getNumberOfMarks();
+		//return new BigDecimal(sum).divide(new BigDecimal(number),3);
+		return (sum/number);
+		
+		}
+	
+	public String toString() {
+		return name+marks;
+		
+	}
+	
+
+}
+
+
+
+
+
+package in20minutes.oops;
+
+public class Mapping {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//int[] marks = {99,98,100};
+		
+		Student student = new Student("Ranga",97,98,100);
+		Student student1 = new Student("Adam",47,48);
+		Student student2 = new Student("Eve",60,65,64,70);
+		
+		int number = student.getNumberOfMarks();
+		System.out.println("Number of marks is:" + number);
+		int sum = student.getTotalSumOfMarks();
+		System.out.println("Total of marks is:" + sum);
+		int maximumMark= student.getMaximumMark();
+		System.out.println("Maximum marks is:" + maximumMark);
+		int minimumMark= student.getMinimumMark();
+		System.out.println("Minimum marks is:" + minimumMark);
+		double	 average = student.getAverageMarks();
+		System.out.println("Average marks is:" + average);
+		
+		System.out.println(student);
+		
+		student.addNewMarks(35);
+		//student.removeMarkAtIndex(5);
+		System.out.println(student);
+	}
+
+}
+
+
+
+
+public class StringMagic {
+
+    /**
+     * This method finds the longest word in a given sentence.
+     *
+     * @param sentence The sentence to find the longest word in.
+     * @return The longest word in the sentence. If sentence is empty, return an empty string.
+     */
+    public String findLongestWord(String sentence) {
+
+        // TODO: Write your code here
+        if(sentence == null || sentence.equals("")){
+	        return "";
+        }
+
+        String[] words= sentence.split(" ");
+
+        int maxLength=0;
+        String longestWord = "";
+
+        for(String word:words){
+            if(word.length() > maxLength){
+            maxLength=word.length();
+            longestWord=word;
+
+            }
+        }
+        return longestWord;	
+        
+    }
+}
+
+
+
+
+if(array.length==0){
+return false;
+}
+
+for int(value:values){
+if(value>number){
+return true;
+}
+}
+return false;
+
+
+
+
+public class ArrayMagic {
+    
+    /**
+     * This method determines whether there's an element greater than a given number in an array.
+     *
+     * @param array The array to search through.
+     * @param number The number to compare with the array elements.
+     * @return True if there's an element greater than the given number in the array, false otherwise.
+     */
+    public boolean doesHaveElementGreaterThan(int[] array, int number) {
+
+        // TODO: Write your code
+        if(array.length==0){
+            return false;
+        }
+
+    for(int value:array){
+        if(value>number){
+            return true;
+        }
+    }
+    return false;
+            
+    }
+}
+
+
+
+if(array.length==0){
+return -1;
+}
+
+int largestElement=Integer.MIN_VALUE;
+int secondLargestElement=Integer.MIN_VALUE;
+for(int value:array){
+if(value>largestElement){
+secondLargestElement=largestElement;
+largestElement=value;
+}
+else if(value > secondLargestElement && value!=largestElement){
+secondLargestElement=value;
+}
+}
+if(secondLargestElement=Integer.MIN_VALUE){
+return -1;
+}
+return secondLargestElement;
+
+
+
+public class ArrayMagic {
+    
+    /**
+     * This method finds and returns the second largest element in the given array.
+     * 
+     * @param array the array in which to find the second largest element
+     * @return the second largest element in the array
+     */
+     
+    public int findSecondLargestElement(int[] array) {
+        //TODO: Write your code here
+        if (array.length == 0){
+            return -1;
+        }
+
+        int largestElement=Integer.MIN_VALUE;
+        
+        int secondLargestElement=Integer.MIN_VALUE;
+    
+        for(int value:array){
+            if(value > largestElement) {
+                secondLargestElement = largestElement;
+                largestElement = value;
+        }
+        else if(value > secondLargestElement && value!=largestElement){
+            secondLargestElement = value;
+        }
+    }
+    if(secondLargestElement == Integer.MIN_VALUE){
+        return -1;
+    }
+    return secondLargestElement;
+    }
+}
+
+
+
+
+public boolean areSumsEqual(){
+
+int sum1= ___
+int sum2= ___
+
+boolean areSumsEqual =(sum1==sum2);
+return areSumsEqual
+
+or return sum1==sum2;
+
+public int calculateSum(int[] array){
+int sum=0;
+for(int value:array){
+sum+=value;
+}
+return sum;
+}
+
+
+public class BiArray {
+
+    private int[] array1;
+    private int[] array2;
+
+    public BiArray(int[] array1, int[] array2) {
+        this.array1 = array1;
+        this.array2 = array2;
+    }
+
+    public boolean areSumsEqual() {
+
+        int sum1 = calculateSum(array1);
+        int sum2 = calculateSum(array2);
+
+        return sum1==sum2;
+        // TODO: Write the code to compare the sums of the arrays and return the result.
+    }
+
+    private int calculateSum(int[] array) {
+        
+        // TODO: Write the code to calculate the sum of the array.
+        int sum = 0;
+        for(int value:array){
+            sum+=value;
+        }
+        return sum;
+    }
+    
+    
+}
+
+
+
+
+if(array.length<=1){
+return true;
+}
+
+for(int i=0;i<array.length-1;i++){
+if(array[i+1]<array[i]{
+return false;
+}
+}
+return true;
+
+
+
+public class ArrayMagic {
+
+    /**
+     * This method checks if the input array is sorted in ascending order.
+     * 
+     * @param array the array to check
+     * @return true if the array is sorted, false otherwise
+     */
+    public boolean isSorted(int[] array) {
+
+        // TODO: Write code here
+        if(array.length<=1){
+return true;
+}
+
+for(int i=0;i<array.length-1;i++){
+if(array[i+1]<array[i]){
+return false;
+}
+}
+return true;
+    }
+}
+
+
+if(array.length<1){
+return array;
+}
+int start = 0;
+int end = array.length - 1;
+int[] reversedArray = new int[array.length];
+
+while(start<end){
+reversedArray[start]=array[end];
+reversedArray[end]=array[start];
+start++;
+end--;
+}
+return reversedArray; 
+
+
+
+
+public class ArrayMagic {
+
+    /**
+     * This method reverses an array.
+     * 
+     * @param array the array to reverse
+     * @return a new array with elements in reverse order
+     */
+    public int[] reverseArray(int[] array) {
+
+        // TODO: Write your code here
+        if(array.length<1){
+return array;
+}
+int start = 0;
+int end = array.length - 1;
+int[] reversedArray = new int[array.length];
+
+while(start<=end){
+reversedArray[start]=array[end];
+reversedArray[end]=array[start];
+start++;
+end--;
+}
+return reversedArray; 
+    }
+}
+
+
+
+
+List<Integer> factors = new ArrayList<>();
+
+if(number <= 0){
+return factors;
+}
+
+for(int i=1;i<number;i++){
+if(number%i==0){
+factors.add(i);
+}
+}
+return factors;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NumberMagic {
+
+    /**
+     * This method returns all factors of a given number in an ArrayList.
+     * 
+     * @param number the number to find factors of
+     * @return a List of factors of the number
+     */
+    public List<Integer> determineAllFactors(int number) {
+
+        // TODO: Write your code here
+        List<Integer> factors = new ArrayList<>();
+
+if(number <= 0){
+return factors;
+}
+
+for(int i=1;i<=number;i++){
+if(number%i==0){
+factors.add(i);
+}
+}
+return factors;
+    }
+}
+
+
+
+List<Integer> multiples = new ArrayList<>();
+
+if(number <= 0 || limit <= 0){
+return multiples;
+
+for(int i=1; number * i < limit ; i++){
+multiples.add(number * i);
+}
+
+return multiples;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NumberMagic {
+    /**
+     * This method generates a list of multiples of a given number less than a specified limit.
+     * 
+     * @param number the number to find multiples of
+     * @param limit the upper bound for the multiples
+     * @return a List of multiples of the number less than the limit
+     */
+    public List<Integer> determineMultiples(int number, int limit) {
+
+        // TODO: Write your code here
+        List<Integer> multiples = new ArrayList<>();
+
+if(number <= 0 || limit <= 0){
+return multiples;
+}
+for(int i=1; number * i < limit ; i++){
+multiples.add(number * i);
+}
+
+return multiples;
+    }
+}
+
+
+
+
+jshell> class AbstractAnimal {
+   ...>     public void bark();
+   ...> }
+|  Error:
+|  missing method body, or declare abstract
+|      public void bark();
+|      ^-----------------^
+
+jshell> class AbstractAnimal {
+   ...>     abstract public void bark();
+   ...> }
+|  Error:
+|  AbstractAnimal is not abstract and does not override abstract method bark() in AbstractAnimal
+|  class AbstractAnimal {
+|  ^---------------------...
+
+jshell> abstract class AbstractAnimal {
+   ...>     abstract public void bark();
+   ...> }
+|  created class AbstractAnimal
+
+
+
+
+
+inheritence
+
+jshell> abstract class AbstractAnimal {
+   ...>     abstract public void bark();
+   ...> }
+|  created class AbstractAnimal
+
+jshell> class Dog extends Animal {
+   ...> }'
+|  Error:
+|  unclosed character literal
+|  }'
+|   ^
+
+jshell> class Dog extends Animal {
+   ...> }
+|  created class Dog, however, it cannot be referenced until class Animal is declared
+
+jshell>
+
+
+
+jshell> class Dog extends AbstractAnimal {
+   ...>     public void bark();
+jshell> class Dog extends AbstractAnimal {
+   ...>     public void bark();
+   ...>     {intf(    println(
+   ...>         System.out.println("Bow Bow");
+   ...>
+
+jshell> class Dog extends AbstractAnimal {
+   ...>     public void bark(){
+   ...>         System.out.println("Bow Bow");
+   ...>     }
+   ...> }
+|  replaced class Dog
+
+jshell> Dog dog = new Dog()
+dog ==> Dog@1b4fb997
+
+jshell> dog.bark();
+Bow Bow
+
+jshell>
+
+
+
+jshell> abstract class AbstractTest{
+   ...> }
+|  created class AbstractTest
+
+jshell> abstract class AbstractAlgorithm{
+   ...>     abstract void steps();
+   ...> }
+|  created class AbstractAlgorithm
+
+jshell> class Algorithm1 extends AbstractAlgorithm{
+   ...> }
+|  Error:
+|  Algorithm1 is not abstract and does not override abstract method steps() in AbstractAlgorithm
+|  class Algorithm1 extends AbstractAlgorithm{
+|  ^------------------------------------------...
+
+jshell> abstract class Algorithm1 extends AbstractAlgorithm{
+   ...> }
+|  created class Algorithm1
+
+jshell>
+
+
+
+jshell> List<String> words = List.of("Apple", "Bat", "Cat"):
+|  Error:
+|  ';' expected
+|  List<String> words = List.of("Apple", "Bat", "Cat"):;
+|                                                     ^
+
+jshell> List<String> words = List.of("Apple", "Bat", "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> words.add("Dog");
+|  Exception java.lang.UnsupportedOperationException
+|        at ImmutableCollections.uoe (ImmutableCollections.java:142)
+|        at ImmutableCollections$AbstractImmutableCollection.add (ImmutableCollections.java:147)
+|        at (#47:1)
+
+jshell> List<String> ArrayListwords = new ArrayList<String>(words);
+ArrayListwords ==> [Apple, Bat, Cat]
+
+jshell> List<String> LinkedListwords = new LinkedList<String>(words);
+LinkedListwords ==> [Apple, Bat, Cat]
+
+jshell> List<String> Vectorwords = new Vector<String>(words);
+Vectorwords ==> [Apple, Bat, Cat]
+
+jshell> words.add("Dog");
+|  Exception java.lang.UnsupportedOperationException
+|        at ImmutableCollections.uoe (ImmutableCollections.java:142)
+|        at ImmutableCollections$AbstractImmutableCollection.add (ImmutableCollections.java:147)
+|        at (#51:1)
+
+jshell> ArrayListwords.add("Dog");
+$52 ==> true
+
+jshell> ArrayListword
+|  Error:
+|  cannot find symbol
+|    symbol:   variable ArrayListword
+|  ArrayListword
+|  ^-----------^
+
+jshell> ArrayListwords
+ArrayListwords ==> [Apple, Bat, Cat, Dog]
+
+jshell>
+
+
+
+jshell> words.size();
+$54 ==> 3
+
+jshell> words.contains("Dog");
+$55 ==> false
+
+jshell> words.contains("Cat");
+$56 ==> true
+
+jshell> words.indexOf("Cat");
+$57 ==> 2
+
+jshell> words.isEmpty();
+$58 ==> false
+
+jshell> words.get(1);
+$59 ==> "Bat"
+
+jshell>
+
+
+jshell> Set<> set = new HashSet<ArrayListwords>();
+|  Error:
+|  illegal start of type
+|  Set<> set = new HashSet<ArrayListwords>();
+|      ^
+
+jshell> Set<> set = new HashSet<>(words);
+|  Error:
+|  illegal start of type
+|  Set<> set = new HashSet<>(words);
+|      ^
+
+jshell> Set<> set = new HashSet<words>();
+|  Error:
+|  illegal start of type
+|  Set<> set = new HashSet<words>();
+|      ^
+
+jshell> Set<String> set = new HashSet<>(words);
+set ==> [Apple, Bat, Cat]
+
+jshell> set.sort();
+|  Error:
+|  cannot find symbol
+|    symbol:   method sort()
+|  set.sort();
+|  ^------^
+
+jshell> HashMap<String, Integer> hashmap = new HashMap<>();
+hashmap ==> {}
+
+jshell> hashmap.put("A",3);
+$62 ==> null
+
+jshell> hashmap.put("B",7);
+$63 ==> null
+
+jshell> hashmap.put("Z",9);
+$64 ==> null
+
+jshell> hashmap.put("D",4);
+$65 ==> null
+
+jshell> hashmap
+hashmap ==> {A=3, B=7, D=4, Z=9}
+
+jshell> LinkedHashMap<String, Integer> linkedHashMap = new LinkedHashMap<>();
+linkedHashMap ==> {}
+
+jshell> LinkedHashMap.put("D",4);
+|  Error:
+|  non-static method put(K,V) cannot be referenced from a static context
+|  LinkedHashMap.put("D",4);
+|  ^---------------^
+|  Warning:
+|  unchecked call to put(K,V) as a member of the raw type java.util.HashMap
+|  LinkedHashMap.put("D",4);
+|  ^----------------------^
+
+jshell> linkedHashMap.put("D",4);
+$68 ==> null
+
+jshell> linkedHashMap.put("Z",5);
+$69 ==> null
+
+jshell> linkedHashMap.put("H",2);
+$70 ==> null
+
+jshell> linkedHashMap
+linkedHashMap ==> {D=4, Z=5, H=2}
+
+jshell> TreeMap<String, Integer> treeMap = new TreeMap<>();
+treeMap ==> {}
+
+jshell> treeMap.put("A",3);
+$73 ==> null
+
+jshell> treeMap.put("F",1);
+$74 ==> null
+
+jshell> treeMap.put("J",7);
+$75 ==> null
+
+jshell> treeMap
+treeMap ==> {A=3, F=1, J=7}
+
+jshell>
+
+
+
+What is the size of this `map`?
+
+
+
+Map<String, Integer> map = Map.of("A", 3, "B", 5, "Z", 10);
+
+
+
+What is the value associated with the key "Z" in `map`?
+
+
+
+Map<String, Integer> map = Map.of("A", 3, "B", 5, "Z", 10);
+
+
+What is the output of `map.containsValue(4)`?
+
+
+
+Map<String, Integer> map = Map.of("A", 3, "B", 5, "Z", 10);
+
+
+Map<String, Integer> map = Map.of("A", 1, "B", 2, "C", 3);
+map.put("D", 4);
+System.out.println(map.size());
+
+
+What is the output of the following code?
+
+Map<String, Integer> map = Map.of("A", 1, "B", 2, "C", 3);
+System.out.println(map.keySet());
+
+
+interface Operation {
+    int perform(int x, int y);
+}
+
+// Complete the classes below by implementing the Operation interface and providing your own implementation of the perform method.
+class Add implements Operation {
+    @Override
+    public int perform(int x, int y) {
+        // Write your code here
+        return x+y;
+    }
+}
+
+class Subtract implements Operation {
+    @Override
+    public int perform(int x, int y) {
+        // Write your code here
+        return x-y;
+    }
+}
+
+class Divide implements Operation {
+    @Override
+    public int perform(int x, int y) {
+        // Write your code here
+        if(y==0){
+            return -1;
+        }
+        return x / y;
+    }
+}
+
+
+
+
+abstract class Shape {
+    protected String name;
+
+    public Shape(String name) {
+        this.name = name;
+    }
+
+    public abstract double calculateArea();
+
+    public void displayInfo() {
+        System.out.println("Shape: " + name);
+        System.out.println("Area: " + calculateArea());
+    }
+}
+
+class Circle extends Shape {
+private double radius;
+
+public Circle(String name, double radius){
+super(name);
+this.radius=radius;
+}
+
+public double calculateArea(){
+return Math.PI*radius*radius;
+}
+}
+
+class Rectangle extends Shape {
+private double length;
+private double width;
+
+public Rectangle(String name, double length,double width){
+super(name);
+this.length=length;
+this.width=width;
+}
+
+public double calculateArea(){
+return length*width;
+}
+}
+// TODO: Create a Circle class that extends Shape
+// The Circle class should have a private double radius attribute and a constructor to initialize it
+// It should also implement the calculateArea() method 
+
+// TODO: Create a Rectangle class that extends Shape
+// The Rectangle class should have private double attributes for length and width, and a constructor to initialize them
+// It should also implement the calculateArea() method 
+
+
+
+The range of thread priorities in Java is from 1 to 10. The Thread class defines constants MIN_PRIORITY (1), NORM_PRIORITY (5), and 
+MAX_PRIORITY (10) to represent the minimum, default, and maximum thread priorities, respectively.
+
+
+The default priority assigned to a thread in Java is 5. The Thread class defines NORM_PRIORITY as the default priority value.
+
+The join() method in Java allows one thread to wait for the completion of another thread. When a thread invokes the join() method on 
+another thread, it suspends its own execution and waits for the specified thread to finish its execution before resuming.
+
+All of the options mentioned are drawbacks of using the Thread class or Runnable interface for managing threads. The Thread class and 
+Runnable interface provide a basic level of thread management but lack fine-grained control over thread execution, can be difficult to 
+maintain when managing multiple threads, and do not provide a straightforward way to get the result from a sub-task. To overcome these 
+drawbacks, more advanced concurrency utilities and frameworks, such as ExecutorService and CompletableFuture, can be used.
+
+The method used to create a single-threaded ExecutorService is newSingleThreadExecutor(). It returns an ExecutorService that uses a 
+single worker thread for executing tasks sequentially. This is useful when you want to ensure that tasks are executed one after another 
+in a specific order, without the need for multiple threads.
+
+The method used to create a fixed-size thread pool with a specified number of threads is ExecutorService.newFixedThreadPool(). It returns
+ an ExecutorService that maintains a fixed number of threads in the pool. Tasks submitted to this pool are executed concurrently by the
+ available threads, up to the specified maximum pool size.
+ 
+ 
+ If more tasks are submitted to an ExecutorService than the number of threads in the thread pool, the additional tasks are queued and 
+ executed when a thread becomes available. The thread pool manages the execution of tasks by allocating threads from the pool to execute
+ the submitted 
+ tasks. If all the threads are busy executing tasks, any additional tasks will be queued until a thread becomes available to execute them.
+ 
+ 
+ The Callable interface is used to create sub-tasks that return a result. The Callable interface is similar to the Runnable interface but 
+ allows the sub-task to return a result and potentially throw an exception.
+ 
+ The invokeAny() method of the ExecutorService interface can be used to wait for the result of the fastest completed task from a 
+ collection of Callable tasks. This method takes a collection of Callable tasks as input and returns the result of the first completed 
+ task. It blocks until at least one task completes and then returns the result of that task. The invokeAny() method is useful when you 
+ have multiple tasks that can be executed concurrently and you only need the result of the first completed task.
+ 
+ 
+ 
+ What are the super most classes for all the streams?
+All the stream classes can be divided into two types of classes that are ByteStream classes and CharacterStream Classes. The ByteStream 
+classes are further divided into InputStream classes and OutputStream classes. CharacterStream classes are also divided into Reader 
+classes and Writer classes. The SuperMost classes for all the InputStream classes is java.io.InputStream and for all the output stream 
+classes is java.io.OutPutStream. Similarly, for all the reader classes, the super-most class is java.io.Reader, and for all the writer 
+classes, it is java.io.Writer.
+
+
+this’ is a keyword used to reference a variable that refers to the current object.
+
+
+Methods to create objects in Java are mentioned below:
+
+Using new keyword
+Using new instance
+Using clone() method
+Using deserialization
+Using the newInstance() method of the Constructor class
+
+
+Constructor is a special method that is used to initialize objects. Constructor is called when a object is created. The name of 
+constructor is same as of the class.
+
+
+
+static methods are part of the class rather than the object so we can’t override them.
+
+we can overload the main method to call the main method with the help of its predefined calling method
+
+A class declared as abstract, cannot be instantiated i.e., the object cannot be created. It may or may not contain abstract methods but 
+if a class has at least one abstract method, it must be declared abstract
+
+
+
+Collection is the primary interface available that can be imported using java.util.Collection.
+
+Syntax:
+
+public interface Collection<E> extends iterable
+
+
+Programmers can convert an Array to ArrayList using asList() method of the Arrays class. It is a static method of the Arrays class that 
+accepts the List object.
+
+Syntax:
+
+Arrays.asList(item)
+
+
+
+Java programmers can convert ArrayList to
+
+Syntax:
+
+List_object.toArray(new String[List_object.size()])
+
+
+
+The Collection is an Interface.
+
+Collections is a class.
+
+It provides the standard functionality of data structure.
+
+It is to sort and synchronize the collection elements.
+
+It provides the methods that can be used for the data structure.
+
+It provides static methods that can be used for various operations.
+
+
+
+
+
+Fibonacci
+
+int n=10;
+int a=0;b=1;
+System.out.println(n + " terms fibonacci");
+for(int i=1;i<=n;i++)
+{
+System.out.println(a + " ");
+int sum=a+b;
+a=b;
+b=sum;
+}
+
+
+
+n Java, synchronization is a mechanism that ensures that only one thread can access a block of code or an object's critical section at a 
+time. This is important to prevent data corruption and race conditions when multiple threads are concurrently executing in a 
+multithreaded environment. There are several ways to achieve synchronization in Java:
+
+Synchronized Blocks:
+
+You can use the synchronized keyword to create a synchronized block of code. This ensures that only one thread can execute the 
+synchronized block at a time.
+java
+Copy code
+public class MyClass {
+    private Object lock = new Object();
+
+    public void synchronizedMethod() {
+        synchronized (lock) {
+            // Code to be synchronized
+        }
+    }
+}
+Synchronized Methods:
+
+You can also use the synchronized keyword with a method to make the entire method synchronized.
+java
+Copy code
+public class MyClass {
+    public synchronized void synchronizedMethod() {
+        // Code to be synchronized
+    }
+}
+Lock Interface:
+
+Java provides the Lock interface and its implementing classes in the java.util.concurrent.locks package. Using ReentrantLock is a common 
+approach.
+java
+Copy code
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class MyClass {
+    private Lock lock = new ReentrantLock();
+
+    public void synchronizedMethod() {
+        lock.lock();
+        try {
+            // Code to be synchronized
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+Semaphore and Mutex:
+
+Java provides Semaphore and Mutex classes in the java.util.concurrent package that can also be used for synchronization.
+java
+Copy code
+import java.util.concurrent.Semaphore;
+
+public class MyClass {
+    private Semaphore semaphore = new Semaphore(1);
+
+    public void synchronizedMethod() {
+        try {
+            semaphore.acquire();
+            // Code to be synchronized
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            semaphore.release();
+        }
+    }
+}
+
+
+
+
+In Java, an enum, or enumeration, is a special data type that represents a fixed set of constants. Enumerations are often used to define 
+a collection of related constants with meaningful names. Enumerations were introduced in Java 5, and they provide a way to create a group
+ of named values.
+
+Here's a basic example of how to define and use an enum in Java:
+
+java
+Copy code
+// Define an enum named Color
+public enum Color {
+    RED, GREEN, BLUE;
+}
+
+// Using the enum
+public class Example {
+    public static void main(String[] args) {
+        // Accessing enum constants
+        Color myColor = Color.RED;
+        
+        // Switch statement with enum
+        switch (myColor) {
+            case RED:
+                System.out.println("Selected color is Red.");
+                break;
+            case GREEN:
+                System.out.println("Selected color is Green.");
+                break;
+            case BLUE:
+                System.out.println("Selected color is Blue.");
+                break;
+            default:
+                System.out.println("Unknown color.");
+        }
+    }
+}
+In this example, Color is an enum with three constants: RED, GREEN, and BLUE. You can use enum constants like any other variables, and 
+they are typically accessed using the enum type followed by the constant name.
+
+Enums can also have fields, methods, and constructors. Here's an example with additional features:
+
+java
+Copy code
+public enum Size {
+    SMALL("S"), MEDIUM("M"), LARGE("L");
+
+    private String abbreviation;
+
+    // Constructor
+    private Size(String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+    // Getter method
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+}
+
+// Using the enum with fields and methods
+public class Example {
+    public static void main(String[] args) {
+        Size mySize = Size.MEDIUM;
+
+        System.out.println("Selected size is " + mySize);
+        System.out.println("Abbreviation: " + mySize.getAbbreviation());
+    }
+}
+In this example, Size is an enum with additional fields and a constructor. Enums in Java are powerful and provide a cleaner way to 
+represent a set of related constants compared to using traditional integer constants or strings.
+
+
+
+
+
+
+
+The 3 dots feature was started in Java 5 and the feature is known as varargs (variable arguments). This simply means that the method can 
+receive one or more/multiple String arguments as shown below:
+
+someMethod("Java", "Interview");
+someMethod("Java", "Interview", "Questions");
+someMethod(new String[]{"Java", "Interview", "Questions"});
+
+
+
+A thread-safe singleton class is created which helps in object initialization in the presence of multiple threads. It can be done using 
+multiple ways:
+
+Using Enums: Enums are the simplest means of creating a thread-safe singleton class in Java because the synchronization support is 
+inherently done by Java itself. Enums are by default final and this also helps in preventing multiple initializations at the time of 
+serialization.
+public enum ThreadSafeSingleton{
+   SINGLETON_INSTANCE;
+   public void display(){
+       System.out.println("Thread-safe singleton Display");
+   }
+}
+// The Singleton class methods can be invoked as below
+ThreadSafeSingleton.SINGLETON_INSTANCE.show();
+Using Static Field Initialization: Thread-safe singleton can also be created by creating the instance at the time of class loading. This 
+is achieved by making use of static fields as the Classloader guarantees that the instances are initialized during class loading and the 
+instance is not visible until that has been fully created.
+public class ThreadSafeSingleton{
+   private static final ThreadSafeSingleton INSTANCE = new ThreadSafeSingleton();
+   private ThreadSafeSingleton(){ }
+   public static ThreadSafeSingleton getInstance(){
+       return INSTANCE;
+   }
+   public void display(){
+       System.out.println("Thread-safe Singleon");
+   }
+}
+ThreadSafeSingleton.getInstance().display();
+But the disadvantage of this way is that the initialization cannot be done lazily and the getInstance() method is called even before any
+ client can call.
+
+Using synchronized keyword: We can make use of the synchronized keyword upon the getInstance method as shown below:
+In this method, we can achieve lazy initialization, and also since we use synchronized keywords, the object initialization is also 
+thread-safe.
+The only problem is that since the whole method is synchronized, the performance is impacted in the presence of multiple threads.
+public class ThreadSafeSingleton
+{
+ // Creating private instance to make it accessible only by getInstance() method
+ private static ThreadSafeSingleton instance;
+ private ThreadSafeSingleton()
+ {
+   // Making constructor private so that objects cant be initialized outside the class
+ }
+ //synchronized getInstance method
+ synchronized public static ThreadSafeSingleton getInstance(){
+   if (this.instance == null)
+   {
+     // if instance is null, initialize
+     this.instance = new ThreadSafeSingleton();
+   }
+   return this.instance;
+ }
+}
+Double-check locking: Here, we will be using a synchronized block of code within the getInstance method instead of making the whole 
+method synchronized. This ensures that only a handful of threads have to wait only for the first time thereby not impacting the 
+performance.
+public class ThreadSafeSingleton {
+ 
+ // Creating private instance to make it accessible only by getInstance() method
+ private static ThreadSafeSingleton instance;
+ private ThreadSafeSingleton(){
+   // Making constructor private so that objects cant be initialized outside the class
+ }
+
+ public static ThreadSafeSingleton getInstance(){
+   if (instance == null){
+     //synchronized block of code
+     synchronized (ThreadSafeSingleton.class){
+       if(instance==null)
+       {
+         // initialize only if instance is null
+         instance = new ThreadSafeSingleton();
+       }
+      
+     }
+   }
+   return instance;
+ }
+}
+
+
+
+In Java, a class loader is a part of the Java Runtime Environment (JRE) that dynamically loads Java classes into the Java Virtual Machine
+ (JVM) at runtime. The class loading process is essential for Java's dynamic and extensible nature, allowing the addition of new classes 
+ and components to a running Java application.
+
+Java uses a delegation model for class loading, where each class loader is responsible for loading classes from a specific source, and if
+ it fails, it delegates the request to its parent class loader. This continues until the bootstrap class loader is reached, which is 
+ responsible for loading core Java classes from the Java runtime environment.
+
+There are three built-in class loaders in Java:
+
+Bootstrap Class Loader:
+
+The bootstrap class loader is responsible for loading core Java classes located in the jre/lib/rt.jar file. It is implemented in native 
+code and is the parent of all other class loaders.
+Extension Class Loader:
+
+The extension class loader is an extension of the standard class loader. It loads classes from the jre/lib/ext directory or any other 
+directory specified by the java.ext.dirs system property.
+System Class Loader (Application Class Loader):
+
+The system class loader loads classes from the classpath, including user-defined classes. It is sometimes referred to as the application 
+class loader. You can obtain it using ClassLoader.getSystemClassLoader().
+In addition to these built-in class loaders, developers can create custom class loaders to load classes from different sources or 
+implement custom loading behavior. This is particularly useful in scenarios such as dynamic class loading, where classes are loaded at 
+runtime based on certain conditions.
+
+Custom class loaders typically extend the ClassLoader class and override its findClass method. The custom class loader is responsible 
+for defining classes and linking them into the runtime.
+
+Here's a simple example of a custom class loader:
+
+java
+Copy code
+public class CustomClassLoader extends ClassLoader {
+    @Override
+    public Class<?> findClass(String name) throws ClassNotFoundException {
+        // Custom logic to load and define the class
+        byte[] classData = loadClassData(name);
+        return defineClass(name, classData, 0, classData.length);
+    }
+
+    private byte[] loadClassData(String className) {
+        // Custom logic to load class data (e.g., read from a file)
+        // Return the byte array representing the class data
+    }
+}
+Remember that class loaders follow a delegation model, so when a class needs to be loaded, the JVM checks with each class loader in the 
+hierarchy before attempting to load it. Understanding class loading is important for scenarios involving dynamic loading, modularization,
+ and application extensibility in Java.
+
+
+
+advanced Java concepts and topics to explore:
+
+Concurrency and Multithreading:
+
+Understanding the java.util.concurrent package.
+Synchronization mechanisms: synchronized keyword, locks, and atomic variables.
+Executors and thread pools.
+Java memory model and the volatile keyword.
+Advanced Design Patterns:
+
+Go beyond the basics like Singleton and Observer patterns.
+Explore patterns like Decorator, Proxy, Command, and Chain of Responsibility.
+Java Memory Management:
+
+Garbage Collection algorithms and tuning options.
+Memory leaks and how to avoid them.
+Understanding the java.lang.OutOfMemoryError.
+Functional Programming in Java:
+
+Explore the functional programming features introduced in Java 8.
+Work with lambda expressions, functional interfaces, and the java.util.function package.
+Stream API and its advanced operations.
+Advanced Java IO:
+
+java.nio package for non-blocking I/O.
+File I/O operations with java.nio.file package.
+Understanding java.io and java.nio differences.
+Java Reflection:
+
+Dynamic class loading and instantiation.
+Accessing and modifying class fields and methods dynamically.
+Use cases and best practices for reflection.
+Java Annotations:
+
+Creating custom annotations.
+Processing annotations at compile time and runtime.
+Integrating annotations with reflection.
+Java Database Connectivity (JDBC):
+
+Connection pooling for database connections.
+Batch processing and performance optimization.
+Working with stored procedures.
+Web Services:
+
+Advanced concepts in JAX-RS and JAX-WS for RESTful and SOAP web services.
+Securing web services with SSL, OAuth, etc.
+Spring Framework:
+
+Advanced Spring features like AOP (Aspect-Oriented Programming) and Spring Security.
+Integration with Hibernate or other ORM frameworks.
+Microservices architecture with Spring Boot.
+Java Messaging Service (JMS):
+
+Understanding message-driven beans.
+Integration with popular message brokers like Apache Kafka or RabbitMQ.
+Java Virtual Machine (JVM) Internals:
+
+Garbage Collection algorithms and their tuning options.
+Memory areas in the JVM.
+Java Performance Monitoring and Tuning.
+Distributed Computing:
+
+Working with RMI (Remote Method Invocation).
+Understanding Java EE for distributed applications.
+Building distributed systems with technologies like Apache ZooKeeper.
+Testing Frameworks:
+
+Advanced usage of JUnit and TestNG.
+Mocking frameworks like Mockito.
+Integration testing with tools like Selenium.
+Security in Java:
+
+Secure coding practices.
+Java Authentication and Authorization Service (JAAS).
+Encryption and decryption in Java.
+These topics delve into the more advanced aspects of Java programming. Depending on your interests and the nature of your projects, you 
+can choose to specialize in specific areas that align with your career goals and project requirements. Keep in mind that hands-on 
+practice and real-world application of these concepts are crucial for solidifying your understanding.
+
+
+
+trouble in serializing a class?
+I would first check if the colleague has implemented the java.io.serializable interface. If this is done, I will check if they are trying
+ to serialize only non-static members since the static members cannot be serialized. I would also check if the fields that are not 
+ serialized are defined as transient accidentally.
+
+
+
+Multithreading in Java allows multiple threads to execute concurrently, enabling you to write more efficient and responsive programs. 
+Here are some key concepts and practices related to multithreading in Java:
+
+Thread Creation:
+
+Extending Thread class:
+
+java
+Copy code
+class MyThread extends Thread {
+    public void run() {
+        // Code to be executed in a separate thread
+    }
+}
+
+MyThread myThread = new MyThread();
+myThread.start();
+Implementing Runnable interface:
+
+java
+Copy code
+class MyRunnable implements Runnable {
+    public void run() {
+        // Code to be executed in a separate thread
+    }
+}
+
+Thread myThread = new Thread(new MyRunnable());
+myThread.start();
+Thread Lifecycle:
+
+New: The thread is in a new state if you create an instance of the Thread class but before the start() method is invoked.
+Runnable: The thread moves to the runnable state after the start() method is called.
+Blocked: A thread is in a blocked state if it wants to access an object that another thread has locked.
+Waiting: A thread is in the waiting state if it waits for another thread to perform a particular action.
+Timed Waiting: A thread is in a timed waiting state if it calls a method with a specified waiting time.
+Terminated: A thread is in the terminated state if its run() method exits.
+Thread Synchronization:
+
+Synchronized Methods:
+java
+Copy code
+public synchronized void mySynchronizedMethod() {
+    // Code to be executed atomically
+}
+Synchronized Blocks:
+java
+Copy code
+Object lock = new Object();
+synchronized(lock) {
+    // Code to be executed atomically
+}
+Thread Intercommunication:
+
+Use methods like wait(), notify(), and notifyAll() for inter-thread communication.
+Thread Priority:
+
+Threads can be assigned priorities ranging from Thread.MIN_PRIORITY to Thread.MAX_PRIORITY.
+Use setPriority() and getPriority() methods.
+Thread Grouping:
+
+Threads can be organized into groups.
+Use ThreadGroup class for grouping and managing threads.
+Daemon Threads:
+
+Daemon threads are background threads that do not prevent the program from exiting.
+Set a thread as daemon using setDaemon(true).
+Thread Pooling:
+
+Use the Executor framework and ThreadPoolExecutor for efficient thread management.
+Executors.newFixedThreadPool(), Executors.newCachedThreadPool(), etc.
+Thread Safety and Immutable Objects:
+
+Ensure that shared resources are accessed safely in a multithreaded environment.
+Consider making objects immutable to avoid race conditions.
+Java Concurrency Utilities:
+
+Explore the java.util.concurrent package for higher-level concurrency utilities.
+Features like ExecutorService, Callable, Future, and Semaphore.
+Atomic Variables:
+
+Use classes in the java.util.concurrent.atomic package for atomic operations on variables.
+Examples include AtomicInteger, AtomicLong, and AtomicReference.
+ThreadLocal:
+
+ThreadLocal provides thread-local variables.
+Each thread that accesses the variable has its own, independently initialized copy.
+Here's a simple example that demonstrates the basics of creating and running threads:
+
+java
+Copy code
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getId() + " Value " + i);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        Thread t1 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable());
+        t1.start();
+        t2.start();
+    }
+}
+This creates two threads running the same MyRunnable instance, demonstrating basic multithreading. Understanding and effectively using 
+multithreading can significantly enhance the performance of certain types of applications. However, it's essential to be cautious of 
+potential issues like race conditions and deadlocks when working with multithreading.
+
+
+
+The four pillars of object-oriented programming (OOP) form the foundation for designing and developing software using the principles of 
+object-oriented design. In Java, these four pillars are:
+
+Encapsulation:
+
+Definition: Encapsulation is the bundling of data (attributes) and the methods that operate on the data into a single unit known as a 
+class. It restricts direct access to some of an object's components and can prevent the accidental modification of data.
+Key Concepts:
+Access Modifiers: Control the access level of variables and methods (e.g., public, private, protected).
+Getter and Setter Methods: Provide controlled access to the class's private attributes.
+java
+Copy code
+public class Person {
+    private String name;
+    private int age;
+
+    // Getter and Setter methods
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        }
+    }
+}
+Abstraction:
+
+Definition: Abstraction is the process of hiding the complex implementation details and showing only the essential features of an object. 
+It involves creating abstract classes and interfaces to define a blueprint for other classes to implement.
+Key Concepts:
+Abstract Classes and Methods: Classes with the abstract keyword can have abstract methods (methods without a body).
+Interfaces: Provide a way to achieve full abstraction.
+java
+Copy code
+// Abstract Class
+abstract class Shape {
+    abstract void draw();
+}
+
+// Concrete Class implementing the abstract class
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+Inheritance:
+
+Definition: Inheritance is a mechanism that allows a new class to inherit the properties and behaviors of an existing class. It promotes 
+code reusability and establishes a relationship between a superclass (base class) and a subclass (derived class).
+Key Concepts:
+Superclass and Subclass: The superclass provides common attributes and methods, and the subclass inherits them.
+Keyword extends: Used to indicate inheritance.
+java
+Copy code
+// Superclass
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starting...");
+    }
+}
+
+// Subclass inheriting from the superclass
+class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car driving...");
+    }
+}
+Polymorphism:
+
+Definition: Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. It provides a 
+way to perform a single action in different ways.
+Key Concepts:
+Method Overloading: Defining multiple methods in the same class with the same name but different parameters.
+Method Overriding: Providing a specific implementation for a method in a subclass that is already defined in its superclass.
+java
+Copy code
+// Method Overloading
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+// Method Overriding
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+These four pillars together provide a powerful framework for organizing and designing code in an object-oriented manner, promoting 
+modularity, reusability, and maintainability. Each pillar contributes to creating robust and efficient software systems
+
+
+
+
+Spring Container manages Spring beans and their lifecycle 1: Bean Factory: Basic Spring Container 2: Application Context: Advanced Spring
+ Container with enterprise-specific features
+ 
+ Most enterprise applications use Application Context. Application Context is recommended for web applications, web services - REST API 
+ and microservices.
+ 
+ @Qualifier has higher priority then @Primary
+ 
+
+
+Getting Started with Java Spring Framework
+Step 03
+Step 01 - Understanding the Need for Java Spring Framework
+Step 02 - Getting Started with Java Spring Framework
+Step 03 - Creating a New Spring Framework Project with Maven and Java
+/learn-spring-framework/pom.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.in28minutes</groupId>
+	<artifactId>learn-spring-framework</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>learn-spring-framework</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+</project>
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/LearnSpringFrameworkApplication.java
+package com.in28minutes.learnspringframework;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LearnSpringFrameworkApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearnSpringFrameworkApplication.class, args);
+	}
+
+}
+/learn-spring-framework/src/main/resources/application.properties
+/learn-spring-framework/src/test/java/com/in28minutes/learnspringframework/LearnSpringFrameworkApplicationTests.java
+package com.in28minutes.learnspringframework;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class LearnSpringFrameworkApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+Step 04
+Step 04 - Getting Started with Java Gaming Application
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/AppGamingBasicJava.java New
+package com.in28minutes.learnspringframework;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.MarioGame;
+
+public class AppGamingBasicJava {
+
+	public static void main(String[] args) {
+		
+		var marioGame = new MarioGame();
+		var gameRunner = new GameRunner(marioGame);
+		gameRunner.run();
+
+	}
+
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/GameRunner.java New
+package com.in28minutes.learnspringframework.game;
+
+public class GameRunner {
+	MarioGame game;
+	
+	public GameRunner(MarioGame game) {
+		this.game = game;
+	}
+
+	public void run() {
+		
+		System.out.println("Running game: " + game);
+		game.up();
+		game.down();
+		game.left();
+		game.right();
+		
+	}
+
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/MarioGame.java New
+package com.in28minutes.learnspringframework.game;
+
+public class MarioGame {
+	
+	public void up() {
+		System.out.println("Jump");
+	}
+
+	public void down() {
+		System.out.println("Go into a hole");
+	}
+	
+	public void left() {
+		System.out.println("Go back");
+	}
+
+	public void right() {
+		System.out.println("Accelerate");
+	}
+
+
+}
+Step 05
+Step 05 - Understanding Loose Coupling and Tight Coupling
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/SuperContraGame.java New
+package com.in28minutes.learnspringframework.game;
+
+public class SuperContraGame {
+
+	public void up() {
+		System.out.println("up");
+	}
+
+	public void down() {
+		System.out.println("Sit down");
+	}
+	
+	public void left() {
+		System.out.println("Go back");
+	}
+
+	public void right() {
+		System.out.println("Shoot a bullet");
+	}
+
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/AppGamingBasicJava.java Modified
+import com.in28minutes.learnspringframework.game.SuperContraGame;
+//var marioGame = new MarioGame();
+var superContraGame = new SuperContraGame();
+var gameRunner = new GameRunner(superContraGame);
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/GameRunner.java Modified
+private SuperContraGame game;
+public GameRunner(SuperContraGame game) {
+Step 06
+Step 06 - Introducting Java Interface to Make App Loosely Coupled
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/GamingConsole.java New
+package com.in28minutes.learnspringframework.game;
+
+public interface GamingConsole {
+	void up();
+	void down();
+	void left();
+	void right();
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/MarioGame.java Modified
+public class MarioGame implements GamingConsole{
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/SuperContraGame.java Modified
+public class SuperContraGame implements GamingConsole{
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/AppGamingBasicJava.java Modified
+//var game = new MarioGame();
+//var game = new SuperContraGame();
+var game = new PacmanGame();
+var gameRunner = new GameRunner(game);
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/GameRunner.java Modified
+//PacmanGame
+private GamingConsole game;
+public GameRunner(GamingConsole game) {
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/game/PacmanGame.java New
+package com.in28minutes.learnspringframework.game;
+
+public class PacmanGame implements GamingConsole{
+	
+	public void up() {
+		System.out.println("up");
+	}
+
+	public void down() {
+		System.out.println("down");
+	}
+	
+	public void left() {
+		System.out.println("left");
+	}
+
+	public void right() {
+		System.out.println("right");
+	}
+
+
+}
+Step 08
+Step 07 - Bringing in Spring Framework to Make Java App Loosely Coupled
+Step 08 - Your First Java Spring Bean and Launching Java Spring Configuration
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/LearnSpringFrameworkApplication.java Deleted
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/AppGamingBasicJava.java RENAMED TO
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App01GamingBasicJava.java
+package com.in28minutes.learnspringframework;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.PacmanGame;
+
+public class App01GamingBasicJava {
+
+	public static void main(String[] args) {
+		
+		//var game = new MarioGame();
+		//var game = new SuperContraGame();
+		
+		var game = new PacmanGame(); //1: Object Creation
+		
+		var gameRunner = new GameRunner(game); 
+			//2: Object Creation + Wiring of Dependencies
+			// Game is a Dependency of GameRunner
+		
+		gameRunner.run();
+
+	}
+
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App02HelloWorldSpring.java New
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App02HelloWorldSpring {
+
+	public static void main(String[] args) {
+
+		//1: Launch a Spring Context
+		var context = 
+			new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		
+		//2: Configure the things that we want Spring to manage - 
+		//HelloWorldConfiguration - @Configuration
+		//name - @Bean
+		
+		//3: Retrieving Beans managed by Spring
+		System.out.println(context.getBean("name"));
+		
+	}
+
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/HelloWorldConfiguration.java New
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class HelloWorldConfiguration {
+	
+	@Bean
+	public String name() {
+		return "Ranga";
+	}
+	
+	
+
+}
+Step 09
+Step 09 - Creating More Java Spring Beans in Spring Java Configuration File
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App02HelloWorldSpring.java Modified
+System.out.println(context.getBean("age"));
+System.out.println(context.getBean("person"));
+System.out.println(context.getBean("address"));
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/HelloWorldConfiguration.java Modified
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+//Eliminate verbosity in creating Java Beans
+//Public accessor methods, constructor, 
+//equals, hashcode and toString are automatically created. 
+//Released in JDK 16.
+
+record Person (String name, int age) { };
+
+//Address - firstLine & city
+record Address(String firstLine, String city){ };
+
+@Configuration
+public class HelloWorldConfiguration {
+	
+	@Bean
+	public String name() {
+		return "Ranga";
+	}
+	
+	@Bean
+	public int age() {
+		return 15;
+	}
+	
+	@Bean
+	public Person person() {
+		return new Person("Ravi", 20);		
+	}
+	
+	@Bean
+	public Address address() {
+		return new Address("Baker Street", "London");		
+	}
+	
+
+}
+Step 10
+Step 10 - Implementing Auto Wiring in Spring Framework Java Configuration File
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App02HelloWorldSpring.java Modified
+System.out.println(context.getBean("person2MethodCall"));
+System.out.println(context.getBean("person3Parameters"));
+System.out.println(context.getBean("address2"));
+//System.out.println(context.getBean(Address.class));
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/HelloWorldConfiguration.java Modified
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+//Eliminate verbosity in creating Java Beans
+//Public accessor methods, constructor, 
+//equals, hashcode and toString are automatically created. 
+//Released in JDK 16.
+
+record Person (String name, int age, Address address) { };
+
+//Address - firstLine & city
+record Address(String firstLine, String city){ };
+
+@Configuration
+public class HelloWorldConfiguration {
+	
+	@Bean
+	public String name() {
+		return "Ranga";
+	}
+	
+	@Bean
+	public int age() {
+		return 15;
+	}
+	
+	@Bean
+	public Person person() {
+		return new Person("Ravi", 20, new Address("Main Street", "Utrecht"));		
+	}
+
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(), age(), address()); //name, age		
+	}
+
+	@Bean
+	public Person person3Parameters(String name, int age, Address address3) {
+		//name,age,address2
+		return new Person(name, age, address3); //name, age		
+	}
+
+	@Bean(name = "address2")
+	public Address address() {
+		return new Address("Baker Street", "London");		
+	}
+
+	@Bean(name = "address3")
+	public Address address3() {
+		return new Address("Motinagar", "Hyderabad");		
+	}
+
+}
+Step 14
+Step 11 - Questions about Spring Framework - What will we learn?
+Step 12 - Understanding Spring IOC Container - Application Context and Bean Factory
+Step 13 - Exploring Java Bean vs POJO vs Spring Bean
+Step 14 - Exploring Spring Framework Bean Auto Wiring - Primary and Qualifier Annotations
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App02HelloWorldSpring.java Modified
+import java.util.Arrays;
+		
+System.out.println(context.getBean(Person.class));
+System.out.println(context.getBean(Address.class));
+System.out.println(context.getBean("person5Qualifier"));
+//System.out.println
+//		Arrays.stream(context.getBeanDefinitionNames())
+//			.forEach(System.out::println);
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/HelloWorldConfiguration.java Modified
+@Bean
+@Primary
+//No qualifying bean of type 'com.in28minutes.learnspringframework.Address' 
+//available: expected single matching bean but found 2: address2,address3
+public Person person4Parameters(String name, int age, Address address) {
+	//name,age,address2
+	return new Person(name, age, address); //name, age		
+}
+
+@Bean
+public Person person5Qualifier(String name, int age, @Qualifier("address3qualifier") Address address) {
+	//name,age,address2
+	return new Person(name, age, address); //name, age		
+}
+
+
+@Bean(name = "address2")
+@Primary
+public Address address() {
+	return new Address("Baker Street", "London");		
+}
+
+@Bean(name = "address3")
+@Qualifier("address3qualifier")
+public Address address3() {
+	return new Address("Motinagar", "Hyderabad");		
+}
+Step 15
+Step 15 - Using Spring Framework to Manage Beans for Java Gaming App
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/HelloWorldConfiguration.java Moved to
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/helloworld/HelloWorldConfiguration.java New
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App02HelloWorldSpring.java Moved to
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/helloworld/App02HelloWorldSpring.java
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/App03GamingSpringBeans.java New
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GamingConsole;
+
+public class App03GamingSpringBeans {
+
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(GamingConfiguration.class)) {
+
+			context.getBean(GamingConsole.class).up();
+			
+			context.getBean(GameRunner.class).run();
+
+		}
+	}
+}
+/learn-spring-framework/src/main/java/com/in28minutes/learnspringframework/GamingConfiguration.java New
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GamingConsole;
+import com.in28minutes.learnspringframework.game.PacmanGame;
+
+@Configuration
+public class GamingConfiguration {
+
+	@Bean
+	public GamingConsole game() {
+		var game = new PacmanGame();
+		return game;
+	}
+
+	@Bean
+	public GameRunner gameRunner(GamingConsole game) {
+		var gameRunner = new GameRunner(game);
+		return gameRunner;
+	}
+
+}
+Section 02
+Using Spring Framework to Create and Manage Your Java Objects
+Step 01 - Getting Spring Framework to Create and Manage Your Java Objects
+Step 01
+Getting Started
+
+Rename learn-spring-framework to learn-spring-framework-01
+Copy learn-spring-framework-01 to learn-spring-framework-02
+Close project learn-spring-framework-01
+Start Work on learn-spring-framework-02
+/learn-spring-framework-02/pom.xml New
+No change
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/GamingAppLauncherApplication.java Copied
+@ComponentScan("com.in28minutes.learnspringframework.game")
+
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GamingConsole;
+
+@Configuration
+@ComponentScan("com.in28minutes.learnspringframework.game")
+public class GamingAppLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(GamingAppLauncherApplication.class)) {
+
+			context.getBean(GamingConsole.class).up();
+			
+			context.getBean(GameRunner.class).run();
+
+		}
+	}
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/GameRunner.java Copied
+Added @Component
+
+package com.in28minutes.learnspringframework.game;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class GameRunner {
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/PacmanGame.java Copied
+Added @Component
+
+package com.in28minutes.learnspringframework.game;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class PacmanGame implements GamingConsole{
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/SuperContraGame.java Copied
+Step 02
+Step 02 - Exploring Primary and Qualifier Annotations for Spring Components
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/GameRunner.java Modified
+import org.springframework.beans.factory.annotation.Qualifier;
+
+@Component
+public class GameRunner {
+	
+	private GamingConsole game;
+	
+	public GameRunner(@Qualifier("SuperContraGameQualifier") GamingConsole game) { //NEW
+
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/MarioGame.java Modified
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+@Component
+@Primary
+public class MarioGame implements GamingConsole{
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/SuperContraGame.java Modified
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+@Component
+@Qualifier("SuperContraGameQualifier")
+public class SuperContraGame implements GamingConsole{
+Step 04
+Step 03 - Primary and Qualifier - Which Spring Annotation Should You Use?
+Step 04 - Exploring Spring Framework - Different Types of Dependency Injection
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/GamingAppLauncherApplication.java MOVED TO
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/game/GamingAppLauncherApplication.java
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/a0/SimpleSpringContextLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.a0;
+
+import java.util.Arrays;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class SimpleSpringContextLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(SimpleSpringContextLauncherApplication.class)) {
+			
+			Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
+
+		}
+	}
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/a1/DepInjectionLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.a1;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Component
+class YourBusinessClass {
+
+	Dependency1 dependency1;
+
+	Dependency2 dependency2;
+
+	//@Autowired
+	public YourBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
+		super();
+		System.out.println("Constructor Injection - YourBusinessClass ");
+		this.dependency1 = dependency1;
+		this.dependency2 = dependency2;
+	}
+
+//	@Autowired
+//	public void setDependency1(Dependency1 dependency1) {
+//		System.out.println("Setter Injection - setDependency1 ");
+//		this.dependency1 = dependency1;
+//	}
+//
+//	@Autowired
+//	public void setDependency2(Dependency2 dependency2) {
+//		System.out.println("Setter Injection - setDependency2 ");
+//		this.dependency2 = dependency2;
+//	}
+
+	public String toString() {
+		return "Using " + dependency1 + " and " + dependency2;
+	}
+
+}
+
+@Component
+class Dependency1 {
+
+}
+
+@Component
+class Dependency2 {
+
+}
+
+@Configuration
+@ComponentScan
+public class DepInjectionLauncherApplication {
+
+	public static void main(String[] args) {
+
+		try (var context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class)) {
+
+			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+
+			System.out.println(context.getBean(YourBusinessClass.class));
+
+		}
+	}
+}
+Step 08
+Step 05 - Java Spring Framework - Understanding Important Terminology
+Step 06 - Java Spring Framework - Comparing @Component vs @Bean
+Step 07 - Why do we have dependencies in Java Spring Applications?
+Step 08 - Exercise/ Solution for Real World Java Spring Framework Example
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/BusinessCalculationService.java New
+package com.in28minutes.learnspringframework.examples.c1;
+
+import java.util.Arrays;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class BusinessCalculationService {
+	
+	private DataService dataService;
+	
+	public BusinessCalculationService(DataService dataService) {
+		super();
+		this.dataService = dataService;
+	}
+
+	public int findMax() {
+		return Arrays.stream(dataService.retrieveData()).max().orElse(0);
+	}
+
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/DataService.java New
+package com.in28minutes.learnspringframework.examples.c1;
+
+public interface DataService {
+	int[] retrieveData();
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/MongoDbDataService.java New
+package com.in28minutes.learnspringframework.examples.c1;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
+public class MongoDbDataService implements DataService {
+
+	@Override
+	public int[] retrieveData() {
+		return new int[] { 11, 22, 33, 44, 55 };
+	}
+
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/MySqlDataService.java New
+package com.in28minutes.learnspringframework.examples.c1;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MySqlDataService implements DataService {
+
+	@Override
+	public int[] retrieveData() {
+		return new int[] { 1, 2, 3, 4, 5 };
+	}
+
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/RealWorldSpringContextLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.c1;
+
+import java.util.Arrays;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class RealWorldSpringContextLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(RealWorldSpringContextLauncherApplication.class)) {
+			
+			Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
+			
+			System.out.println(
+					context.getBean(BusinessCalculationService.class).findMax());
+			
+		}
+	}
+}
+Section 03
+Exploring Spring Framework Advanced Features
+Step 03
+Step 01 - Exploring Lazy and Eager Initialization of Spring Framework Beans
+Step 02 - Comparing Lazy Initialization vs Eager Initialization
+Step 03 - Exploring Java Spring Framework Bean Scopes - Prototype and Singleton
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/d1/LazyInitializationLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.d1;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
+@Component
+class ClassA {
+	
+}
+
+@Component
+@Lazy
+class ClassB {
+	
+	private ClassA classA;
+	
+	public ClassB(ClassA classA) {
+		//Logic
+		System.out.println("Some Initialization logic");
+		this.classA = classA;
+	}
+	
+	public void doSomething() {
+		System.out.println("Do Something");
+	}
+	
+}
+
+
+@Configuration
+@ComponentScan
+public class LazyInitializationLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(LazyInitializationLauncherApplication.class)) {
+			
+			System.out.println("Initialization of context is completed");
+			
+			context.getBean(ClassB.class).doSomething();
+			
+
+		}
+	}
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/e1/BeanScopesLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.e1;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+class NormalClass {
+	
+}
+
+
+@Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Component
+class PrototypeClass {
+	
+}
+
+
+@Configuration
+@ComponentScan
+public class BeanScopesLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(BeanScopesLauncherApplication.class)) {
+			
+			System.out.println(context.getBean(NormalClass.class));
+			System.out.println(context.getBean(NormalClass.class));
+			System.out.println(context.getBean(NormalClass.class));
+			System.out.println(context.getBean(NormalClass.class));
+			System.out.println(context.getBean(NormalClass.class));
+			System.out.println(context.getBean(NormalClass.class));
+			
+			System.out.println(context.getBean(PrototypeClass.class));
+			System.out.println(context.getBean(PrototypeClass.class));
+			System.out.println(context.getBean(PrototypeClass.class));
+			System.out.println(context.getBean(PrototypeClass.class));
+			
+
+		}
+	}
+}
+Step 07
+Step 04 - Comparing Prototype vs Singleton - Spring Framework Bean Scopes
+Step 05 - Exploring Spring Beans - PostConstruct and PreDestroy
+Step 06 - Evolution of Jakarta EE - Comparing with J2EE and Java EE
+Step 07 - Exploring Jakarta CDI with Spring Framework and Java
+/learn-spring-framework-02/pom.xml Modified
+<dependency>
+	<groupId>jakarta.inject</groupId>
+	<artifactId>jakarta.inject-api</artifactId>
+	<version>2.0.1</version>
+</dependency>
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/f1/PrePostAnnotationsContextLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.f1;
+
+import java.util.Arrays;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
+@Component
+class SomeClass {
+	
+	private SomeDependency someDependency;
+	
+	public SomeClass(SomeDependency someDependency) {
+		super();
+		this.someDependency = someDependency;
+		System.out.println("All dependencies are ready!");
+	}
+	
+	@PostConstruct
+	public void initialize() {
+		someDependency.getReady();
+	}
+	
+	@PreDestroy
+	public void cleanup() {
+		System.out.println("Cleanup");
+	}
+	
+}
+
+@Component 
+class SomeDependency {
+
+	public void getReady() {
+		System.out.println("Some logic using SomeDependency");
+		
+	}
+	
+}
+
+@Configuration
+@ComponentScan
+public class PrePostAnnotationsContextLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(PrePostAnnotationsContextLauncherApplication.class)) {
+			
+			Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
+
+		}
+	}
+}
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/g1/CdiContextLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.g1;
+
+import java.util.Arrays;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
+
+//@Component
+@Named
+class BusinessService {
+	private DataService dataService;
+
+	//@Autowired
+	@Inject
+	public void setDataService(DataService dataService) {
+		System.out.println("Setter Injection");
+		this.dataService = dataService;
+	}
+
+
+	public DataService getDataService() {
+		return dataService;
+	}
+
+	
+	
+}
+
+//@Component
+@Named
+class DataService {
+	
+}
+
+@Configuration
+@ComponentScan
+public class CdiContextLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new AnnotationConfigApplicationContext
+					(CdiContextLauncherApplication.class)) {
+			
+			Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
+			
+			System.out.println(context.getBean(BusinessService.class)
+					.getDataService());
+
+		}
+	}
+}
+Step 10
+Step 08 - Exploring Java Spring XML Configuration
+Step 09 - Exploring Java Annotations vs XML Configuration for Java Spring Framework
+Step 10 - Exploring Spring Framework Stereotype Annotations - Component and more
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/BusinessCalculationService.java Modified
+import org.springframework.stereotype.Service;
+//@Component
+@Service
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/MongoDbDataService.java Modified
+import org.springframework.stereotype.Repository;
+//@Component
+@Repository
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/c1/MySqlDataService.java Modified
+import org.springframework.stereotype.Repository;
+//@Component
+@Repository
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/d1/LazyInitializationLauncherApplication.java Modified
+@SuppressWarnings("unused")
+private ClassA classA;
+/learn-spring-framework-02/src/main/java/com/in28minutes/learnspringframework/examples/h1/XmlConfigurationContextLauncherApplication.java New
+package com.in28minutes.learnspringframework.examples.h1;
+
+import java.util.Arrays;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+
+public class XmlConfigurationContextLauncherApplication {
+	
+	public static void main(String[] args) {
+
+		try (var context = 
+				new ClassPathXmlApplicationContext("contextConfiguration.xml")) {
+			
+			Arrays.stream(context.getBeanDefinitionNames())
+				.forEach(System.out::println);
+			
+			System.out.println(context.getBean("name"));
+			
+			System.out.println(context.getBean("age"));
+			
+			context.getBean(GameRunner.class).run();
+
+		}
+	}
+}
+/learn-spring-framework-02/src/main/resources/contextConfiguration.xml New
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+	
+	<bean id="name" class="java.lang.String">
+		<constructor-arg value="Ranga" />
+	</bean>
+
+	<bean id="age" class="java.lang.Integer">
+		<constructor-arg value="35" />
+	</bean>
+
+<!-- 	<context:component-scan 
+		base-package="com.in28minutes.learnspringframework.game"/>
+ -->
+ 	<bean id="game" class="com.in28minutes.learnspringframework.game.PacmanGame"/>
+ 	
+ 	<bean id="gameRunner" 
+ 		class="com.in28minutes.learnspringframework.game.GameRunner">
+ 		<constructor-arg ref="game" />
+ 	</bean>
+ 	
+</beans>
+
+
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class CallableTask implements Callable<String> {
+	
+	private String name;
+
+	public CallableTask(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String call() throws Exception {
+		Thread.sleep(1000);
+		return "Hello " + name;
+	}
+	
+}
+
+public class CallableRunner {
+
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		ExecutorService executorService = Executors.newFixedThreadPool(1);
+		
+		Future<String> welcomeFuture = 
+				executorService.submit(new CallableTask("in28Minutes"));
+		
+		System.out.print("\n new CallableTask(\"in28Minutes\") executed");
+		
+		String welcomeMessage = welcomeFuture.get();
+		
+		System.out.println(welcomeMessage);
+		
+		System.out.print("\n Main completed");
+
+	}
+
+}
+
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class Task extends Thread {
+	
+	private int number;
+
+	public Task(int number) {
+		this.number = number;
+	}
+	
+	public void run() { //SIGNATURE
+		System.out.print("\nTask " + number + " Started");
+		
+		for(int i=number*100;i<=number*100 + 99; i++) 
+			System.out.print(i + " ");
+		
+		System.out.print("\nTask" + number +  "Done");
+	}
+}
+
+
+public class ExecutorServiceRunner {
+
+	public static void main(String[] args) {
+		//ExecutorService executorService = Executors.newSingleThreadExecutor();
+		ExecutorService executorService = Executors.newFixedThreadPool(5);
+		
+		executorService.execute(new Task(1));
+		executorService.execute(new Task(2));
+		executorService.execute(new Task(3));
+		executorService.execute(new Task(4));
+		executorService.execute(new Task(5));
+		executorService.execute(new Task(6));
+		executorService.execute(new Task(7));
+				
+		executorService.shutdown();
+
+	}
+
+}
+
+
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class MultipleAnyCallableRunner {
+
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		
+		List<CallableTask> tasks = List.of(
+				new CallableTask("in28Minutes"),
+				new CallableTask("Ranga"),
+				new CallableTask("Adam"));
+		
+		String result = executorService.invokeAny(tasks);
+		
+		System.out.println(result);
+
+		executorService.shutdown();
+	}
+
+}
+
+
+
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class MultipleCallableRunner {
+
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		
+		List<CallableTask> tasks = List.of(new CallableTask("in28Minutes"), 
+				new CallableTask("Ranga"),  new CallableTask("Adam"));
+		
+		List<Future<String>> results = executorService.invokeAll(tasks);
+		
+		for(Future<String> result:results) {
+			System.out.println(result.get());
+		}
+
+		executorService.shutdown();
+	}
+
+}
+
+
+
+//extends Thread
+//implements Runnable
+
+class Task1 extends Thread {
+	
+	public void run() { //SIGNATURE
+		System.out.print("\nTask1 Started");
+		
+		for(int i=101;i<=199; i++) 
+			System.out.print(i + " ");
+		
+		System.out.print("\nTask1 Done");
+	}
+}
+
+class Task2 implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.print("\nTask2 Started");
+		
+		for(int i=201;i<=299; i++) 
+			System.out.print(i + " ");
+		
+		System.out.print("\nTask2 Done");
+		
+		
+	}
+	
+}
+
+
+public class ThreadBasicsRunner {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		//• NEW;
+		//• RUNNABLE;
+		//• RUNNING;
+		//• BLOCKED/WAITING;
+		//• TERMINATED/DEAD;
+		
+		//Task1 - 101 to 199
+		System.out.print("\nTask1 Kicked Off");
+		Task1 task1 = new Task1();
+		task1.setPriority(1);
+		task1.start(); //task1.run();
+		
+		System.out.print("\nTask2 Kicked Off");
+		
+		Task2 task2 = new Task2();
+		Thread task2Thread = new Thread(task2);
+		task2Thread.setPriority(10);
+		task2Thread.start();	
+	
+		task1.join();
+		task2Thread.join();
+		
+		System.out.print("\nTask3 Kicked Off");
+		
+		//Task3
+		for(int i=301;i<=399; i++) 
+			System.out.print(i + " ");
+		
+		System.out.print("\nTask3 Done");
+		
+		System.out.print("\nMain Done");
+	}
+}
+
+
+
+MapRunner
+
+
+package collections;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class MapRunner {
+
+	public static void main(String[] args) {
+		String str = "This is an awesome occasion. "
+				+ "This has never happened before.";
+		
+		Map<Character, Integer> occurances = new HashMap<>();
+		
+		char[] characters = str.toCharArray();
+		
+		for(char character:characters) {
+			//Get the character
+			Integer integer = occurances.get(character);
+			if(integer==null) {
+				occurances.put(character, 1);
+			} else {
+				occurances.put(character, integer + 1);
+			}
+		}
+		
+		System.out.println(occurances);
+		
+		Map<String, Integer> stringOccurances = new HashMap<>();
+		String[] words = str.split(" ");
+		
+		
+		for(String word:words) {
+			//Get the character
+			Integer integer = stringOccurances.get(word);
+			if(integer==null) {
+				stringOccurances.put(word, 1);
+			} else {
+				stringOccurances.put(word, integer + 1);
+			}
+		}
+		
+		System.out.println(stringOccurances);
+		
+		
+	}
+
+}
+
+Queue Runner
+
+package collections;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+class StringLengthComparator implements Comparator<String> {
+	@Override
+	public int compare(String value1, String value2) {
+		return Integer.compare(value2.length(),
+				value1.length());
+	}
+
+}
+
+public class QueueRunner {
+
+	public static void main(String[] args) {
+		Queue<String> queue = new PriorityQueue<>(10,
+				new StringLengthComparator());
+		queue.addAll(List.of("Zebra", "Monkey", "Cat", "A",
+				"B", "C", "D", "E", "F", "G"));
+		queue.offer("Z");
+		while (queue.peek() != null)
+			System.out.println(queue.poll());
+	}
+
+}
+
+
+Set Runner
+
+package collections;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetRunner {
+
+	public static void main(String[] args) {
+		List<Character> characters = List.of('A','Z','A', 'B', 'Z','F');
+		//unique - Set
+		// Tree
+		// Hash
+		// LinkedHash
+		
+		Set<Character> treeSet = new TreeSet<>(characters);
+		System.out.println("treeSet "+ treeSet);
+
+		Set<Character> linkedHashSet = new LinkedHashSet<>(characters);
+		System.out.println("linkedHashSet "+ linkedHashSet);
+		
+		Set<Character> hashSet = new HashSet<>(characters);
+		System.out.println("hashSet "+ hashSet);
+
+		
+
+	}
+
+}
+
+
+Student
+
+package collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class AscendingStudentComparator implements Comparator<Student> {
+	@Override
+	public int compare(Student student1, Student student2) {
+		return Integer.compare(student1.getId(), student2.getId());
+	}
+}
+
+public class StudentsCollectionRunner {
+
+	public static void main(String[] args) {
+		List<Student> students = List.of(new Student(1, "Ranga"),
+				new Student(100, "Adam"),
+				new Student(2,"Eve"));
+		
+		ArrayList<Student> studentsAl = new ArrayList<>(students);
+		
+		System.out.println(studentsAl);
+		
+		Collections.sort(studentsAl);
+		System.out.println("Desc " + studentsAl);
+		
+		//Collections.sort(studentsAl, new AscendingStudentComparator());
+		
+		studentsAl.sort(new AscendingStudentComparator());
+		System.out.println("AscendingStudentComparator " + studentsAl);	
+	}
+
+}
+
+
+
+Functional Programming
+
+
+package com.in28minutes.functionalprogramming;
+
+import java.util.List;
+
+public class FPNumberRunner {
+
+	public static void main(String[] args) {
+		List<Integer> numbers = List.of(4,6,8,13,3,15);
+		
+		//Exercise - Print squares of first 10 numbers!
+		//Clue - IntStream.range(1,10)
+		
+		//List.of("Apple", "Ant", "Bat").stream()
+		//Map all of these to lowercase and print them
+
+		//List.of("Apple", "Ant", "Bat").stream()
+		//Print the length of each element
+
+		/*
+		numbers.stream()
+				.forEach( element ->System.out.println(element));*/
+		
+		int sum = fpSum(numbers);
+			
+		System.out.println(sum);
+
+	}
+
+	private static int fpSum(List<Integer> numbers) {
+		return numbers.stream()
+				.reduce(0, 
+					(number1, number2) ->  number1 + number2);
+	}
+
+	private static int normalSum(List<Integer> numbers) {
+		int sum = 0;
+		for(int number:numbers) {
+			sum += number; 
+		}
+		return sum;
+	}
+
+}
+
+
+
+package com.in28minutes.functionalprogramming;
+
+import java.util.List;
+
+public class FunctionalProgrammingRunner {
+
+	public static void main(String[] args) {
+		List<String> list = List.of("Apple", "Bat", "Cat",
+				"Dog");
+		printWithFPWithFiltering(list);
+
+	}
+
+	private static void printBasic(List<String> list) {
+		for (String string : list) {
+			System.out.println(string);
+		}
+	}
+
+	private static void printBasicWithFiltering(
+			List<String> list) {
+		for (String string : list) {
+			if (string.endsWith("at")) {
+				System.out.println(string);
+			}
+		}
+	}
+
+	private static void printWithFP(List<String> list) {
+		list.stream().forEach(element -> System.out
+				.println("element - " + element));
+	}
+	
+	private static void printWithFPWithFiltering(List<String> list) {
+		list.stream()
+				.filter(element -> element.endsWith("at"))
+			.forEach(element -> System.out.println("element - " + element));
+	}
+
+}
+
+
+package com.in28minutes.functionalprogramming;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+class EvenNumberPredicate implements Predicate<Integer> {
+
+	@Override
+	public boolean test(Integer number) {
+		return number%2 == 0;
+	}
+	
+}
+
+class SystemOutConsumer implements Consumer<Integer> {
+
+	@Override
+	public void accept(Integer number) {
+		System.out.println(number);
+	}
+	
+}
+
+class NumberSquareMapper implements Function<Integer, Integer> {
+
+	@Override
+	public Integer apply(Integer number) {
+		return number * number;
+	}
+	
+}
+
+public class LambdaBehindTheScreensRunner {
+	
+	
+
+	public static void main(String[] args) {
+
+		List.of(23,43,34,45,36,48).stream()
+		.filter(n -> n%2 ==0)
+		.map(n -> n * n)
+		.forEach(e -> System.out.println(e));
+
+		List.of(23,43,34,45,36,48).stream()
+		.filter(new EvenNumberPredicate())
+		.map(new NumberSquareMapper())
+		.forEach(new SystemOutConsumer());
+
+		//.map(n -> n * n)
+		//<R> Stream<R> map(Function<? super T, ? extends R> mapper);
+		// R apply(T t);
+		
+		//.filter(new EvenNumberPredicate())
+		//Stream<T> filter(Predicate<? super T> predicate);
+		//boolean test(T t);
+		
+		//.forEach(e -> System.out.println(e));
+		//Consumer<? super T> action
+		//void accept(T t);
+		
+		//1.Storing functions in variables
+		//2.Passing functions to methods <=
+		//3.Returning functions from methods
+		
+		Predicate<? super Integer> evenPredicate = createEvenPredicate();
+		Predicate<? super Integer> oddPredicate = n -> n%2 ==1;
+		
+		List.of(23,43,34,45,36,48).stream()
+				.filter(evenPredicate)
+				.map(n -> n * n)
+				.forEach(e -> System.out.println(e));
+	}
+
+	private static Predicate<? super Integer> createEvenPredicate() {
+		return n -> n%2 ==0;
+	}
+
+}
+
+
+
+package com.in28minutes.functionalprogramming;
+
+import java.util.List;
+
+public class MethodReferencesRunner {
+
+	public static void print(Integer number) {
+		System.out.println(number);
+	}
+
+	public static void main(String[] args) {
+		List.of("Ant", "Bat", "Cat", "Dog", "Elephant")
+				.stream().map(s -> s.length())
+				.forEach(s -> MethodReferencesRunner
+						.print(s));
+
+		List.of("Ant", "Bat", "Cat", "Dog", "Elephant")
+				.stream().map(String::length)
+				.forEach(MethodReferencesRunner::print);
+
+		List.of(23,45,67,34).stream()
+				.filter(n -> n%2==0)
+				.max( (n1,n2) -> Integer.compare(n1,n2) )
+				.orElse(0);
+		
+		Integer max = List.of(23, 45, 67, 34).stream()
+				.filter(MethodReferencesRunner::isEven)
+				.max(Integer::compare)
+				.orElse(0);
+		
+		System.out.println(max);
+	}
+
+	public static boolean isEven(Integer number) {
+		return number % 2 == 0;
+	}
+
+}
+
+
+
+Checked Exception error
+
+package com.in28minutes.exceptionhandling;
+
+public class CheckedExceptionRunner {
+	
+	public static void main(String[] args) {
+	/*	try {
+			someOtherMethod();
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}*/
+		//someOtherMethod1();
+		someOtherMethod2();
+
+	}
+	
+	private static void someOtherMethod2() throws RuntimeException{
+		
+	}
+	
+	private static void someOtherMethod() throws InterruptedException{
+		Thread.sleep(2000);
+	}
+
+}
+
+
+package com.in28minutes.exceptionhandling;
+
+public class ExceptionHandlingRunner {
+
+	public static void main(String[] args) {
+		method1();
+		System.out.println("Main Ended");
+	}
+
+	private static void method1() {
+		method2();
+		System.out.println("Method1 Ended");
+	}
+
+	private static void method2() {
+		String str = null;
+		str.length();
+		System.out.println("Method2 Ended");
+	}
+}
+
+
+
+
+package com.in28minutes.exceptionhandling;
+
+public class ExceptionHandlingRunner2 {
+
+	public static void main(String[] args) {
+		method1();
+		System.out.println("Main Ended");
+	}
+
+	private static void method1() {
+		method2();
+		System.out.println("Method1 Ended");
+	}
+
+	private static void method2() {
+		try {
+			//String str = null;
+			//str.length();
+			int[] i = {1,2};
+			int number = i[3];
+			System.out.println("Method2 Ended");
+		} catch (NullPointerException ex) {
+			System.out.println("Matched NullPointerException");
+			ex.printStackTrace();
+		} catch (ArrayIndexOutOfBoundsException ex) {
+			System.out.println("Matched ArrayIndexOutOfBoundsException");
+			ex.printStackTrace();
+		} catch (Exception ex) {
+			System.out.println("Matched Exception");
+			ex.printStackTrace();
+		}
+	}
+}
+
+
+
+package com.in28minutes.exceptionhandling;
+
+import java.util.Scanner;
+
+public class FinallyRunner {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = null;
+
+		try {
+			scanner = new Scanner(System.in);
+			int[] numbers = { 12, 3, 4, 5 };
+
+			int number = numbers[21];
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("Before Scanner Close");
+			if(scanner!=null) {
+				scanner.close();
+			}
+		}
+		
+		System.out.println("Just before closing out main");
+	}
+
+}
+
+
+
+package com.in28minutes.exceptionhandling;
+
+class Amount {
+	private String currency;
+	private int amount;
+	
+	public Amount(String currency, int amount) {
+		super();
+		this.currency = currency;
+		this.amount = amount;
+	}
+	
+	public void add(Amount that) throws CurrenciesDoNotMatchException {
+		
+		if(!this.currency.equals(that.currency)) {
+			//throw new Exception("Currencies Don't Match " + this.currency + " & " +that.currency );
+			throw new CurrenciesDoNotMatchException("Currencies Don't Match " + this.currency + " & " +that.currency );
+		}
+		
+		this.amount = this.amount + that.amount;
+	}
+	
+	public String toString() {
+		return amount + " " + currency; 
+	}
+}
+
+class CurrenciesDoNotMatchException extends Exception {
+	public CurrenciesDoNotMatchException(String msg) {
+		super(msg);
+	}
+}
+
+public class ThrowingExceptionRunner {
+
+	public static void main(String[] args) throws CurrenciesDoNotMatchException {
+		Amount amount1 = new Amount("USD", 10);
+		Amount amount2 = new Amount("EUR", 20);
+		amount1.add(amount2);
+		System.out.println(amount1);	
+	}
+
+}
+
+
+
+
+package com.in28minutes.exceptionhandling;
+
+import java.util.Scanner;
+
+public class TryWithResourcesRunner {
+
+	public static void main(String[] args) {
+		try (Scanner scanner = new Scanner(System.in)) {
+			int[] numbers = { 12, 3, 4, 5 };
+			int number = numbers[21];
+		} 
+	}
+
+}
+
+
+
+package com.in28minutes.api.a;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CopyOfApiRunner {
+
+	public static void main(String[] args) {
+		List<String> names = new ArrayList<String>();
+		names.add("Ranga");
+		names.add("Ravi");
+		names.add("John");
+		
+		List<String> copyOfNames = List.copyOf(names);
+		
+		doNotChange(copyOfNames);
+		System.out.println(copyOfNames);
+
+	}
+
+	private static void doNotChange(List<String> names) {
+		names.add("ShouldNotbeAllowed");
+		
+	}
+
+}
+
+
+package com.in28minutes.api.b;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class FileReadWriteRunner {
+
+	public static void main(String[] args) throws IOException {
+		Path path = Paths.get("./resources/sample.txt");
+		String fileContent = Files.readString(path);
+		System.out.println(fileContent);
+		String newFileContent = fileContent.replace("Line", "Lines");
+		
+		Path newFilePath = Paths.get("./resources/sample-new.txt");
+		Files.writeString(newFilePath, newFileContent);
+
+	}
+
+}
+
+
+
+package com.in28minutes.api.c;
+
+import java.util.List;
+import java.util.function.Predicate;
+
+public class PredicateNotRunner {
+	
+	public static boolean isEven(Integer number) {
+		return number%2==0;
+	}
+		
+	public static void main(String[] args) {
+		List<Integer> numbers = List.of(3,4,5,67,89,88);
+//		Predicate<Integer> evenNumberPredicate = number -> number%2==0;
+//		numbers.stream().filter(evenNumberPredicate.negate()).forEach(System.out::println);
+		numbers.stream().filter(Predicate.not(PredicateNotRunner::isEven))
+					.forEach(System.out::println);
+		
+		
+		
+	}
+
+}
+
+
+
+package com.in28minutes.api.d;
+
+class SampleClass {
+	String str = null;
+}
+
+public class StringNewApiRunner {
+	
+	
+	public static void main(String[] args) {
+		System.out.println(" ".isBlank());
+		System.out.println(" L R ".strip().replace(" ","@"));
+		System.out.println(" L R ".stripLeading().replace(" ","@"));
+		System.out.println(" L R ".stripTrailing().replace(" ","@"));
+		"Line1\nLine2\nLine3\nLine4".lines().forEach(System.out::println);
+		
+		System.out.println("UPPER".transform(s -> s.substring(2)));
+		System.out.println("My name is %s. My age is %d.".formatted("Ranga", 25));
+		
+		
+		SampleClass sample = new SampleClass();
+		String str = null;
+		System.out.println(sample.str.isBlank());
+		//Exception in thread "main" java.lang.NullPointerException: 
+		//	Cannot invoke "String.isBlank()" because "sample.str" is null
+		//at com.in28minutes.api.d.StringNewApiRunner.main(StringNewApiRunner.java:23)
+
+		
+		//Exception in thread "main" java.lang.NullPointerException: 
+		//Cannot invoke "String.isBlank()" because "str" is null
+		//at com.in28minutes.api.d.StringNewApiRunner.main(StringNewApiRunner.java:15)
+
+	}
+
+}
+
+
+
+package com.in28minutes.api.e;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+public class TypeInferencesRunner {
+	
+	public static void main(String[] args) {
+		var names1 = List.of("Ranga", "Ravi");
+		var names2 = List.of("John", "Adam");
+		var var = "";
+		
+		final var names = List.of(names1,names2);
+		
+		names.stream().forEach(System.out::println);
+		
+		for(var name:names1)
+			System.out.println(name);
+		
+		var filter = List.of("Ranga", "Ravi").stream().filter(s -> s.length()<5);
+		filter.forEach(System.out::println);
+		
+		
+		
+	}
+
+}
+
+
+package com.in28minutes.api.f;
+
+public class SwitchExpressionRunner {
+	
+	public static String findDayOfTheWeek(int day) {
+		String dayOfWeek = "";
+
+		switch(day) {
+		case 0: dayOfWeek = "Sunday"; break;
+		case 1: dayOfWeek = "Monday"; break;
+		case 2: dayOfWeek = "Tuesday"; break;
+		case 3: dayOfWeek = "Wednesday"; break;
+		default: throw new IllegalArgumentException("Invalid Option"+ day);
+		}
+		
+		return dayOfWeek;
+	}
+
+	public static String findDayOfTheWeekWithSwitchExpression(int day) {
+		String dayOfWeek = switch(day) {
+		case 0 -> {
+			System.out.println("Do Some complex logic here");
+			yield "Sunday";
+			}
+		case 1 -> "Monday";
+		case 2 -> "Tuesday";
+		case 3 ->"Wednesday";
+		default -> throw new IllegalArgumentException("Invalid Option"+ day);
+		};
+		
+		return dayOfWeek;
+	}
+
+	
+	public static void main(String[] args) {
+
+	}
+
+}
+
+
+
+package com.in28minutes.api.g;
+
+public class TextBlocksRunner {
+
+	public static void main(String[] args) {
+		String str1 = """
+				fsadfjklasjf""";
+		String str = """
+				"Line 1"   
+				   "Line 2"  
+				   Line 3  
+				       Line 4 
+				       Line 5      
+				Line 6""";
+
+		String textBlock = """
+			Line 1: %s
+			Line 2: %s
+			Line 3
+			Line 4
+			""".formatted("Some Value", "Some Other Value");
+
+		System.out.print(textBlock);
+
+	}
+
+}
+
+
+
+package com.in28minutes.api.h;
+
+public class RecordsRunner {
+	
+	record Person(String name, String email, String phoneNumber) {
+		Person {
+			if(name == null)
+				throw new IllegalArgumentException("name is null");
+		}
+		
+		public String name() {
+			System.out.println("Do Something");
+			return name;
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		Person person = new Person("Ranga", "ranga@in28minutes.com","123-456-7890");
+		System.out.println(person.name());
+
+		
+//		Person person1 = new Person("Ranga", "ranga@in28minutes.com","123-456-7890");
+//		Person person2 = new Person("Ranga1", "ranga@in28minutes.com","123-456-7890");
+//		System.out.println(person.equals(person1));
+//		System.out.println(person.equals(person2));
+
+	}
+
+}
+
+
+
+package com.in28minutes.concurrency;
+
+public class BiCounter {
+	private int i = 0;
+	private int j = 0;
+	
+	synchronized public void incrementI() {
+		i++; 
+		//get i
+		//increment  
+		//set i
+	}
+
+	public int getI() {
+		return i;
+	}
+	
+	synchronized public void incrementJ() {
+		j++; 
+		//get j
+		//increment  
+		//set j
+	}
+
+	public int getJ() {
+		return j;
+	}
+
+}
+
+
+package com.in28minutes.concurrency;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class BiCounterWithAtomicInteger {
+	private AtomicInteger i = new AtomicInteger();
+	private AtomicInteger j = new AtomicInteger();
+		
+	public void incrementI() {		
+		i.incrementAndGet();
+	}
+
+	public int getI() {
+		return i.get();
+	}
+	
+	public void incrementJ() {
+		j.incrementAndGet(); 
+	}
+
+	public int getJ() {
+		return j.get();
+	}
+
+}
+
+
+
+package com.in28minutes.concurrency;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class BiCounterWithLock {
+	private int i = 0;
+	private int j = 0;
+	
+	Lock lockForI = new ReentrantLock();
+	Lock lockForJ = new ReentrantLock();
+	
+	public void incrementI() {		
+		lockForI.lock();//Get Lock For I 
+		i++;
+		lockForI.unlock();
+		//Release Lock For I
+	}
+
+	public int getI() {
+		return i;
+	}
+	
+	public void incrementJ() {
+		lockForJ.lock();//Get Lock For J
+		j++; 
+		lockForJ.unlock();//Release Lock For J
+	}
+
+	public int getJ() {
+		return j;
+	}
+
+}
+
+
+
+package com.in28minutes.concurrency;
+
+public class ConcurrencyRunner {
+
+	public static void main(String[] args) {
+		Counter counter = new Counter();
+		counter.increment();
+		counter.increment();
+		counter.increment();
+		System.out.println(counter.getI());
+
+	}
+
+}
+
+
+
+package com.in28minutes.concurrency;
+
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.LongAdder;
+
+public class ConcurrentMapRunner {
+
+	public static void main(String[] args) {
+		ConcurrentMap<Character, LongAdder> occurances = new ConcurrentHashMap<>();
+		
+		String str = "ABCD ABCD ABCD";
+
+		for(char character:str.toCharArray()) {
+			occurances.computeIfAbsent(character, ch -> new LongAdder()).increment();
+		}
+		
+		System.out.println(occurances);
+				
+
+	}
+
+	/*
+	 		Map<Character, LongAdder> occurances = new Hashtable<>();
+		
+		String str = "ABCD ABCD ABCD";
+		for(char character:str.toCharArray()) {
+			LongAdder longAdder = occurances.get(character);
+			if(longAdder == null) {
+				longAdder = new LongAdder();
+			}
+			longAdder.increment();
+			occurances.put(character, longAdder);
+		}
+		
+		System.out.println(occurances);
+
+	 */
+}
+
+
+
+package com.in28minutes.concurrency;
+
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.LongAdder;
+
+public class ConcurrentMapRunner {
+
+	public static void main(String[] args) {
+		ConcurrentMap<Character, LongAdder> occurances = new ConcurrentHashMap<>();
+		
+		String str = "ABCD ABCD ABCD";
+
+		for(char character:str.toCharArray()) {
+			occurances.computeIfAbsent(character, ch -> new LongAdder()).increment();
+		}
+		
+		System.out.println(occurances);
+				
+
+	}
+
+	/*
+	 		Map<Character, LongAdder> occurances = new Hashtable<>();
+		
+		String str = "ABCD ABCD ABCD";
+		for(char character:str.toCharArray()) {
+			LongAdder longAdder = occurances.get(character);
+			if(longAdder == null) {
+				longAdder = new LongAdder();
+			}
+			longAdder.increment();
+			occurances.put(character, longAdder);
+		}
+		
+		System.out.println(occurances);
+
+	 */
+}
+
+
+
+package com.in28minutes.concurrency;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class CopyOnWriteArrayListRunner {
+	
+	//add - copy
+	//get
+
+	public static void main(String[] args) {
+		List<String> list = new CopyOnWriteArrayList<>();
+		
+		//Threads - 3
+		list.add("Ant");
+		list.add("Bat");
+		list.add("Cat");
+		
+		//Threads - 10000
+		for(String element:list) {
+			System.out.println(element);
+		}
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+
+package com.in28minutes.concurrency;
+
+public class Counter {
+	private int i = 0;
+	
+	synchronized public void increment() {
+		i++; 
+		//get i
+		//increment  
+		//set i
+	}
+
+	public int getI() {
+		return i;
+	}
+}
+
+
+
+class A{  
+private int data=40;  
+private void msg(){System.out.println("Hello java");}  
+}  
+  
+public class Simple{  
+ public static void main(String args[]){  
+   A obj=new A();  
+   System.out.println(obj.data);//Compile Time Error  
+   obj.msg();//Compile Time Error  
+   }  
+}  
+
+
+class A{  
+private A(){}//private constructor  
+void msg(){System.out.println("Hello java");}  
+}  
+public class Simple{  
+ public static void main(String args[]){  
+   A obj=new A();//Compile Time Error  
+ }  
+}  
+
+
+
+package pack;  
+class A{  
+  void msg(){System.out.println("Hello");}  
+}  
+//save by B.java  
+package mypack;  
+import pack.*;  
+class B{  
+  public static void main(String args[]){  
+   A obj = new A();//Compile Time Error  
+   obj.msg();//Compile Time Error  
+  }  
+  
+  
+  
+  package pack;  
+public class A{  
+protected void msg(){System.out.println("Hello");}  
+}  
+//save by B.java  
+package mypack;  
+import pack.*;  
+  
+class B extends A{  
+  public static void main(String args[]){  
+   B obj = new B();  
+   obj.msg();  
+  }  
+}  
+
+
+
+package pack;  
+public class A{  
+public void msg(){System.out.println("Hello");}  
+}  
+//save by B.java  
+  
+package mypack;  
+import pack.*;  
+  
+class B{  
+  public static void main(String args[]){  
+   A obj = new A();  
+   obj.msg();  
+  }  
+}  
+
+
+protected void msg(){System.out.println("Hello java");}  
+}  
+  
+public class Simple extends A{  
+void msg(){System.out.println("Hello java");}//C.T.Error  
+ public static void main(String args[]){  
+   Simple obj=new Simple();  
+   obj.msg();  
+   }  
+}  
+
+
+Encapsulation in Java is a process of wrapping code and data together into a single unit
+By providing only a setter or getter method, you can make the class read-only or write-only
+
+Java Bean class is the example of a fully encapsulated class.
+
+
+rovides you the control over the data. Suppose you want to set the value of id which should be greater than 100 only, you can write the 
+logic inside the setter method. You can write the logic not to store the negative numbers in the setter methods.
+
+It is a way to achieve data hiding in Java because other class will not be able to access the data through the private data members.
+
+The encapsulate class is easy to test. So, it is better for unit testing.
+
+The standard IDE's are providing the facility to generate the getters and setters. So, it is easy and fast to create an encapsulated 
+class in Java.
+
+
+//A Java class which is a fully encapsulated class.  
+//It has a private data member and getter and setter methods.  
+package com.javatpoint;  
+public class Student{  
+//private data member  
+private String name;  
+//getter method for name  
+public String getName(){  
+return name;  
+}  
+//setter method for name  
+public void setName(String name){  
+this.name=name  
+}  
+}  
+File: Test.java
+
+//A Java class to test the encapsulated class.  
+package com.javatpoint;  
+class Test{  
+public static void main(String[] args){  
+//creating instance of the encapsulated class  
+Student s=new Student();  
+//setting value in the name member  
+s.setName("vijay");  
+//getting value of the name member  
+System.out.println(s.getName());  
+}  
+}  
+Compile By: javac -d . Test.java
+Run By: java com.javatpoint.Test
+Output:
+
+vijay
+Read-Only class
+//A Java class which has only getter methods.  
+public class Student{  
+//private data member  
+private String college="AKG";  
+//getter method for college  
+public String getCollege(){  
+return college;  
+}  
+}  
+Now, you can't change the value of the college data member which is "AKG".
+
+s.setCollege("KITE");//will render compile time error  
+
+/A Java class which has only setter methods.  
+public class Student{  
+//private data member  
+private String college;  
+//getter method for college  
+public void setCollege(String college){  
+this.college=college;  
+}  
+}  
+
+
+System.out.println(s.getCollege());//Compile Time Error, because there is no such method  
+System.out.println(s.college);//Compile Time Error, because the college data member is private.   
+//So, it can't be accessed from outside the class  
+
+
+/A Account class which is a fully encapsulated class.  
+//It has a private data member and getter and setter methods.  
+class Account {  
+//private data members  
+private long acc_no;  
+private String name,email;  
+private float amount;  
+//public getter and setter methods  
+public long getAcc_no() {  
+    return acc_no;  
+}  
+public void setAcc_no(long acc_no) {  
+    this.acc_no = acc_no;  
+}  
+public String getName() {  
+    return name;  
+}  
+public void setName(String name) {  
+    this.name = name;  
+}  
+public String getEmail() {  
+    return email;  
+}  
+public void setEmail(String email) {  
+    this.email = email;  
+}  
+public float getAmount() {  
+    return amount;  
+}  
+public void setAmount(float amount) {  
+    this.amount = amount;  
+}  
+  
+}  
+File: TestAccount.java
+
+//A Java class to test the encapsulated class Account.  
+public class TestEncapsulation {  
+public static void main(String[] args) {  
+    //creating instance of Account class  
+    Account acc=new Account();  
+    //setting values through setter methods  
+    acc.setAcc_no(7560504000L);  
+    acc.setName("Sonoo Jaiswal");  
+    acc.setEmail("sonoojaiswal@javatpoint.com");  
+    acc.setAmount(500000f);  
+    //getting values through getter methods  
+    System.out.println(acc.getAcc_no()+" "+acc.getName()+" "+acc.getEmail()+" "+acc.getAmount());  
+}  
+}  
+
+
+Object class is the parent class of all the classes in java by default. In other words, it is the topmost class of java
+
+Object obj=getObject();//we don't know what object will be returned from this method  
+
+public final Class getClass()		returns the Class class object of this object. The Class class can further be used to get the 
+									metadata of this class.
+public int hashCode()				returns the hashcode number for this object.
+public boolean equals(Object obj)	compares the given object to this object.
+protected Object clone() throws CloneNotSupportedException				creates and returns the exact copy (clone) of this object.
+public String toString()			returns the string representation of this object.
+public final void notify()			wakes up single thread, waiting on this object's monitor.
+public final void notifyAll()		wakes up all the threads, waiting on this object's monitor.
+public final void wait(long timeout)throws InterruptedException			causes the current thread to wait for the specified milliseconds,
+									until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait(long timeout,int nanos)throws InterruptedException			causes the current thread to wait for the specified 
+									milliseconds and nanoseconds, until another thread notifies (invokes notify() or notifyAll() method).
+public final void wait()throws InterruptedException						causes the current thread to wait, until another thread notifies
+									(invokes notify() or notifyAll() method).
+protected void finalize()throws Throwable					is invoked by the garbage collector before object is being garbage collected.
+
+
+
+ object cloning is a way to create exact copy of an object. The clone() method of Object class is used to clone an object
+ 
+ 
+ protected Object clone() throws CloneNotSupportedException  
+ 
+clone() method saves the extra processing task for creating the exact copy of an object. If we perform it by using the new keyword, it 
+will take a lot of processing time to be performed that is why we use object cloning
+
+
+class Student18 implements Cloneable{  
+int rollno;  
+String name;  
+  
+Student18(int rollno,String name){  
+this.rollno=rollno;  
+this.name=name;  
+}  
+  
+public Object clone()throws CloneNotSupportedException{  
+return super.clone();  
+}  
+  
+public static void main(String args[]){  
+try{  
+Student18 s1=new Student18(101,"amit");  
+  
+Student18 s2=(Student18)s1.clone();  
+  
+System.out.println(s1.rollno+" "+s1.name);  
+System.out.println(s2.rollno+" "+s2.name);  
+  
+}catch(CloneNotSupportedException c){}  
+  
+}  
+}  
+
+
+
+public class JavaMathExample1    
+{    
+    public static void main(String[] args)     
+    {    
+        double x = 28;    
+        double y = 4;    
+          
+        // return the maximum of two numbers  
+        System.out.println("Maximum number of x and y is: " +Math.max(x, y));   
+          
+        // return the square root of y   
+        System.out.println("Square root of y is: " + Math.sqrt(y));   
+          
+        //returns 28 power of 4 i.e. 28*28*28*28    
+        System.out.println("Power of x and y is: " + Math.pow(x, y));      
+  
+        // return the logarithm of given value       
+        System.out.println("Logarithm of x is: " + Math.log(x));   
+        System.out.println("Logarithm of y is: " + Math.log(y));  
+          
+        // return the logarithm of given value when base is 10      
+        System.out.println("log10 of x is: " + Math.log10(x));   
+        System.out.println("log10 of y is: " + Math.log10(y));    
+          
+        // return the log of x + 1  
+        System.out.println("log1p of x is: " +Math.log1p(x));    
+  
+        // return a power of 2    
+        System.out.println("exp of a is: " +Math.exp(x));    
+          
+        // return (a power of 2)-1  
+        System.out.println("expm1 of a is: " +Math.expm1(x));  
+    }    
+}    
+
+
+
+public class JavaMathExample2    
+{    
+    public static void main(String[] args)     
+    {    
+        double a = 30;    
+          
+        // converting values to radian    
+        double b = Math.toRadians(a);   
+          
+        // return the trigonometric sine of a      
+        System.out.println("Sine value of a is: " +Math.sin(a));    
+          
+        // return the trigonometric cosine value of a  
+        System.out.println("Cosine value of a is: " +Math.cos(a));  
+          
+        // return the trigonometric tangent value of a  
+        System.out.println("Tangent value of a is: " +Math.tan(a));  
+          
+        // return the trigonometric arc sine of a      
+        System.out.println("Sine value of a is: " +Math.asin(a));    
+          
+        // return the trigonometric arc cosine value of a  
+        System.out.println("Cosine value of a is: " +Math.acos(a));  
+          
+        // return the trigonometric arc tangent value of a  
+        System.out.println("Tangent value of a is: " +Math.atan(a));  
+  
+        // return the hyperbolic sine of a      
+        System.out.println("Sine value of a is: " +Math.sinh(a));    
+          
+        // return the hyperbolic cosine value of a  
+        System.out.println("Cosine value of a is: " +Math.cosh(a));  
+          
+        // return the hyperbolic tangent value of a  
+        System.out.println("Tangent value of a is: " +Math.tanh(a));  
+    }    
+}    
+
+
+
+
+Method	Description
+Math.abs()	It will return the Absolute value of the given value.
+Math.max()	It returns the Largest of two values.
+Math.min()	It is used to return the Smallest of two values.
+Math.round()	It is used to round of the decimal numbers to the nearest value.
+Math.sqrt()	It is used to return the square root of a number.
+Math.cbrt()	It is used to return the cube root of a number.
+Math.pow()	It returns the value of first argument raised to the power to second argument.
+Math.signum()	It is used to find the sign of a given value.
+Math.ceil()	It is used to find the smallest integer value that is greater than or equal to the argument or mathematical integer.
+Math.copySign()	It is used to find the Absolute value of first argument along with sign specified in second argument.
+Math.nextAfter()	It is used to return the floating-point number adjacent to the first argument in the direction of the second argument.
+Math.nextUp()	It returns the floating-point value adjacent to d in the direction of positive infinity.
+Math.nextDown()	It returns the floating-point value adjacent to d in the direction of negative infinity.
+Math.floor()	It is used to find the largest integer value which is less than or equal to the argument and is equal to the mathematical integer of a double value.
+Math.floorDiv()	It is used to find the largest integer value that is less than or equal to the algebraic quotient.
+Math.random()	It returns a double value with a positive sign, greater than or equal to 0.0 and less than 1.0.
+Math.rint()	It returns the double value that is closest to the given argument and equal to mathematical integer.
+Math.hypot()	It returns sqrt(x2 +y2) without intermediate overflow or underflow.
+Math.ulp()	It returns the size of an ulp of the argument.
+Math.getExponent()	It is used to return the unbiased exponent used in the representation of a value.
+Math.IEEEremainder()	It is used to calculate the remainder operation on two arguments as prescribed by the IEEE 754 standard and returns value.
+Math.addExact()	It is used to return the sum of its arguments, throwing an exception if the result overflows an int or long.
+Math.subtractExact()	It returns the difference of the arguments, throwing an exception if the result overflows an int.
+Math.multiplyExact()	It is used to return the product of the arguments, throwing an exception if the result overflows an int or long.
+Math.incrementExact()	It returns the argument incremented by one, throwing an exception if the result overflows an int.
+Math.decrementExact()	It is used to return the argument decremented by one, throwing an exception if the result overflows an int or long.
+Math.negateExact()	It is used to return the negation of the argument, throwing an exception if the result overflows an int or long.
+Math.toIntExact()	It returns the value of the long argument, throwing an exception if the value overflows an int.
+Logarithmic Math Methods
+Method	Description
+Math.log()	It returns the natural logarithm of a double value.
+Math.log10()	It is used to return the base 10 logarithm of a double value.
+Math.log1p()	It returns the natural logarithm of the sum of the argument and 1.
+Math.exp()	It returns E raised to the power of a double value, where E is Euler's number and it is approximately equal to 2.71828.
+Math.expm1()	It is used to calculate the power of E and subtract one from it.
+Trigonometric Math Methods
+Method	Description
+Math.sin()	It is used to return the trigonometric Sine value of a Given double value.
+Math.cos()	It is used to return the trigonometric Cosine value of a Given double value.
+Math.tan()	It is used to return the trigonometric Tangent value of a Given double value.
+Math.asin()	It is used to return the trigonometric Arc Sine value of a Given double value
+Math.acos()	It is used to return the trigonometric Arc Cosine value of a Given double value.
+Math.atan()	It is used to return the trigonometric Arc Tangent value of a Given double value.
+Hyperbolic Math Methods
+Method	Description
+Math.sinh()	It is used to return the trigonometric Hyperbolic Cosine value of a Given double value.
+Math.cosh()	It is used to return the trigonometric Hyperbolic Sine value of a Given double value.
+Math.tanh()	It is used to return the trigonometric Hyperbolic Tangent value of a Given double value.
+Angular Math Methods
+Method	Description
+Math.toDegrees	It is used to convert the specified Radians angle to equivalent angle measured in Degrees.
+Math.toRadians	It is used to convert the specified Degrees angle to equivalent angle measured in Radians.
+
+
+
+Wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+
+Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects and objects into primitives automatically. The automatic 
+conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+
+
+
+
+
+Change the value in Method: Java supports only call by value. So, if we pass a primitive value, it will not change the original value. 
+But, if we convert the primitive value in an object, it will change the original value.
+Serialization: We need to convert the objects into streams to perform the serialization. If we have a primitive value, we can convert it 
+in objects through the wrapper classes.
+Synchronization: Java synchronization works with objects in Multithreading.
+java.util package: The java.util package provides the utility classes to deal with objects.
+Collection Framework: Java collection framework works with objects only. All classes of the collection framework (ArrayList, LinkedList, 
+Vector, HashSet, LinkedHashSet, TreeSet, PriorityQueue, ArrayDeque, etc.) deal with objects only.
+
+
+/Java program to convert primitive into objects  
+//Autoboxing example of int to Integer  
+public class WrapperExample1{  
+public static void main(String args[]){  
+//Converting int into Integer  
+int a=20;  
+Integer i=Integer.valueOf(a);//converting int into Integer explicitly  
+Integer j=a;//autoboxing, now compiler will write Integer.valueOf(a) internally  
+  
+System.out.println(a+" "+i+" "+j);  
+}}  
+Output:
+
+20 20 20
+
+
+
+public class WrapperExample2{    
+public static void main(String args[]){    
+//Converting Integer to int    
+Integer a=new Integer(3);    
+int i=a.intValue();//converting Integer to int explicitly  
+int j=a;//unboxing, now compiler will write a.intValue() internally    
+    
+System.out.println(a+" "+i+" "+j);    
+}}    
+
+
+//Java Program to convert all primitives into its corresponding   
+//wrapper objects and vice-versa  
+public class WrapperExample3{  
+public static void main(String args[]){  
+byte b=10;  
+short s=20;  
+int i=30;  
+long l=40;  
+float f=50.0F;  
+double d=60.0D;  
+char c='a';  
+boolean b2=true;  
+  
+//Autoboxing: Converting primitives into objects  
+Byte byteobj=b;  
+Short shortobj=s;  
+Integer intobj=i;  
+Long longobj=l;  
+Float floatobj=f;  
+Double doubleobj=d;  
+Character charobj=c;  
+Boolean boolobj=b2;  
+  
+//Printing objects  
+System.out.println("---Printing object values---");  
+System.out.println("Byte object: "+byteobj);  
+System.out.println("Short object: "+shortobj);  
+System.out.println("Integer object: "+intobj);  
+System.out.println("Long object: "+longobj);  
+System.out.println("Float object: "+floatobj);  
+System.out.println("Double object: "+doubleobj);  
+System.out.println("Character object: "+charobj);  
+System.out.println("Boolean object: "+boolobj);  
+  
+//Unboxing: Converting Objects to Primitives  
+byte bytevalue=byteobj;  
+short shortvalue=shortobj;  
+int intvalue=intobj;  
+long longvalue=longobj;  
+float floatvalue=floatobj;  
+double doublevalue=doubleobj;  
+char charvalue=charobj;  
+boolean boolvalue=boolobj;  
+  
+//Printing primitives  
+System.out.println("---Printing primitive values---");  
+System.out.println("byte value: "+bytevalue);  
+System.out.println("short value: "+shortvalue);  
+System.out.println("int value: "+intvalue);  
+System.out.println("long value: "+longvalue);  
+System.out.println("float value: "+floatvalue);  
+System.out.println("double value: "+doublevalue);  
+System.out.println("char value: "+charvalue);  
+System.out.println("boolean value: "+boolvalue);  
+}}  
+Output:
+
+---Printing object values---
+Byte object: 10
+Short object: 20
+Integer object: 30
+Long object: 40
+Float object: 50.0
+Double object: 60.0
+Character object: a
+Boolean object: true
+---Printing primitive values---
+byte value: 10
+short value: 20
+int value: 30
+long value: 40
+float value: 50.0
+double value: 60.0
+char value: a
+boolean value: true
+
+
+
+class Javatpoint{  
+private int i;  
+Javatpoint(){}  
+Javatpoint(int i){  
+this.i=i;  
+}  
+public int getValue(){  
+return i;  
+}  
+public void setValue(int i){  
+this.i=i;  
+}  
+@Override  
+public String toString() {  
+  return Integer.toString(i);  
+}  
+}  
+//Testing the custom wrapper class  
+public class TestJavatpoint{  
+public static void main(String[] args){  
+Javatpoint j=new Javatpoint(10);  
+System.out.println(j);  
+}}  
+
+
+
+call by value original value is not changed. Let's take a simple example:
+class Operation{  
+ int data=50;  
+  
+ void change(int data){  
+ data=data+100;//changes will be in the local variable only  
+ }  
+     
+ public static void main(String args[]){  
+   Operation op=new Operation();  
+  
+   System.out.println("before change "+op.data);  
+   op.change(500);  
+   System.out.println("after change "+op.data);  
+  
+ }  
+}  
+
+
+
+/Java Program to illustrate how to declare, instantiate, initialize  
+//and traverse the Java array.  
+class Testarray{  
+public static void main(String args[]){  
+int a[]=new int[5];//declaration and instantiation  
+a[0]=10;//initialization  
+a[1]=20;  
+a[2]=70;  
+a[3]=40;  
+a[4]=50;  
+//traversing array  
+for(int i=0;i<a.length;i++)//length is the property of array  
+System.out.println(a[i]);  
+}}  
+
+
+//Java Program to illustrate the use of declaration, instantiation   
+//and initialization of Java array in a single line  
+class Testarray1{  
+public static void main(String args[]){  
+int a[]={33,3,4,5};//declaration, instantiation and initialization  
+//printing array  
+for(int i=0;i<a.length;i++)//length is the property of array  
+System.out.println(a[i]);  
+}}  
+
+
+
+/Java Program to print the array elements using for-each loop  
+class Testarray1{  
+public static void main(String args[]){  
+int arr[]={33,3,4,5};  
+//printing array using for-each loop  
+for(int i:arr)  
+System.out.println(i);  
+}}  
+
+
+/Java Program to demonstrate the way of passing an array  
+//to method.  
+class Testarray2{  
+//creating a method which receives an array as a parameter  
+static void min(int arr[]){  
+int min=arr[0];  
+for(int i=1;i<arr.length;i++)  
+ if(min>arr[i])  
+  min=arr[i];  
+  
+System.out.println(min);  
+}  
+  
+public static void main(String args[]){  
+int a[]={33,3,4,5};//declaring and initializing an array  
+min(a);//passing array to method  
+}}  
+Test it Now
+Output:
+
+3
+Anonymous Array in Java
+Java supports the feature of an anonymous array, so you don't need to declare the array while passing an array to the method.
+
+//Java Program to demonstrate the way of passing an anonymous array  
+//to method.  
+public class TestAnonymousArray{  
+//creating a method which receives an array as a parameter  
+static void printArray(int arr[]){  
+for(int i=0;i<arr.length;i++)  
+System.out.println(arr[i]);  
+}  
+  
+public static void main(String args[]){  
+printArray(new int[]{10,22,44,66});//passing anonymous array to method  
+}}  
+
+
+/Java Program to demonstrate the way of passing an anonymous array  
+//to method.  
+public class TestAnonymousArray{  
+//creating a method which receives an array as a parameter  
+static void printArray(int arr[]){  
+for(int i=0;i<arr.length;i++)  
+System.out.println(arr[i]);  
+}  
+  
+public static void main(String args[]){  
+printArray(new int[]{10,22,44,66});//passing anonymous array to method  
+}}  
+
+
+
+/Java Program to return an array from the method  
+class TestReturnArray{  
+//creating method which returns an array  
+static int[] get(){  
+return new int[]{10,30,50,90,60};  
+}  
+  
+public static void main(String args[]){  
+//calling method which returns an array  
+int arr[]=get();  
+//printing the values of an array  
+for(int i=0;i<arr.length;i++)  
+System.out.println(arr[i]);  
+}}  
+
+
+
+class Testarray3{  
+public static void main(String args[]){  
+//declaring and initializing 2D array  
+int arr[][]={{1,2,3},{2,4,5},{4,4,5}};  
+//printing 2D array  
+for(int i=0;i<3;i++){  
+ for(int j=0;j<3;j++){  
+   System.out.print(arr[i][j]+" ");  
+ }  
+ System.out.println();  
+}  
+}}  
+
+
+
+/Java Program to illustrate the jagged array  
+class TestJaggedArray{  
+    public static void main(String[] args){  
+        //declaring a 2D array with odd columns  
+        int arr[][] = new int[3][];  
+        arr[0] = new int[3];  
+        arr[1] = new int[4];  
+        arr[2] = new int[2];  
+        //initializing a jagged array  
+        int count = 0;  
+        for (int i=0; i<arr.length; i++)  
+            for(int j=0; j<arr[i].length; j++)  
+                arr[i][j] = count++;  
+   
+        //printing the data of a jagged array   
+        for (int i=0; i<arr.length; i++){  
+            for (int j=0; j<arr[i].length; j++){  
+                System.out.print(arr[i][j]+" ");  
+            }  
+            System.out.println();//new line  
+        }  
+    }  
+}  
+Test it Now
+Output:
+
+0 1 2 
+3 4 5 6 
+7 8 
+
+
+
+
+//Java Program to copy a source array into a destination array in Java  
+class TestArrayCopyDemo {  
+    public static void main(String[] args) {  
+        //declaring a source array  
+        char[] copyFrom = { 'd', 'e', 'c', 'a', 'f', 'f', 'e',  
+                'i', 'n', 'a', 't', 'e', 'd' };  
+        //declaring a destination array  
+        char[] copyTo = new char[7];  
+        //copying array using System.arraycopy() method  
+        System.arraycopy(copyFrom, 2, copyTo, 0, 7);  
+        //printing the destination array  
+        System.out.println(String.valueOf(copyTo));  
+    }  
+}  
+
+
+
+1) Checked Exception
+The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions. For example, 
+IOException, SQLException, etc. Checked exceptions are checked at compile-time.
+
+2) Unchecked Exception
+The classes that inherit the RuntimeException are known as unchecked exceptions. For example, ArithmeticException, NullPointerException, 
+ArrayIndexOutOfBoundsException, etc. Unchecked exceptions are not checked at compile-time, but they are checked at runtime.
+
+3) Error
+Error is irrecoverable. Some example of errors are OutOfMemoryError, VirtualMachineError, AssertionError etc.
+
+
+
+try		The "try" keyword is used to specify a block where we should place an exception code. It means we can't use try block alone. The 
+		try block must be followed by either catch or finally.
+catch	The "catch" block is used to handle the exception. It must be preceded by try block which means we can't use catch block alone. 
+		It can be followed by finally block later.
+finally	The "finally" block is used to execute the necessary code of the program. It is executed whether an exception is handled or not.
+throw	The "throw" keyword is used to throw an exception.
+throws	The "throws" keyword is used to declare exceptions. It specifies that there may occur an exception in the method. It doesn't 
+		throw an exception. It is always used with method signature.
+		
+		
+public class JavaExceptionExample{  
+  public static void main(String args[]){  
+   try{  
+      //code that may raise exception  
+      int data=100/0;  
+   }catch(ArithmeticException e){System.out.println(e);}  
+   //rest code of the program   
+   System.out.println("rest of the code...");  
+  }  
+} 
+
+
+
+DBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE
+ (Java Standard Edition). JDBC API uses JDBC drivers to connect with the database. There are four types of JDBC drivers:
+
+JDBC-ODBC Bridge Driver,
+Native Driver,
+Network Protocol Driver, and
+Thin Driver
+
+
+The current version of JDBC is 4.3. It is the stable release since 21st September, 2017. It is based on the X/Open SQL Call Level 
+Interface. The java.sql package contains classes and interfaces for JDBC API. A list of popular interfaces of JDBC API are given below:
+
+Driver interface
+Connection interface
+Statement interface
+PreparedStatement interface
+CallableStatement interface
+ResultSet interface
+ResultSetMetaData interface
+DatabaseMetaData interface
+RowSet interface
+A list of popular classes of JDBC API are given below:
+
+DriverManager class
+Blob class
+Clob class
+Types class
+
+
+Before JDBC, ODBC API was the database API to connect and execute the query with the database. But, ODBC API uses ODBC driver which is 
+written in C language (i.e. platform dependent and unsecured). That is why Java has defined its own API (JDBC API) that uses JDBC drivers
+ (written in Java language).
+ 
+ 
+//Java Program to demonstrate the conversion of String into int  
+//using Integer.parseInt() method  
+public class StringToIntExample1{  
+public static void main(String args[]){  
+//Declaring String variable  
+String s="200";  
+//Converting String into int using Integer.parseInt()  
+int i=Integer.parseInt(s);  
+//Printing value of i  
+System.out.println(i);  
+}}  
+
+
+
+/Java Program to understand the working of string concatenation operator  
+public class StringToIntExample{  
+public static void main(String args[]){  
+//Declaring String variable  
+String s="200";  
+//Converting String into int using Integer.parseInt()  
+int i=Integer.parseInt(s);  
+System.out.println(s+100);//200100, because "200"+100, here + is a string concatenation operator  
+System.out.println(i+100);//300, because 200+100, here + is a binary plus operator  
+}}  
+
+
+
+//Java Program to demonstrate the conversion of String into Integer  
+//using Integer.valueOf() method  
+public class StringToIntegerExample2{  
+public static void main(String args[]){  
+//Declaring a string  
+String s="200";  
+//converting String into Integer using Integer.valueOf() method  
+Integer i=Integer.valueOf(s);  
+System.out.println(i);  
+}}  
+
+
+
+Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes 
+(ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+
+To instantiate the List interface, we must use :
+
+List <data-type> list1= new ArrayList();  
+List <data-type> list2 = new LinkedList();  
+List <data-type> list3 = new Vector();  
+List <data-type> list4 = new Stack();  
+
+
+The ArrayList class implements the List interface. It uses a dynamic array to store the duplicate element of different data types. The ArrayList class maintains the insertion order and is non-synchronized. The elements stored in the ArrayList class can be randomly accessed. Consider the following example.
+
+import java.util.*;  
+class TestJavaCollection1{  
+public static void main(String args[]){  
+ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+list.add("Ravi");//Adding object in arraylist  
+list.add("Vijay");  
+list.add("Ravi");  
+list.add("Ajay");  
+//Traversing list through Iterator  
+Iterator itr=list.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ravi
+Vijay
+Ravi
+Ajay
+
+
+LinkedList implements the Collection interface. It uses a doubly linked list internally to store the elements. It can store the duplicate elements. It maintains the insertion order and is not synchronized. In LinkedList, the manipulation is fast because no shifting is required.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection2{  
+public static void main(String args[]){  
+LinkedList<String> al=new LinkedList<String>();  
+al.add("Ravi");  
+al.add("Vijay");  
+al.add("Ravi");  
+al.add("Ajay");  
+Iterator<String> itr=al.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ravi
+Vijay
+Ravi
+Ajay
+
+
+Vector uses a dynamic array to store the data elements. It is similar to ArrayList. However, It is synchronized and contains many methods that are not the part of Collection framework.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection3{  
+public static void main(String args[]){  
+Vector<String> v=new Vector<String>();  
+v.add("Ayush");  
+v.add("Amit");  
+v.add("Ashish");  
+v.add("Garima");  
+Iterator<String> itr=v.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ayush
+Amit
+Ashish
+Garima
+Stack
+The stack is the subclass of Vector. It implements the last-in-first-out data structure, i.e., Stack. The stack contains all of the methods of Vector class and also provides its methods like boolean push(), boolean peek(), boolean push(object o), which defines its properties.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection4{  
+public static void main(String args[]){  
+Stack<String> stack = new Stack<String>();  
+stack.push("Ayush");  
+stack.push("Garvit");  
+stack.push("Amit");  
+stack.push("Ashish");  
+stack.push("Garima");  
+stack.pop();  
+Iterator<String> itr=stack.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ayush
+Garvit
+Amit
+Ashish
+Queue Interface
+Queue interface maintains the first-in-first-out order. It can be defined as an ordered list that is used to hold the elements which are about to be processed. There are various classes like PriorityQueue, Deque, and ArrayDeque which implements the Queue interface.
+
+Queue interface can be instantiated as:
+
+Queue<String> q1 = new PriorityQueue();  
+Queue<String> q2 = new ArrayDeque();  
+There are various classes that implement the Queue interface, some of them are given below.
+
+PriorityQueue
+The PriorityQueue class implements the Queue interface. It holds the elements or objects which are to be processed by their priorities. PriorityQueue doesn't allow null values to be stored in the queue.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection5{  
+public static void main(String args[]){  
+PriorityQueue<String> queue=new PriorityQueue<String>();  
+queue.add("Amit Sharma");  
+queue.add("Vijay Raj");  
+queue.add("JaiShankar");  
+queue.add("Raj");  
+System.out.println("head:"+queue.element());  
+System.out.println("head:"+queue.peek());  
+System.out.println("iterating the queue elements:");  
+Iterator itr=queue.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+queue.remove();  
+queue.poll();  
+System.out.println("after removing two elements:");  
+Iterator<String> itr2=queue.iterator();  
+while(itr2.hasNext()){  
+System.out.println(itr2.next());  
+}  
+}  
+}  
+Output:
+
+head:Amit Sharma
+head:Amit Sharma
+iterating the queue elements:
+Amit Sharma
+Raj
+JaiShankar
+Vijay Raj
+after removing two elements:
+Raj
+Vijay Raj
+Deque Interface
+Deque interface extends the Queue interface. In Deque, we can remove and add the elements from both the side. Deque stands for a double-ended queue which enables us to perform the operations at both the ends.
+
+Deque can be instantiated as:
+
+Deque d = new ArrayDeque();  
+ArrayDeque
+ArrayDeque class implements the Deque interface. It facilitates us to use the Deque. Unlike queue, we can add or delete the elements from both the ends.
+
+ArrayDeque is faster than ArrayList and Stack and has no capacity restrictions.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection6{  
+public static void main(String[] args) {  
+//Creating Deque and adding elements  
+Deque<String> deque = new ArrayDeque<String>();  
+deque.add("Gautam");  
+deque.add("Karan");  
+deque.add("Ajay");  
+//Traversing elements  
+for (String str : deque) {  
+System.out.println(str);  
+}  
+}  
+}  
+Output:
+
+Gautam
+Karan
+Ajay
+Set Interface
+Set Interface in Java is present in java.util package. It extends the Collection interface. It represents the unordered set of elements which doesn't allow us to store the duplicate items. We can store at most one null value in Set. Set is implemented by HashSet, LinkedHashSet, and TreeSet.
+
+Set can be instantiated as:
+
+Set<data-type> s1 = new HashSet<data-type>();  
+Set<data-type> s2 = new LinkedHashSet<data-type>();  
+Set<data-type> s3 = new TreeSet<data-type>();  
+HashSet
+HashSet class implements Set Interface. It represents the collection that uses a hash table for storage. Hashing is used to store the elements in the HashSet. It contains unique items.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection7{  
+public static void main(String args[]){  
+//Creating HashSet and adding elements  
+HashSet<String> set=new HashSet<String>();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+//Traversing elements  
+Iterator<String> itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Vijay
+Ravi
+Ajay
+LinkedHashSet
+LinkedHashSet class represents the LinkedList implementation of Set Interface. It extends the HashSet class and implements Set interface. Like HashSet, It also contains unique elements. It maintains the insertion order and permits null elements.
+
+Consider the following example.
+
+import java.util.*;  
+public class TestJavaCollection8{  
+public static void main(String args[]){  
+LinkedHashSet<String> set=new LinkedHashSet<String>();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+Iterator<String> itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ravi
+Vijay
+Ajay
+SortedSet Interface
+SortedSet is the alternate of Set interface that provides a total ordering on its elements. The elements of the SortedSet are arranged in the increasing (ascending) order. The SortedSet provides the additional methods that inhibit the natural ordering of the elements.
+
+The SortedSet can be instantiated as:
+
+SortedSet<data-type> set = new TreeSet();  
+TreeSet
+Java TreeSet class implements the Set interface that uses a tree for storage. Like HashSet, TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. The elements in TreeSet stored in ascending order.
+
+Consider the following example:
+
+import java.util.*;  
+public class TestJavaCollection9{  
+public static void main(String args[]){  
+//Creating and adding elements  
+TreeSet<String> set=new TreeSet<String>();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+//traversing elements  
+Iterator<String> itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ajay
+Ravi
+Vijay
+
+
+Components
+All the elements like the button, text fields, scroll bars, etc. are called components. In Java AWT, there are classes for each component as shown in above diagram. In order to place every component in a particular position on a screen, we need to add them to a container.
+
+Container
+The Container is a component in AWT that can contain another components like buttons, textfields, labels etc. The classes that extends Container class are known as container such as Frame, Dialog and Panel.
+
+It is basically a screen where the where the components are placed at their specific locations. Thus it contains and controls the layout of components.
+
+Note: A container itself is a component (see the above diagram), therefore we can add a container inside container.
+Types of containers:
+
+There are four types of containers in Java AWT:
+
+Window
+Panel
+Frame
+Dialog
+Window
+The window is the container that have no borders and menu bars. You must use frame, dialog or another window for creating a window. We 
+need to create an instance of Window class to create this container.
+
+Panel
+The Panel is the container that doesn't contain title bar, border or menu bar. It is generic container for holding the components. It can
+ have other components like button, text field etc. An instance of Panel class creates a container, in which we can add components.
+
+Frame
+The Frame is the container that contain title bar and border and can have menu bars. It can have other components like button, text field,
+ scrollbar etc. Frame is most widely used container while developing an AWT application.
+ 
+ 
+Integer sum = 0;
+for(int i=0;i<=n;i++){
+  if(i%3==0|| i%5==0)
+    sum+=i;
+}
+return sum;
+
+
+
+int factorial =n;
+for(int j=n-1;j>0;j--){
+factorial*=j;
+}
+return factorial;
+}
+
+
+int index = -1;
+for (int i = 0; i < list.length; i++) {
+    if (list[i].equals(n)) {
+        index = i;
+        break;
+    }
+}
+return index;
+
+
+String result = "";
+for (int i = 0; i < s.length(); i++) {
+    result += s.charAt(s.length() - i - 1);
+}
+return result;
+
+
+
+int a = 0;
+for(int i=0;i<list.length;i++){
+  if(a<list[i])
+    a=list[i];
+}
+return a;
+
+
+
+int elementIndex = 2 * (n-1);
+return elementIndex > list.size() - 1 ? -1 : list.get(elementIndex);
+
+
+
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        scanner.close();
+        
+        if(N%2==1)
+        System.out.println("Weird");
+        
+        if(N%2==0 && N>=2 && N<=5)
+        System.out.println("Not Weird");
+        
+        if(N%2==0 && N>=6 && N<=20)
+        System.out.println("Weird");
+        
+        if(N%2==0 && N>20)
+        System.out.println("Not Weird");
+    }
+}
+
+
+
+Singleton - One object instance per Spring IoC container. Prototype - Possibly many object instances per Spring IoC container.
+CDI is a specification. Spring Framework implements CDI.
+@Service, @Controller, @Repository along with @Component are called Spring Stereotype annotations.
+) @Service - Indicates that an annotated class has business logic 2) @Controller - Indicates that an annotated class is a "Controller" 
+(e.g. a web controller). Used to define controllers in your web applications and REST API 3) @Repository - Indicates that an annotated 
+class is used to retrieve and/or manipulate data in a database
+
+1) @ComponentScan - Define specific packages to scan for components. If specific packages are not defined, scanning will occur from the package of 
+the class that declares this annotation 2) @Bean - Indicates that a method produces a bean to be managed by the Spring container
+
+
+
+package MyBrushUp;
+
+class BasicsDemo {
+    // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
+	static int computeCount;
+	  
+    int id;
+	  String name;
+	  String gender;
+	  int age;
+	  long phone;	  
+	  double gpa;	  
+	  char degree;
+	  
+	  boolean international;
+	  double tuitionFees = 12000.0;
+	  double internationalFees = 5000.0;
+	
+	  void compute() {	
+ 	      computeCount = computeCount + 1;
+		  int nextId = id + 1;		  
+		  
+		  if (international) {
+		      tuitionFees = tuitionFees + internationalFees;
+		  }
+		
+	      System.out.println("\nid: " + id);
+		  System.out.println("nextId: " + nextId);
+		  System.out.println("name: " + name);
+		  System.out.println("gender: " + gender);
+		  System.out.println("age: " + age);
+		  System.out.println("phone: " + phone);
+		  System.out.println("gpa: " + gpa);
+		  System.out.println("degree: " + degree);
+		  System.out.println("tuitionFees: " + tuitionFees);
+		  System.out.println("computeCount: " + computeCount);
+	  }
+	  
+	
+	  public static void main(String[] args) {
+		  BasicsDemo student1 = new BasicsDemo();
+		  student1.id = 1000;	
+	      student1.name = "John";
+	      student1.gender = "male";
+	      student1.age = 18;
+	      student1.phone = 223_456_7890L;	  
+	      student1.gpa = 3.8;	  
+	      student1.degree = 'B';	  
+	      student1.international = false;
+		  student1.compute();
+		  
+		  BasicsDemo student2 = new BasicsDemo();
+		  student2.id = 1001;	
+	      student2.name = "Raj";
+	      student2.gender = "male";
+	      student2.age = 21;
+	      student2.phone = 223_456_9999L;	  
+	      student2.gpa = 3.4;	  
+	      student2.degree = 'M';	  
+	      student2.international = true;
+		  student2.compute();
+		  
+		  BasicsDemo student3 = new BasicsDemo();
+		  student3.id = 1002;
+		  student3.name = "Anita";
+		  student3.gender = "female";
+		  student3.age = 20;
+		  student3.phone = 223_456_8888L;
+		  student3.gpa = 4.0;
+		  student3.degree = 'M';
+		  student3.international = true;
+		  student3.compute();
+		  
+		  System.out.println("Student.computeCount: " + BasicsDemo.computeCount);
+	  }
+}
+
+
+
+class CustomerOrder {
+
+static int orderNumber=1000;
+	
+	double price = 10.0;
+	double seniorDiscount = 2.0;
+	int quantity=1;
+	boolean seniorCitizen = false;
+	double orderAmount=0.0;
+	
+	    
+		public void generateOrderBill() {
+			// TODO Auto-generated method stub
+			orderNumber=orderNumber+1;
+			
+			
+				    if(seniorCitizen==true){
+					orderAmount=(quantity*price)-2;
+				    }
+				    
+				    else
+				    {
+				        orderAmount=(quantity*price);
+				    }
+				
+		}
+		
+			
+		
+}
+
+
+
+  class BasicsDemo {
+    // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
+    static void print() {
+      System.out.println("\n\nInside print ...");
+      System.out.println("Hello, world!!"); // Advance cursor to beginning of next line
+      System.out.println();                 // Print empty line
+      System.out.print("Hello, world!!");   // Cursor stayed after the printed string
+      System.out.println("Hello,");
+      System.out.print(" ");                // Print a space
+      System.out.print("world!!");
+    }
+	
+	static void primitives() {
+	  System.out.println("\n\nInside primitives ..."); 
+	  // literals demo
+	  int intHex = 0x0041;
+	  System.out.println("intHex: " + intHex);
+	  int intBinary = 0b01000001;
+	  System.out.println("intBinary: " + intBinary);
+	  int intChar = 'A'; // holds decimal equivalent, which is 65
+	  System.out.println("intChar: " + intChar);
+	  int intUnderscore = 1_23_456;
+	  System.out.println("intUnderscore: " + intUnderscore);
+	  
+	  char charA = 'A';
+	  System.out.println("charA: " + charA);
+	  char charInt = 65;
+	  System.out.println("charInt: " + charInt);
+	  char charUnicode1 = '\u0041'; // 4 * (16 power 1 )+ 1 * (16 power 0)
+	  System.out.println("charUnicode1: " + charUnicode1);
+	  char charUnicode2 = 0x41;     // 4 * (16 power 1 )+ 1 * (16 power 0)
+	  System.out.println("charUnicode2: " + charUnicode2);
+	  char charBinary = 0b01000001; // binary corresponding to decimal 65
+	  System.out.println("charBinary: " + charBinary);	  		  	  
+    }
+  
+    static void typeCasting() {
+      System.out.println("\nInside typeCasting ...");
+      // Explicit casting
+      long y = 42;
+      //int x = y;
+      int x = (int)y;
+      
+      // Information loss due to out-of-range assignment
+      byte narrowdByte = (byte)123456;
+	  System.out.println("narrowdByte: " + narrowdByte); 
+	  
+	  // Truncation
+	  int iTruncated = (int)0.99;
+	  System.out.println("iTruncated: " + iTruncated); 
+	  
+	  // Implicit cast (int to long)
+	  y = x;
+	  
+	  // Implicit cast (char to int)
+	  char cChar = 'A';
+	  int iInt = cChar; 
+	  System.out.println("iInt: " + iInt);
+	  
+	  // byte to char using an explicit cast
+	  byte bByte = 65;
+	  cChar = (char)bByte; // special conversion (widening from byte --> int followed by narrowing from int --> char)
+	  System.out.println("cChar: " + cChar);
+    }
+	
+	public static void main(String[] args) {	
+	  // Language Basics 1
+	  //print();				
+	  //primitives();
+	  typeCasting(); 
+    }       
+  }
+  
+  
+  
+  
+package MyBrushUp;
+
+package MyBrushUp;
+
+public class CurrencyConvertor {
+
+	/*int rupee=63;
+	int dirham = 3;
+	int real = 3;
+	int chilean_peso= 595;
+	int mexican_peso = 18;
+	int _yen = 107;
+	int $australian_dollar = 2;*/
+	double exchangeRates[] = new double[] {63.0,3.0,3.0};
+	public void printCurrencies() {
+		/*System.out.println("dirham: " + dirham);
+		System.out.println("real: " + real);
+		System.out.println("chilean_peso: " + chilean_peso);
+		System.out.println("rupee: " + rupee);
+		System.out.println("mexican_peso: " + mexican_peso);
+		System.out.println("_yen: " + _yen);
+		System.out.println("$australian_dollar: " + $australian_dollar);*/
+		for(int i=0;i<exchangeRates.length;i++)	{
+			System.out.println(exchangeRates[i]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CurrencyConvertor cc = new CurrencyConvertor();
+		
+		
+		
+
+		cc.printCurrencies();
+		
+	}
+
+}
+
+
+
+List<Integer> newAI = new ArrayList<Integer>();
+newAI = obj.stream().filter(x->x>=5).collect(Collectors.toList());
+newAI.stream().forEach(x->System,.out.println(x));

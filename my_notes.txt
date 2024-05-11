@@ -1,0 +1,136 @@
+Write a program to find out first non repeated character from a string.
+
+
+using stream api logic
+
+
+int myVar = streams.collect(cond).collectors(var)
+
+List<Integer> newAI = new ArrayList<Integer>();
+newAI = obj.stream().filter(x->x>=5).collect(Collectors.toList());
+newAI.stream().forEach(x->System,.out.println(x));
+
+
+--------------------------------------------------------------------------------------
+
+for(int i=0; i<nums.length -1; i++){
+            farthest = Math.max(farthest,nums[i]+i);
+
+            if(i==curr){
+                curr = farthest;
+                jumps++;
+            }
+			
+			
+-------------------------------------------------------------------------------------
+
+or api call through get method, what will be the url for sum of two numbers
+ChatGPT
+To perform an API call using the GET method to get the sum of two numbers, you would typically structure the URL with parameters representing the numbers you want to add together. Here's an example:
+
+arduino
+Copy code
+http://example.com/api/add?num1=5&num2=10
+In this URL:
+
+http://example.com/api/add is the base URL of the API endpoint.
+num1 and num2 are query parameters representing the numbers you want to add.
+5 and 10 are the values of the numbers you want to add.
+So, when you make a GET request to this URL, the server would process it and return the sum of the numbers 5 and 10, which would be 15.
+
+User
+what will be the annotations used?
+ChatGPT
+The annotations used in the URL depend on the programming language or framework you're using to make the API call. Here's how you might annotate the parameters in a few popular programming languages or frameworks:
+
+Python (Requests library):
+python
+Copy code
+import requests
+
+url = "http://example.com/api/add"
+params = {"num1": 5, "num2": 10}
+response = requests.get(url, params=params)
+In this example, the params dictionary is used to specify the parameters to be included in the GET request URL.
+
+JavaScript (Fetch API):
+javascript
+Copy code
+const num1 = 5;
+const num2 = 10;
+fetch(`http://example.com/api/add?num1=${num1}&num2=${num2}`)
+  .then(response => response.json())
+  .then(data => console.log(data));
+Here, template literals (${}) are used to interpolate the values of num1 and num2 into the URL.
+
+Java (using HttpURLConnection):
+java
+Copy code
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        int num1 = 5;
+        int num2 = 10;
+        URL url = new URL("http://example.com/api/add?num1=" + num1 + "&num2=" + num2);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+        System.out.println(response.toString());
+    }
+}
+In Java, you simply append the parameters directly to the URL string.
+
+These annotations help to specify the parameters that need to be included in the URL for the GET request.
+
+
+How it proceeds when it enters HTTP requests
+ChatGPT
+When your program initiates an HTTP request, such as a GET request, it follows a series of steps to communicate with the server and retrieve the requested data. Here's an overview of how it proceeds:
+
+URL Parsing: The program parses the URL to extract the protocol (HTTP), domain name (example.com), port (if specified, default is 80 for HTTP), path (/api/add), and query parameters (?num1=5&num2=10).
+
+DNS Resolution (if needed): If the domain name (example.com in this case) is not already resolved to an IP address, the program performs a DNS lookup to resolve the domain name to an IP address.
+
+TCP Connection Establishment: The program initiates a TCP connection to the IP address of the server, using the specified port number (or default port 80 for HTTP). This involves a three-way handshake to establish the connection.
+
+HTTP Request Construction: The program constructs an HTTP GET request, including the requested path (/api/add) and query parameters (?num1=5&num2=10), along with other headers as necessary. The request might look something like this:
+
+sql
+Copy code
+GET /api/add?num1=5&num2=10 HTTP/1.1
+Host: example.com
+Sending Request: The program sends the HTTP request over the established TCP connection to the server.
+
+Server Processing: The server receives the HTTP request, parses it, and determines how to handle it based on the requested path and parameters.
+
+Processing the Request: In this specific case, the server might perform addition on the numbers provided in the query parameters (num1 and num2) and prepare a response accordingly.
+
+HTTP Response Construction: The server constructs an HTTP response, including the status code, headers, and optionally, response body. For example:
+
+css
+Copy code
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"result":15}
+Sending Response: The server sends the HTTP response back to the client over the established TCP connection.
+
+Response Processing: The program receives the HTTP response, parses it, and extracts the relevant data (such as the result of addition) from the response body.
+
+Connection Closure: Depending on the HTTP version and headers, the connection may be closed by either the client or the server, or kept open for future requests (with Keep-Alive header).
+
+Data Processing: Finally, the program processes the retrieved data (such as the result of addition) as needed for further use within the application.
+
+This process outlines the high-level steps involved when your program initiates an HTTP GET request to a server. Each step is crucial for successful communication and data retrieval between the client and server.
+
+

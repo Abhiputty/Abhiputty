@@ -1,0 +1,675 @@
+--------------------------------------Palindrome---------------------------------------
+
+package Projects;
+
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String reverse="";
+		System.out.println("Enter a new String\n");
+		Scanner sc = new Scanner(System.in);
+		String original = sc.nextLine();
+		
+		for(int i= original.length()-1;i>=0;i--) {
+			reverse=reverse+original.charAt(i);
+		}
+		
+		if(original.equals(reverse)) {
+			System.out.println("Given String is a palindrome");
+		}
+		else {
+			System.out.println("Given String is not a palindrome");
+		}
+	}
+
+}
+
+
+public 
+
+
+String rev = ""
+String str = "Nitin"
+for(int i=str.length()-1;i>=0;i--){
+reverse=reverse+str.charAt(i);
+}
+
+if(str.equals(reverse)){
+SOP("Palindrome");
+else
+not
+
+--------------------------------------String char sort---------------------------------------
+
+package Projects;
+
+import java.util.Arrays;
+
+public class SortString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str="java";
+		char ch[]= str.toCharArray();
+		Arrays.sort(ch);
+		String sortedString = new String(ch);
+		System.out.println(sortedString);
+	}
+
+}
+
+
+Str str=""
+String s="java"
+char ch = s.toCharArray();
+Arrays.sort(ch);
+str=new String(ch);
+SOP(str);
+
+--------------------------------------Output even length words---------------------------------------
+
+package Projects;
+
+public class EvenLenWord {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = "Hell World We lol";
+		
+		for(String s:str.split(" ")) {
+			if(s.length()%2==0) {
+				System.out.println(s);
+			}
+		}
+	}
+
+}
+
+
+String str="Hello World"
+for(String s:str.split(" ")){
+if(s.length()%2==0){
+SOP(s);}
+}
+
+
+--------------------------------------Remove Element---------------------------------------
+
+package Projects;
+
+import java.util.Arrays;
+
+public class ElementRmv {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int[] arr1 = {1,2,3,4,5};
+		int elementToRemove = 3;
+		
+		int[] arr2 = remove(arr1,elementToRemove);
+		System.out.println("original Array :"+Arrays.toString(arr1));
+		System.out.println("new Array :"+Arrays.toString(arr2));
+		
+	}
+
+	private static int[] remove(int[] array, int element) {
+		// TODO Auto-generated method stub
+		int[] arr3 = new int[array.length-1];
+		int index=0;
+		for(int i=0; i<array.length;i++) {
+			if(array[i]!=element) {
+				arr3[index]=array[i];
+				index++;
+			}
+		}
+		return arr3;
+	}
+
+}
+
+
+
+-----------------------------------String reverse(Anagram)----------------------------
+
+package Projects;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Check {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str1 = "java";	//rama rama ratate ratate
+		String str2 = "avaj";	//beeti re umariya
+		System.out.println(anagramCheck(str1,str2));//raghukul nanadan kab aaoge
+	}//milan ki dagariya....... :)
+	
+	public static boolean anagramCheck(String str1, String str2) {
+		char[] array1 = str1.toCharArray();
+		char[] array2 = str2.toCharArray();
+		Arrays.sort(array1);
+		Arrays.sort(array2);
+		return Arrays.equals(array1,array2);
+	}
+
+}
+
+
+--------------------------------------Remove Char duplicates from string using hashset---------------------------------------
+
+package MyStatements;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Duplicates {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "java";
+		System.out.println(removeDuplicates(str));
+
+	}
+	
+	public static String removeDuplicates(String str) {
+		Set<Character> set = new HashSet<Character>();
+		StringBuffer sf = new StringBuffer();
+		
+		for(int i=0;i<str.length();i++) {
+			Character c = str.charAt(i);
+			if(!set.contains(c)) {
+				set.add(c);
+				sf.append(c);
+			}
+			
+		}
+		return sf.toString();
+		
+	}
+
+}
+
+
+
+--------------------------------------Reverse string---------------------------------------
+
+package MyStatements;
+
+public class RevWords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = "Welcome to Java World";
+		String splitArray[]=str.split(" ");
+		for(int i=splitArray.length-1;i>=0;i--) {
+			System.out.println(splitArray[i]);
+		}
+	}
+
+}
+
+-----------------------------Merge sorted array------------------------------------
+
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        int i = m-1;
+        int j = n-1;
+        int k = m + n - 1;
+
+        while(i>=0 && j>=0){
+            if(nums1[i] > nums2[j]){
+                nums1[k--] = nums1[i--];
+            }
+            else{
+                nums1[k--] = nums2[j--];
+            }
+        }
+
+        while(j>=0){
+            nums1[k--] = nums2[j--];
+        }
+    }
+}
+
+
+--------------------------------------Remove Element---------------------------------------
+
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        
+		int index=0;
+		for(int i=0; i<nums.length;i++) {
+			if(nums[i]!=val) {
+				nums[index]=nums[i];
+				index++;
+			}
+		}
+		return index;
+    }
+}
+
+--------------------------------------Remove Duplicates---------------------------------------
+
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int j = 1; // Index for the next unique element
+        for (int i = 1; i < nums.length; i++) {
+            // If the current element is different from the previous one
+            if (nums[i] != nums[i - 1]) {
+                nums[j] = nums[i]; // Copy the current element to the next position in the array
+                j++; // Move to the next position for the next unique element
+            }
+        }
+        return j; // Return the length of the resulting array
+    }
+}
+
+
+
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int j = 1;
+        int k=1; // Index for the next unique element
+        for (int i = 1; i < nums.length; i++) {
+            // If the current element is different from the previous one
+            if (nums[i] == nums[i - 1]) {
+                //nums[j] = nums[i]; // Copy the current element to the next position in the array
+                k++; // Move to the next position for the next unique element
+            }else{
+                k=1;
+            }
+
+            if(k<=2){
+                nums[j]=nums[i];
+                j++;
+            }
+        }
+        return j; // Return the length of the resulting array
+    }
+}
+
+-------------------------------------------Majority Element---------------------------------------------
+
+
+The below code begins by sorting the array nums in non-decreasing order using the sort function from the C++ Standard Library. This rearranges the elements such that identical elements are grouped together.
+Once the array is sorted, the majority element will always be present at index n/2, where n is the size of the array.
+This is because the majority element occurs more than n/2 times, and when the array is sorted, it will occupy the middle position.
+The code returns the element at index n/2 as the majority element.
+The time complexity of this approach is O(n log n)sorting an array of size n takes O(n log n) time
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        return nums[n/2];
+    }
+};
+
+
+The below code begins by initializing a hash map m to store the count of occurrences of each element.
+It then iterates through the array nums using a for loop.
+For each element nums[i], it increments its count in the hash map m by using the line m[nums[i]]++;.
+If nums[i] is encountered for the first time, it will be added to the hash map with a count of 1.
+If nums[i] has been encountered before, its count in the hash map will be incremented by 1.
+After counting the occurrences of each element, the code updates n to be n/2, where n is the size of the array. This is done to check if an element occurs more than n/2 times, which is the criteria for being the majority element.
+The code then iterates through the key-value pairs in the hash map using a range-based for loop.
+For each key-value pair (x.first, x.second), it checks if the count x.second is greater than n.
+If the count is greater than n, it means that x.first occurs more than n/2 times, so it returns x.first as the majority element.
+If no majority element is found in the hash map, the code returns 0 as the default value.
+Note that this will only occur if the input array nums is empty or does not have a majority element.
+The time complexity of this approach is O(n) because it iterates through the array once to count the occurrences and then iterates through the hash map, which has a maximum size of the number of distinct elements in the array.
+
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int, int> m;
+        
+        for(int i = 0; i < n; i++){
+            m[nums[i]]++;
+        }
+        n = n/2;
+        for(auto x: m){
+            if(x.second > n){
+                return x.first;
+            }
+        }
+        return 0;
+    }
+};
+
+
+Initialize two variables: count and candidate. Set count to 0 and candidate to an arbitrary value.
+Iterate through the array nums:
+a. If count is 0, assign the current element as the new candidate and increment count by 1.
+b. If the current element is the same as the candidate, increment count by 1.
+c. If the current element is different from the candidate, decrement count by 1.
+After the iteration, the candidate variable will hold the majority element.
+Explanation:
+
+The algorithm starts by assuming the first element as the majority candidate and sets the count to 1.
+As it iterates through the array, it compares each element with the candidate:
+a. If the current element matches the candidate, it suggests that it reinforces the majority element because it appears again. Therefore, the count is incremented by 1.
+b. If the current element is different from the candidate, it suggests that there might be an equal number of occurrences of the majority element and other elements. Therefore, the count is decremented by 1.
+Note that decrementing the count doesn't change the fact that the majority element occurs more than n/2 times.
+If the count becomes 0, it means that the current candidate is no longer a potential majority element. In this case, a new candidate is chosen from the remaining elements.
+The algorithm continues this process until it has traversed the entire array.
+The final value of the candidate variable will hold the majority element.
+Explanation of Correctness:
+The algorithm works on the basis of the assumption that the majority element occurs more than n/2 times in the array. This assumption guarantees that even if the count is reset to 0 by other elements, the majority element will eventually regain the lead.
+
+Let's consider two cases:
+
+If the majority element has more than n/2 occurrences:
+
+The algorithm will ensure that the count remains positive for the majority element throughout the traversal, guaranteeing that it will be selected as the final candidate.
+If the majority element has exactly n/2 occurrences:
+
+In this case, there will be an equal number of occurrences for the majority element and the remaining elements combined.
+However, the majority element will still be selected as the final candidate because it will always have a lead over any other element.
+In both cases, the algorithm will correctly identify the majority element.
+
+The time complexity of the Moore's Voting Algorithm is O(n) since it traverses the array once.
+
+This approach is efficient compared to sorting as it requires only a single pass through the array and does not change the original order of the elements.
+
+Code
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int count = 0;
+        int candidate = 0;
+        
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        
+        return candidate;
+    }
+};
+
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        return Arrays.stream(nums)
+                .boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .get().getKey();
+    }
+}
+
+
+----------------------------------Swanp k positions right-----------------------------------
+
+class Solution {
+public void rotate(int[] nums, int k) {
+k %= nums.length;
+int n = nums.length;
+reverseNum(nums,0,n-k-1);
+reverseNum(nums,n-k,n-1);
+reverseNum(nums,0,n-1);
+}
+
+public void reverseNum(int[] nums, int start, int end) {
+while(start < end) {
+int temp = nums[start];
+nums[start] = nums[end];
+nums[end] = temp;
+start++;
+end--;
+}
+}
+}
+
+-------------------------------------------------------------------------------------
+
+Best Time to Buy and Sell Stocks
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int currMax_profit=0;
+        int maxProfit=0;
+        int n=prices.length;
+        for(int i=1;i<n;i++){
+            currMax_profit += prices[i]-prices[i-1];
+            if(currMax_profit>0){
+                //do nothing
+            }
+            else{
+                currMax_profit=0;
+            }
+            //maxProfit = Math.max(maxProfit,currMax_profit);
+        }
+        return currMax_profit;
+    }
+}
+
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        
+        int ans = 0;
+
+        for(int i=1;i<prices.length;i++)
+        {
+            if(prices[i] > prices[i-1]) 
+                ans += prices[i] - prices[i-1];
+        }
+
+        return ans;
+    }
+}
+
+----------------------------------Max Jump----------------------------------
+
+class Solution {
+    public boolean canJump(int[] nums) {
+        int j=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0){
+                return false;
+                }
+            
+        }
+
+        return true;
+    }
+}
+
+
+----------------------------------Min Jump----------------------------------
+
+class Solution {
+    public int jump(int[] nums) {
+        int jumps = 0;
+        int curr = 0;
+        int farthest = 0;
+
+        for(int i=0; i<nums.length -1; i++){
+            farthest = Math.max(farthest,nums[i]+i);
+
+            if(i==curr){
+                curr = farthest;
+                jumps++;
+            }
+        }
+        return jumps;
+    }
+}
+
+------------------------------------------- Binary Search----------------------------
+
+class Solution {
+    public int hIndex(int[] citations) {
+       int low=0 , high = citations.length;
+        while(low < high){
+            int mid = (low+high+1)/2;
+            int cnt=0;
+            for(int i=0 ; i<high ; i++) if(citations[i] >= mid) cnt++;
+            if(cnt >= mid) low = mid;
+            else high = mid-1;
+        }
+        return low; 
+    }
+}
+
+
+--------------------------- H index-----------------------------
+
+Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return the researcher's h-index.
+
+According to the definition of h-index on Wikipedia: The h-index is defined as the maximum value of h such that the given researcher has published at least h papers that have each been cited at least h times.
+
+ 
+
+Example 1:
+
+Input: citations = [3,0,6,1,5]
+Output: 3
+Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of them had received 3, 0, 6, 1, 5 citations respectively.
+Since the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, their h-index is 3.
+
+class Solution {
+    public int hIndex(int[] citations) {
+       Arrays.sort(citations);
+     int n = citations.length;
+   
+     int idx = 0 ;
+
+     while(idx < n &&  n-idx >citations[idx]){
+         idx++;
+     }
+
+return n-idx; 
+    }
+}
+
+
+-----------------------------------------------Insert Delete GetRandom O(1)--------------------------------------
+
+Implement the RandomizedSet class:
+
+RandomizedSet() Initializes the RandomizedSet object.
+bool insert(int val) Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.
+bool remove(int val) Removes an item val from the set if present. Returns true if the item was present, false otherwise.
+int getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.
+You must implement the functions of the class such that each function works in average O(1) time complexity.
+
+ 
+
+Example 1:
+
+Input
+["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+[[], [1], [2], [2], [], [1], [2], []]
+Output
+[null, true, false, true, 2, true, false, 2]
+
+Explanation
+RandomizedSet randomizedSet = new RandomizedSet();
+randomizedSet.insert(1); // Inserts 1 to the set. Returns true as 1 was inserted successfully.
+randomizedSet.remove(2); // Returns false as 2 does not exist in the set.
+randomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].
+randomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.
+randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
+randomizedSet.insert(2); // 2 was already in the set, so return false.
+randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
+
+
+class RandomizedSet {
+
+private ArrayList<Integer> list;
+private Map<Integer, Integer> map;
+    public RandomizedSet() {
+        list = new ArrayList<>();
+        map = new HashMap<>();
+    }
+    
+    public boolean search(int val) {
+        return map.containsKey(val);
+    }
+
+    public boolean insert(int val) {
+        if(search(val)) return false;
+
+        list.add(val);
+        map.put(val, list.size() - 1);
+        return true;
+    }
+    
+    public boolean remove(int val) {
+       if (!search(val)) return false;
+
+        int index = map.get(val);
+        list.set(index, list.get(list.size() - 1));
+        map.put(list.get(index), index);
+        list.remove(list.size() - 1);
+        map.remove(val);
+
+        return true; 
+    }
+    
+    public int getRandom() {
+       Random rand = new Random();
+        return list.get(rand.nextInt(list.size())); 
+    }
+}
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * RandomizedSet obj = new RandomizedSet();
+ * boolean param_1 = obj.insert(val);
+ * boolean param_2 = obj.remove(val);
+ * int param_3 = obj.getRandom();
+ */
+
+
+----------------------------------------------------------------------------
+ 
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+You must write an algorithm that runs in O(n) time and without using the division operation.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+Example 2:
+
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0]
+
